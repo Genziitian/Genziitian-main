@@ -1,0 +1,1496 @@
+{"timestamp":"2026-05-17T08:20:30.375Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-17T08:20:30.423Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-17T08:20:30.423Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-17T08:20:45.336Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-17T08:20:45.380Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-17T08:20:45.381Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-17T08:20:46.377Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-17T08:20:46.424Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-17T08:20:46.425Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-17T09:20:30.441Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-17T09:20:32.733Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-17T09:20:46.442Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-17T09:20:48.023Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-17T10:25:58.950Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-17T10:25:58.998Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-17T10:25:58.998Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-17T11:25:59.022Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-17T11:26:01.170Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-17T11:41:21.105Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-17T11:41:21.165Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-17T11:41:21.165Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-17T12:41:21.182Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-17T12:41:23.629Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-17T13:57:17.597Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-17T13:57:17.644Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-17T13:57:17.644Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-17T14:57:17.663Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-17T14:57:19.416Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-17T15:09:28.810Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-17T15:09:28.859Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-17T15:09:28.859Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-17T16:09:28.878Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-17T16:09:30.584Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-17T16:20:14.690Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-17T16:20:14.743Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-17T16:20:14.743Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-17T16:30:38.256Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-17T16:30:38.297Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-17T16:30:38.297Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-17T17:20:14.762Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-17T17:20:17.040Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-17T17:20:17.220Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-17T17:20:17.220Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-17T18:33:24.691Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-17T18:33:24.739Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-17T18:33:24.739Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-17T19:33:24.737Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-17T19:33:26.413Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-17T19:33:26.600Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-17T19:33:27.262Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-17T20:07:00.638Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-17T20:07:00.695Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-17T20:07:00.695Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-17T21:07:00.711Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T00:52:22.813Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-18T00:52:22.862Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T00:52:22.862Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T01:52:22.882Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T01:52:24.231Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-18T02:55:08.292Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-18T02:55:08.345Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T02:55:08.345Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T03:55:08.364Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T03:55:10.465Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-18T05:05:41.648Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-18T05:05:41.700Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T05:05:41.701Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T06:05:41.717Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T06:05:43.904Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-18T06:33:12.083Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-18T06:33:12.133Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T06:33:12.133Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T07:33:12.153Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T07:33:14.380Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-18T08:38:30.420Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-18T08:38:30.467Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T08:38:30.467Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T09:38:30.487Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T09:38:32.718Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-18T11:10:52.504Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-18T11:10:52.552Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T11:10:52.552Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T11:36:38.592Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-18T11:36:38.852Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-18T12:10:52.571Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T12:10:54.758Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-18T12:58:04.546Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-18T12:58:04.610Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T12:58:04.610Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T13:58:04.625Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T13:58:06.630Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-18T14:05:19.378Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-18T14:05:19.441Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T14:05:19.441Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T14:29:39.236Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-18T14:29:39.281Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T14:29:39.281Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T14:35:10.411Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-18T14:35:10.449Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T14:35:10.449Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T14:46:16.168Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-18T14:46:16.217Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T14:46:16.217Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T15:46:16.235Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T15:46:17.774Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-18T15:46:17.958Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-18T15:46:18.741Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-18T16:19:25.716Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-18T16:19:25.766Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T16:19:25.766Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T17:19:25.785Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T17:19:28.120Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-18T17:21:15.771Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-18T17:21:15.823Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T17:21:15.823Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T18:21:15.842Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T18:21:18.137Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-18T19:31:24.761Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-18T19:31:24.808Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T19:31:24.808Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T20:31:24.828Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T20:31:27.033Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-18T21:39:20.215Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-18T21:39:20.279Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T21:39:20.279Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T22:39:20.295Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T22:39:22.652Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-18T22:39:22.825Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-18T22:39:22.825Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-18T22:42:41.074Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-18T22:42:41.128Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-18T22:42:41.128Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-18T23:42:41.146Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-18T23:42:43.430Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-19T00:46:02.992Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-19T00:46:03.052Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-19T00:46:03.052Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-19T02:28:30.056Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-19T02:28:30.115Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-19T02:28:30.115Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-19T03:28:30.132Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-19T03:28:32.221Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-19T06:19:22.644Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-19T06:19:22.702Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-19T06:19:22.702Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-19T07:19:22.719Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-19T07:19:24.590Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-19T07:19:24.775Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-19T07:19:24.775Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-19T08:19:10.888Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-19T08:19:10.948Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-19T08:19:10.948Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-19T09:19:10.965Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-19T09:19:13.065Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-19T10:29:31.708Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-19T10:29:31.761Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-19T10:29:31.761Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-19T11:29:31.780Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-19T11:29:34.072Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-19T12:33:32.304Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-19T12:33:32.362Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-19T12:33:32.362Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-19T12:51:53.001Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-19T12:51:53.044Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-19T12:51:53.044Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-19T13:33:32.381Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-19T13:33:34.515Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-19T13:51:53.063Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-19T13:51:54.794Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-19T14:22:01.307Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-19T14:22:01.365Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-19T14:22:01.365Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-19T15:22:01.382Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-19T17:11:54.055Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-19T17:11:54.102Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-19T17:11:54.102Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-19T18:11:54.121Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-19T18:11:56.325Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-19T18:42:59.059Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-19T18:42:59.105Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-19T18:42:59.105Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-19T19:42:59.124Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-19T19:43:01.377Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-19T20:13:38.720Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-19T20:13:38.768Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-19T20:13:38.768Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-19T21:13:38.787Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-19T21:13:41.118Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-19T22:05:00.695Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-19T22:05:00.744Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-19T22:05:00.744Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-19T23:05:00.763Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-20T03:23:49.832Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-20T03:23:49.889Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-20T03:23:49.890Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-20T04:23:49.907Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-20T04:23:52.136Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-20T07:06:03.991Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-20T07:06:04.051Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-20T07:06:04.051Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-20T08:06:04.068Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-20T08:06:06.391Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-20T10:50:45.995Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-20T10:50:46.050Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-20T10:50:46.050Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-20T11:50:46.066Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-20T11:50:48.228Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-20T12:51:04.886Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-20T12:51:04.936Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-20T12:51:04.936Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-20T13:51:04.955Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-20T13:51:07.681Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-20T14:53:03.164Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-20T14:53:03.227Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-20T14:53:03.227Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-20T15:53:03.244Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-20T16:43:26.903Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-20T16:43:26.956Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-20T16:43:26.956Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-20T17:11:56.569Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-20T17:11:56.620Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-20T17:11:56.620Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-20T17:43:26.975Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-20T17:43:29.170Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-20T18:03:46.592Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-20T18:03:46.644Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-20T18:03:46.644Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-20T18:11:56.638Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-20T18:11:58.916Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-20T19:00:16.442Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-20T19:00:16.490Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-20T19:00:16.491Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-20T19:03:46.662Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-20T19:03:49.043Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-20T20:00:16.508Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-20T20:00:18.679Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-20T20:52:47.682Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-20T20:52:47.741Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-20T20:52:47.742Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-20T21:52:47.759Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-20T21:52:49.583Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-20T23:15:42.640Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-20T23:15:42.693Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-20T23:15:42.693Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T00:15:42.711Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T00:15:44.893Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T00:51:40.756Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-21T00:51:40.807Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T00:51:40.807Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T01:51:40.825Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T01:51:43.054Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T01:52:32.863Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-21T01:52:32.921Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T01:52:32.921Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T02:52:32.936Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T02:52:34.124Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T03:12:57.097Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-21T03:12:57.159Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T03:12:57.159Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T04:12:57.176Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T04:13:01.033Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T08:59:27.045Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-21T08:59:27.094Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T08:59:27.094Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T09:24:41.767Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-21T09:24:41.808Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T09:24:41.808Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T10:24:08.001Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-21T10:24:08.062Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T10:24:08.063Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T11:24:08.080Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T11:24:10.146Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T11:30:55.309Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-21T11:30:55.367Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T11:30:55.367Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T12:30:55.382Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T12:30:58.131Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T12:32:26.216Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-21T12:32:26.261Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T12:32:26.261Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T13:32:26.281Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T13:32:28.582Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T13:38:04.461Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-21T13:38:04.515Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T13:38:04.515Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T14:38:04.532Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T14:38:06.833Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T14:40:13.816Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-21T14:40:13.862Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T14:40:13.862Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T15:40:13.882Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T15:40:15.843Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T15:42:12.764Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-21T15:42:12.819Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T15:42:12.820Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T16:42:12.837Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T16:42:15.414Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T16:44:28.562Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-21T16:44:28.621Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T16:44:28.621Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T17:44:28.624Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T17:44:30.984Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T17:46:24.982Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-21T17:46:25.033Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T17:46:25.033Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T18:46:25.050Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T18:46:27.572Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T18:49:12.590Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-21T18:49:12.648Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T18:49:12.649Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T19:49:12.665Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T19:49:15.031Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-21T19:49:15.207Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-21T19:49:15.207Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T19:55:22.572Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-21T19:55:22.619Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T19:55:22.619Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T20:55:22.640Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T20:55:24.188Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T21:01:09.609Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-21T21:01:09.659Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T21:01:09.659Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T22:01:09.652Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T22:01:11.979Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T22:03:47.344Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-21T22:03:47.393Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T22:03:47.393Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-21T23:03:47.410Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-21T23:03:49.834Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-21T23:07:36.755Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-21T23:07:36.801Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-21T23:07:36.801Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-22T00:07:36.821Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-22T00:07:40.666Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-22T00:12:32.638Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-22T00:12:32.696Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-22T00:12:32.696Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-22T01:00:00.301Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-22T01:00:00.349Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-22T01:00:00.349Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-22T01:12:32.715Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-22T01:12:35.131Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-22T01:34:20.992Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-22T01:34:21.044Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-22T01:34:21.044Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-22T02:00:00.368Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-22T02:00:01.683Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-22T02:34:21.063Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-22T02:34:23.222Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-22T02:59:30.990Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-22T02:59:31.038Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-22T02:59:31.038Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T07:15:58.657Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-23T07:15:58.711Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T07:15:58.711Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T07:17:11.146Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-23T07:17:11.202Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T07:17:11.202Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T07:28:28.519Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-23T07:28:28.562Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T07:28:28.562Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T08:15:58.727Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-23T08:16:01.269Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-23T08:28:28.584Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-23T08:28:30.987Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-23T10:49:22.220Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-23T10:49:22.274Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T10:49:22.274Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T11:46:33.155Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-23T11:46:33.196Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T11:46:33.196Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T11:49:22.291Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-23T11:49:24.980Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-23T13:40:32.487Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-23T13:40:32.537Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T13:40:32.537Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T14:40:32.555Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-23T14:40:34.466Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-23T14:49:02.641Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-23T14:49:02.695Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T14:49:02.695Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T15:49:02.714Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-23T15:49:03.872Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-23T16:23:28.504Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-23T16:23:28.553Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T16:23:28.553Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T17:23:28.571Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-23T17:23:30.284Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-23T17:29:43.111Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-23T17:29:43.166Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T17:29:43.166Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T18:29:43.176Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-23T18:29:44.863Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-23T18:38:07.325Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-23T18:38:07.384Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T18:38:07.384Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T19:38:07.402Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-23T19:38:09.664Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-23T20:02:44.045Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-23T20:02:44.088Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T20:02:44.088Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T20:55:22.028Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-23T20:55:22.072Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T20:55:22.072Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-23T21:02:44.107Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-23T21:02:46.288Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-23T21:55:22.092Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-23T21:55:23.818Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-23T23:39:43.813Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-23T23:39:43.872Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-23T23:39:43.872Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T00:39:43.890Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T00:39:46.119Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T01:04:59.655Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-24T01:04:59.703Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T01:04:59.703Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T02:04:59.722Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T02:05:02.047Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-24T02:05:02.229Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-24T02:05:02.229Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T03:14:11.786Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-24T03:14:11.846Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T03:14:11.864Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T04:14:11.863Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T04:14:14.016Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T04:41:34.270Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-24T04:41:34.319Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T04:41:34.319Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T05:41:34.338Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T05:41:36.040Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T06:39:41.714Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-24T06:39:41.763Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T06:39:41.763Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T07:39:41.782Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T07:39:43.070Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T07:42:15.051Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-24T07:42:15.092Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T07:42:15.092Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T08:42:15.112Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T08:42:17.410Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T08:52:52.160Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-24T08:52:52.214Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T08:52:52.214Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T09:52:52.233Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T09:52:54.485Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T10:55:28.163Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-24T10:55:28.218Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T10:55:28.218Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T11:55:28.237Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T11:55:30.427Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T12:13:18.181Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-24T12:13:18.230Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T12:13:18.230Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T13:13:18.237Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T13:13:20.553Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T13:14:04.935Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-24T13:14:04.978Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T13:14:04.978Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T13:14:32.583Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-24T13:14:32.585Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-24T13:14:32.728Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-24T13:43:27.254Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-24T13:43:27.441Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-24T13:43:27.522Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-24T14:14:04.999Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T14:14:06.636Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T14:15:32.868Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-24T14:15:32.908Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T14:15:32.908Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T15:15:32.928Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T15:15:34.564Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-24T15:15:34.744Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-24T15:15:34.744Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T15:17:00.672Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-24T15:17:00.721Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T15:17:00.721Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T16:17:00.740Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T16:20:34.856Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-24T16:20:34.913Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T16:20:34.913Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T17:20:34.930Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T17:20:36.318Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-24T17:20:36.503Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-24T17:20:36.681Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T17:24:41.436Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-24T17:24:41.489Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T17:24:41.489Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T17:55:31.164Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-24T17:55:31.278Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-24T17:55:31.456Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-24T18:24:41.507Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T18:24:43.265Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-24T18:24:43.443Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-24T18:24:44.145Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T18:27:11.877Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-24T18:27:11.934Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T18:27:11.934Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T19:21:25.153Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-24T19:21:25.247Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T19:21:25.247Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T19:21:26.352Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-24T19:21:26.394Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T19:21:26.394Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T19:27:11.934Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T19:27:13.668Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T20:19:53.722Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-24T20:19:53.772Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T20:19:53.773Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T20:21:26.412Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T20:21:28.816Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T21:19:53.790Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T21:19:55.642Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-24T21:50:09.219Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-24T21:50:09.265Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-24T21:50:09.265Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-24T22:50:09.285Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-24T22:50:10.958Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-24T22:50:11.143Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-24T22:50:11.321Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T00:05:50.791Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-25T00:05:50.841Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T00:05:50.841Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T01:05:50.860Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T01:05:53.211Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T01:08:00.149Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-25T01:08:00.201Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T01:08:00.201Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T02:08:00.220Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T02:08:02.556Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T02:15:08.584Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-25T02:15:08.640Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T02:15:08.640Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T03:15:08.657Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T03:15:10.829Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T03:33:52.287Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-25T03:33:52.348Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T03:33:52.349Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T04:33:52.346Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T04:33:54.732Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T04:40:36.315Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-25T04:40:36.369Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T04:40:36.369Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T05:40:36.388Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T05:40:38.703Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T05:42:39.059Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-25T05:42:39.100Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T05:42:39.100Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T06:42:39.119Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T06:42:41.662Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T06:47:43.300Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-25T06:47:43.347Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T06:47:43.347Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T07:47:43.366Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T07:47:45.638Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T08:13:39.724Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-25T08:13:39.768Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T08:13:39.768Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T09:13:39.788Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T09:13:42.130Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T09:23:52.950Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-25T09:23:52.996Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T09:23:52.996Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T10:23:53.013Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T10:23:55.013Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T10:37:44.135Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-25T10:37:44.187Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T10:37:44.187Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T11:37:44.206Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T11:37:46.412Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-25T11:37:46.599Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-25T11:37:46.599Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T11:49:03.354Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-25T11:49:03.429Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T11:49:03.429Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T12:49:03.444Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T12:49:05.567Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-25T12:49:05.744Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-25T12:49:05.744Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T13:13:48.797Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-25T13:13:48.840Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T13:13:48.841Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T14:13:48.860Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T14:13:51.074Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T14:48:57.977Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-25T14:48:58.027Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T14:48:58.027Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T15:30:53.647Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-25T15:30:53.701Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T15:30:53.701Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T15:48:58.046Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T15:49:00.457Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T16:30:53.718Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T16:30:55.574Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T16:33:59.098Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-25T16:33:59.143Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T16:33:59.143Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T17:33:59.163Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T17:34:01.558Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T17:42:37.306Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-25T17:42:37.357Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T17:42:37.357Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T17:49:21.972Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-25T17:49:22.019Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T17:49:22.020Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T18:42:37.376Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T18:42:39.948Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T18:49:22.037Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T18:49:23.890Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T19:11:57.457Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-25T19:11:57.513Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T19:11:57.513Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T19:58:34.319Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-25T19:58:34.364Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T19:58:34.364Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T20:11:57.530Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T20:11:59.327Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T20:23:28.969Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-25T20:23:29.011Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T20:23:29.011Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T20:58:34.385Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T20:58:36.580Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T21:16:06.626Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-25T21:16:06.674Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T21:16:06.674Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T21:23:29.030Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T21:23:31.509Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T22:16:06.693Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T22:16:09.029Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-25T22:43:41.087Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-25T22:43:41.136Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-25T22:43:41.136Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-25T23:43:41.155Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-25T23:43:43.684Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T00:04:31.938Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-26T00:04:31.985Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T00:04:31.985Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T01:04:32.005Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T01:04:34.302Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T01:39:14.106Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-26T01:39:14.166Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T01:39:14.166Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T02:39:14.183Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T02:39:16.423Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T03:04:59.797Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-26T03:04:59.853Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T03:04:59.853Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T04:04:59.870Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T04:05:02.116Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T04:18:38.316Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-26T04:18:38.365Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T04:18:38.365Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T05:18:38.384Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T05:18:39.981Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T05:22:08.178Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-26T05:22:08.241Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T05:22:08.242Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T06:06:10.888Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-26T06:06:10.935Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T06:06:10.935Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T06:22:08.258Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T06:22:09.842Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T07:06:10.954Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T07:06:13.373Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T07:18:22.444Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-26T07:18:22.497Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T07:18:22.497Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T08:18:22.517Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T08:18:24.879Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T08:39:24.556Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-26T08:39:24.615Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T08:39:24.615Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T09:39:24.631Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T09:39:26.820Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T10:14:54.461Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-26T10:14:54.511Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T10:14:54.511Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T11:14:54.531Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T11:14:56.527Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T11:32:11.035Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-26T11:32:11.090Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T11:32:11.090Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T12:32:10.225Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-26T12:32:10.269Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T12:32:10.269Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T12:32:11.109Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T12:32:12.960Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T12:51:11.933Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-26T12:51:11.972Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T12:51:11.972Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T13:32:10.287Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T13:32:12.634Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T13:51:11.991Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T13:51:14.292Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T14:17:49.847Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-26T14:17:49.896Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T14:17:49.896Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T14:54:42.850Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-26T14:54:42.900Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T14:54:42.900Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T15:17:49.912Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T15:17:51.566Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-26T15:17:51.751Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-26T15:17:51.946Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T15:54:42.918Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T15:54:43.914Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-26T15:54:44.089Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-26T15:54:44.818Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T16:15:37.965Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-26T16:15:38.011Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T16:15:38.011Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T17:15:38.032Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T17:15:40.099Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T17:18:22.636Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-26T17:18:22.687Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T17:18:22.687Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T18:18:22.704Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T18:18:23.845Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T18:24:38.561Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-26T18:24:38.617Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T18:24:38.617Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T19:24:38.636Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T19:24:41.104Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T19:26:42.410Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-26T19:26:42.465Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T19:26:42.466Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T19:34:43.404Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-26T19:34:43.448Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T19:34:43.448Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T19:36:22.587Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-26T19:36:22.989Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-26T20:26:42.482Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T20:26:44.359Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T20:34:43.467Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T20:34:45.297Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T21:20:09.948Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-26T21:20:09.998Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T21:20:09.998Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T22:20:10.015Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T22:20:12.132Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-26T22:44:18.012Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-26T22:44:18.061Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-26T22:44:18.061Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-26T23:44:18.071Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-26T23:44:19.711Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-26T23:44:19.889Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-26T23:44:20.544Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T01:11:30.480Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-27T01:11:30.526Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T01:11:30.526Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T01:45:44.691Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-27T01:45:44.733Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T01:45:44.733Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T02:11:30.546Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T02:11:32.206Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-27T02:11:32.380Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-27T02:11:32.381Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T02:12:21.802Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-27T02:12:21.847Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T02:12:21.847Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T02:45:44.752Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T02:45:46.974Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T03:12:21.866Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T03:12:24.045Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T03:15:03.989Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-27T03:15:04.034Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T03:15:04.034Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T03:16:41.035Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-27T03:16:41.335Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-27T04:15:04.055Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T04:21:29.303Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-27T04:21:29.366Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T04:21:29.366Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T06:16:17.424Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-27T06:16:17.475Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T06:16:17.475Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T06:18:39.397Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-27T06:18:39.446Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T06:18:39.446Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T06:18:46.747Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-27T06:18:46.802Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T06:18:46.802Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T07:16:17.492Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T07:16:19.951Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T07:18:46.820Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T07:18:47.835Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-27T07:18:48.034Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-27T07:18:48.464Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T07:39:17.276Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-27T07:39:17.330Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T07:39:17.330Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T08:39:17.349Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T08:39:19.615Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-27T08:39:19.795Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-27T08:39:19.795Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T08:59:00.962Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-27T08:59:01.011Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T08:59:01.011Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T09:59:01.030Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T09:59:03.540Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T10:55:13.920Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-27T10:55:13.986Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T10:55:13.986Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T11:27:32.702Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-27T11:27:32.751Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T11:27:32.751Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T12:27:32.769Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T12:27:34.930Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T12:35:14.780Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-27T12:35:14.824Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T12:35:14.824Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T13:35:14.842Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T13:35:17.144Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T13:47:48.439Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-27T13:47:48.498Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T13:47:48.499Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T14:47:48.515Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T14:47:50.773Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T15:16:53.683Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-27T15:16:53.726Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T15:16:53.726Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T15:20:30.980Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-27T15:20:31.027Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T15:20:31.027Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T15:26:22.384Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-27T15:26:22.435Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T15:26:22.436Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T16:16:30.215Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-27T16:16:30.632Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-27T16:20:31.046Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T16:20:32.792Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T16:22:46.478Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-27T16:22:46.521Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T16:22:46.521Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T16:26:22.452Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T16:26:24.318Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T17:22:46.540Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T17:22:48.634Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T18:47:01.128Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-27T18:47:01.182Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T18:47:01.183Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T19:47:01.201Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T19:47:03.293Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T20:37:38.173Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-27T20:37:38.216Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T20:37:38.216Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T21:37:38.216Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T21:37:40.406Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T21:57:26.641Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-27T21:57:26.697Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T21:57:26.697Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T22:57:26.713Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T22:57:29.144Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-27T22:58:32.947Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-27T22:58:32.993Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T22:58:32.993Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T23:13:46.346Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-27T23:13:46.398Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-27T23:13:46.398Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-27T23:58:33.011Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-27T23:58:35.338Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T00:13:46.418Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T00:13:48.678Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T01:54:02.081Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-28T01:54:02.134Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T01:54:02.134Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T01:56:07.048Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-28T01:56:07.098Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T01:56:07.102Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T02:54:02.153Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T02:54:03.945Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-28T02:54:04.121Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-28T02:54:04.121Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T02:56:07.116Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T02:56:08.764Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-28T02:56:08.943Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-28T02:56:08.943Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T03:10:11.893Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-28T03:10:11.940Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T03:10:11.940Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T04:10:11.957Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T04:10:14.239Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T04:44:12.961Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-28T04:44:13.020Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T04:44:13.020Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T05:44:13.038Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T05:44:15.456Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T06:08:51.123Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-28T06:08:51.181Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T06:08:51.181Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T07:08:51.197Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T07:08:53.482Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T07:21:29.350Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-28T07:21:29.401Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T07:21:29.401Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T07:23:50.602Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-28T07:23:50.655Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T07:23:50.655Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T08:21:29.416Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T08:21:31.278Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T08:23:50.671Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T08:23:52.346Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T09:44:19.212Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-28T09:44:19.267Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T09:44:19.267Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T10:10:07.121Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-28T10:10:07.393Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-28T10:10:07.607Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-28T10:44:19.285Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T10:44:21.552Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T11:15:04.997Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-28T11:15:05.062Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T11:15:05.062Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T12:15:05.079Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T12:15:09.164Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T13:44:34.200Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-28T13:44:34.255Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T13:44:34.255Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T14:05:33.242Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-28T14:05:33.244Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-28T14:05:33.408Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-28T14:44:34.274Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T14:44:35.779Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-28T14:44:35.953Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-28T14:44:36.664Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T14:45:11.493Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-28T14:45:11.540Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T14:45:11.540Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T15:45:11.560Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T15:45:13.586Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T15:47:46.015Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-28T15:47:46.060Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T15:47:46.060Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T16:47:46.079Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T16:47:47.534Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T17:00:33.876Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-28T17:00:33.922Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T17:00:33.922Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T18:00:33.942Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T18:00:36.296Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T18:33:24.688Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-28T18:33:24.729Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T18:33:24.729Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T19:33:24.748Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T19:33:26.185Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-28T19:33:26.422Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-28T19:33:27.140Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T19:40:00.573Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-28T19:40:00.618Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T19:40:00.618Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T20:28:47.247Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-28T20:28:47.293Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T20:28:47.293Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T20:40:00.637Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T20:40:02.948Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T21:11:58.913Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-28T21:11:58.965Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T21:11:58.965Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T21:28:47.313Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T21:28:49.669Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T22:11:58.984Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T22:12:00.859Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T22:37:11.558Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-28T22:37:11.605Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T22:37:11.605Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-28T23:37:11.622Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-28T23:37:13.873Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-28T23:52:21.026Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-28T23:52:21.071Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-28T23:52:21.071Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T00:52:21.089Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T00:52:23.187Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T01:07:24.104Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-29T01:07:24.149Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T01:07:24.149Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T01:56:53.447Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-29T01:56:53.490Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T01:56:53.490Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T02:07:24.168Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T02:07:26.423Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T02:19:06.357Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-29T02:19:06.418Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T02:19:06.442Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T02:56:53.510Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T02:56:55.697Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T03:19:06.438Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T03:19:08.791Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T03:28:31.545Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-29T03:28:31.607Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T03:28:31.607Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T04:19:58.778Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-29T04:19:58.820Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T04:19:58.820Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T04:28:31.623Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T04:28:33.326Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T04:48:18.809Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-29T04:48:18.854Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T04:48:18.854Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T05:19:58.839Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T05:20:01.162Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T05:48:18.875Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T05:48:21.207Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T05:50:16.895Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-29T05:50:16.943Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T05:50:16.943Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T06:20:34.862Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-29T06:20:36.026Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-29T06:50:16.961Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T06:50:18.568Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T06:53:06.045Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-29T06:53:06.103Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T06:53:06.103Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T07:53:06.119Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T07:53:08.439Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-29T07:53:08.649Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-29T07:53:08.649Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T07:56:38.435Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-29T07:56:38.494Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T07:56:38.494Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T08:56:38.511Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T08:56:40.909Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T09:28:14.778Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-29T09:28:14.830Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T09:28:14.830Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T10:28:14.824Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T10:28:15.777Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-29T10:28:15.960Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-29T10:28:16.671Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T10:28:31.932Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-29T10:28:32.352Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-29T10:29:09.088Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-29T10:29:09.129Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T10:29:09.129Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T10:45:45.913Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-29T10:45:45.956Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T10:45:45.956Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T11:29:09.149Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T11:29:11.632Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T11:32:41.434Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-29T11:32:41.482Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T11:32:41.482Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T11:45:45.974Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T11:45:48.120Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T12:32:41.502Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T12:32:43.760Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T12:43:35.159Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-29T12:43:35.205Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T12:43:35.205Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T13:43:35.223Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T13:43:37.458Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T14:14:07.409Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-29T14:14:07.464Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T14:14:07.464Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T14:14:50.668Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-29T14:14:50.669Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-29T14:14:50.670Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-29T15:14:07.480Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T15:14:09.227Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-29T15:14:09.411Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-29T15:14:09.614Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T15:29:32.723Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-29T15:29:32.767Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T15:29:32.767Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T16:29:32.787Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T16:29:35.135Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T17:52:56.239Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-29T17:52:56.280Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T17:52:56.280Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T18:23:26.261Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-29T18:23:26.304Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T18:23:26.305Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T18:52:56.301Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T18:52:58.035Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-29T18:52:58.219Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-29T18:52:58.943Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T18:54:46.386Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-29T18:54:46.428Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T18:54:46.428Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T19:23:26.324Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T19:23:28.793Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T19:54:46.448Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T19:54:48.665Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T19:57:30.732Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-29T19:57:30.779Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T19:57:30.779Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T20:15:52.547Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-29T20:15:52.597Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T20:15:52.598Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T20:57:30.799Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T20:57:32.748Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T21:15:52.617Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T21:15:54.896Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T21:58:45.314Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-29T21:58:45.368Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T21:58:45.368Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-29T22:58:45.385Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-29T22:58:47.677Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-29T23:31:02.450Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-29T23:31:02.494Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-29T23:31:02.494Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T00:31:02.513Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T00:31:04.808Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T00:45:53.576Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-30T00:45:53.622Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T00:45:53.622Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T01:45:53.640Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T01:45:55.803Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T01:57:58.002Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-30T01:57:58.045Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T01:57:58.045Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T01:58:51.357Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-30T01:58:51.520Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-05-30T02:57:58.064Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T02:58:00.397Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T03:12:02.348Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-30T03:12:02.399Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T03:12:02.399Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T04:12:02.419Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T04:12:04.241Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T04:18:20.711Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-30T04:18:20.762Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T04:18:20.762Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T05:18:20.763Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T05:18:22.966Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T05:20:41.662Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-30T05:20:41.708Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T05:20:41.708Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T05:20:46.449Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-30T05:20:46.497Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T05:20:46.497Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T06:20:41.729Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T06:20:42.589Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-30T06:20:42.797Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-30T06:20:43.486Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T06:20:46.515Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T06:20:47.423Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-30T06:20:47.594Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-30T06:20:48.292Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T06:43:12.403Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-30T06:43:12.451Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T06:43:12.451Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T07:43:12.470Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T07:43:14.745Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T08:07:25.874Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-30T08:07:25.917Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T08:07:25.917Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T09:07:25.937Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T09:07:29.743Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T09:09:36.324Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-30T09:09:36.375Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T09:09:36.375Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T09:34:42.259Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-30T09:34:42.301Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T09:34:42.301Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T10:09:36.393Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T10:09:38.084Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T10:10:17.658Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-30T10:10:17.713Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T10:10:17.713Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T10:34:42.321Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T10:34:44.123Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T11:10:17.728Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T11:10:20.335Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T11:28:29.240Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-30T11:28:29.288Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T11:28:29.288Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T12:28:29.305Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T12:28:31.647Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T12:29:32.207Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-30T12:29:32.258Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T12:29:32.258Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T13:29:32.276Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T13:29:34.636Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T13:59:30.975Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-30T13:59:31.032Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T13:59:31.033Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T14:59:31.050Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T14:59:32.941Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T15:14:31.342Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-30T15:14:31.391Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T15:14:31.392Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T15:56:41.825Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-30T15:56:41.867Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T15:56:41.867Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T16:14:31.412Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T16:14:33.770Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T16:23:34.554Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-30T16:23:34.603Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T16:23:34.603Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T16:56:41.887Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T16:56:44.140Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T17:04:47.648Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-30T17:04:47.693Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T17:04:47.693Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T17:23:34.619Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T17:23:36.975Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T18:03:01.286Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-30T18:03:01.329Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T18:03:01.329Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T18:04:47.713Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T18:04:49.455Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T19:03:01.348Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T19:03:02.991Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T19:13:59.603Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-30T19:13:59.664Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T19:13:59.664Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T20:13:59.680Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T20:14:01.520Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T20:31:06.252Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-05-30T20:31:06.300Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T20:31:06.300Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T21:31:06.319Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T21:31:07.138Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T21:36:40.199Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-05-30T21:36:40.245Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T21:36:40.245Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T22:36:40.263Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T22:36:42.083Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-30T22:50:39.577Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-30T22:50:39.637Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-30T22:50:39.637Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-30T23:50:39.652Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-30T23:50:40.954Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T00:04:04.471Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-05-31T00:04:04.517Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T00:04:04.517Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T01:04:04.536Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T01:04:06.864Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T01:07:22.485Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-31T01:07:22.541Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T01:07:22.541Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T02:07:22.532Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T02:07:24.757Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T02:12:34.323Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-31T02:12:34.369Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T02:12:34.369Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T03:12:34.389Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T03:12:36.712Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T04:19:48.267Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-31T04:19:48.318Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T04:19:48.318Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T05:19:48.334Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T05:19:50.563Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T05:36:21.222Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-31T05:36:21.270Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T05:36:21.270Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T06:36:21.287Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T06:36:23.716Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T06:37:55.458Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-31T06:37:55.503Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T06:37:55.503Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T07:37:55.522Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T07:37:57.203Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T07:49:06.934Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-31T07:49:06.988Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T07:49:06.988Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T08:49:07.004Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T08:49:09.274Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T08:52:57.761Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-31T08:52:57.806Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T08:52:57.806Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T09:52:57.825Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T09:52:58.968Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T09:55:23.544Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-31T09:55:23.597Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T09:55:23.597Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T10:55:23.615Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T10:55:25.869Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T11:18:25.603Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-31T11:18:25.654Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T11:18:25.654Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T12:18:25.673Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T12:18:26.816Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-05-31T12:18:26.999Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-31T12:18:27.705Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T13:03:56.558Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-31T13:03:56.602Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T13:03:56.602Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T14:03:56.622Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T14:03:58.731Z","level":"LOG","message":"[Automated Emails] Found 2 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-31T14:03:58.905Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-31T14:03:59.069Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-31T14:03:59.069Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T15:23:26.287Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-31T15:23:26.346Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T15:23:26.346Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T16:23:26.362Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T16:23:28.743Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T16:27:48.444Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-31T16:27:48.490Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T16:27:48.490Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T17:27:48.510Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T17:27:50.324Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T17:35:56.435Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-05-31T17:35:56.485Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T17:35:56.485Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T18:22:24.732Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-31T18:22:24.784Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T18:22:24.785Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T18:35:56.503Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T18:35:57.738Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-05-31T18:35:57.915Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-05-31T18:35:57.915Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T18:37:16.497Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-05-31T18:37:16.544Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T18:37:16.544Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T19:22:24.803Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T19:22:27.038Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T19:37:16.561Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T19:37:18.743Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T19:47:32.132Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-31T19:47:32.182Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T19:47:32.182Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T19:51:37.861Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-31T19:51:37.915Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T19:51:37.915Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T20:47:32.202Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T20:47:34.313Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T20:51:37.933Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T20:51:39.275Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T21:41:22.556Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-05-31T21:41:22.604Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T21:41:22.605Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T22:17:32.425Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-31T22:17:32.469Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T22:17:32.469Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T22:41:22.623Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T22:41:25.146Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T22:47:18.889Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-05-31T22:47:18.940Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T22:47:18.940Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T23:17:32.488Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T23:17:34.706Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-05-31T23:46:21.798Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-05-31T23:46:21.851Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-05-31T23:46:21.851Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-05-31T23:47:18.956Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-05-31T23:47:20.292Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T00:46:21.868Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T00:46:24.231Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T00:52:06.783Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-06-01T00:52:06.825Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T00:52:06.825Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T01:52:06.846Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T01:52:08.496Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T02:05:28.926Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-06-01T02:05:28.971Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T02:05:28.971Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T02:50:52.135Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-06-01T02:50:52.178Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T02:50:52.178Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T03:05:28.991Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T03:05:30.099Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T03:22:39.148Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-06-01T03:22:39.200Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T03:22:39.201Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T03:35:03.220Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-06-01T03:35:03.221Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-06-01T03:35:03.222Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-06-01T03:50:52.197Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T03:50:54.293Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T04:22:39.218Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T04:22:40.283Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T04:32:25.480Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-06-01T04:32:25.535Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T04:32:25.535Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T05:32:25.552Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T05:32:27.017Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T05:46:18.171Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-06-01T05:46:18.224Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T05:46:18.224Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T06:46:18.241Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T06:46:20.288Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T06:49:50.646Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-06-01T06:49:50.701Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T06:49:50.701Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T07:14:28.517Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-06-01T07:14:28.567Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T07:14:28.567Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T07:49:50.717Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T07:49:52.520Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-06-01T07:49:52.697Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-06-01T07:49:53.384Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T08:06:18.165Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-06-01T08:06:18.213Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T08:06:18.213Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T08:14:28.585Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T08:14:30.148Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-06-01T08:14:30.327Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-06-01T08:14:30.999Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T09:06:18.231Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T09:06:20.891Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T10:08:45.282Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-06-01T10:08:45.341Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T10:08:45.341Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T11:08:45.358Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T11:08:47.874Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T11:40:10.092Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-06-01T11:40:10.146Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T11:40:10.147Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T12:40:10.163Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T12:40:12.248Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T14:15:54.316Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-06-01T14:15:54.370Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T14:15:54.370Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T14:42:03.057Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-06-01T14:42:03.059Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-06-01T14:42:03.062Z","level":"ERROR","message":"Auto-enroll error: {\"code\":\"22P02\",\"details\":\"Token \\\"cmn2sm2gl000fcqgo540cdrbj\\\" is invalid.\",\"hint\":null,\"message\":\"invalid input syntax for type json\"}"}
+{"timestamp":"2026-06-01T15:15:54.387Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T15:15:56.058Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T15:26:21.872Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ secrets for agents [www.dotenvx.com]"}
+{"timestamp":"2026-06-01T15:26:21.923Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T15:26:21.923Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T16:26:21.940Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T16:26:24.247Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T16:42:58.813Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }"}
+{"timestamp":"2026-06-01T16:42:58.872Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T16:42:58.872Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T17:42:58.888Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T17:43:01.318Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T18:08:51.159Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]"}
+{"timestamp":"2026-06-01T18:08:51.215Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T18:08:51.216Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T19:08:51.232Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T19:08:53.695Z","level":"LOG","message":"[Automated Emails] Found 1 potential nudges. Processing queue..."}
+{"timestamp":"2026-06-01T19:08:54.134Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-06-01T19:08:55.574Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T19:23:51.081Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-06-01T19:23:51.128Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T19:23:51.129Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T19:44:30.424Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-06-01T19:44:30.478Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T19:44:30.478Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T20:23:51.146Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T20:23:55.071Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T20:44:30.497Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T20:44:34.303Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T21:27:25.076Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }"}
+{"timestamp":"2026-06-01T21:27:25.137Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T21:27:25.137Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T22:27:25.153Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T22:27:28.863Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-01T22:40:14.512Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-06-01T22:40:14.557Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-01T22:40:14.557Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-01T23:40:14.575Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-01T23:40:16.831Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-02T00:07:46.563Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-06-02T00:07:46.610Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-02T00:07:46.610Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-02T01:07:46.629Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-02T01:07:48.166Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-02T01:26:20.970Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }"}
+{"timestamp":"2026-06-02T01:26:21.016Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-02T01:26:21.016Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-02T02:26:21.013Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-02T02:26:22.780Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-02T02:31:07.015Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-06-02T02:31:07.070Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-02T02:31:07.070Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-02T03:31:07.089Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-02T03:31:09.223Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-02T03:38:00.278Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-06-02T03:38:00.320Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-02T03:38:00.320Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-02T04:38:00.339Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-02T04:38:04.158Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-02T06:15:29.708Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-06-02T06:15:29.763Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-02T06:15:29.763Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-02T07:15:29.783Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-02T07:15:31.967Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-02T07:41:40.542Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-06-02T07:41:40.593Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-02T07:41:40.593Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-02T08:41:40.611Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-02T08:41:42.756Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-02T10:38:29.234Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]"}
+{"timestamp":"2026-06-02T10:38:29.278Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-02T10:38:29.278Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-02T11:38:29.299Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-02T11:38:31.760Z","level":"LOG","message":"[Automated Emails] Found 1 potential miss you profiles. Processing queue..."}
+{"timestamp":"2026-06-02T11:38:31.945Z","level":"ERROR","message":"[Automated Emails] Purchase check failed: column website_orders.id does not exist"}
+{"timestamp":"2026-06-02T11:38:31.945Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-02T12:17:35.199Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-06-02T12:17:35.249Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-02T12:17:35.249Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-02T13:05:11.346Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }"}
+{"timestamp":"2026-06-02T13:05:11.393Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-02T13:05:11.393Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}
+{"timestamp":"2026-06-02T13:17:35.267Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-02T13:17:37.655Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-02T14:05:11.413Z","level":"LOG","message":"[Automated Emails] Running background check..."}
+{"timestamp":"2026-06-02T14:05:13.241Z","level":"LOG","message":"[Automated Emails] Background queue processing complete."}
+{"timestamp":"2026-06-02T14:06:24.587Z","level":"LOG","message":"◇ injected env (0) from .env // tip: ⌘ override existing { override: true }"}
+{"timestamp":"2026-06-02T14:06:24.645Z","level":"LOG","message":"\n  🔐 Admin Panel running at: http://localhost:3001/admin"}
+{"timestamp":"2026-06-02T14:06:24.645Z","level":"LOG","message":"  📡 API running at: http://localhost:3001/api\n"}

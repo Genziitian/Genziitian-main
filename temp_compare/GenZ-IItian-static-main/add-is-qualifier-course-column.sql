@@ -1,0 +1,2 @@
+ALTER TABLE courses
+ADD COLUMN IF NOT EXISTS "isQualifierCourse" BOOLEAN NOT NULL DEFAULT false;
