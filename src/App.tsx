@@ -100,7 +100,12 @@ function AppContent() {
           <Route path="/*" element={<SEOPage />} />
         </Routes>
       </main>
-      {!isCheckoutPage && <Footer />}
+      {/* Footer is hidden on mobile — the bottom-nav Menu tab covers all links there */}
+      {!isCheckoutPage && (
+        <div className="hidden md:block">
+          <Footer />
+        </div>
+      )}
       {!isCheckoutPage && <MobileNav />}
     </div>
   );

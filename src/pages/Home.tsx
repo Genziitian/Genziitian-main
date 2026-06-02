@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
-import { ChevronRight, Award, CheckCircle2, X as XIcon, Star } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Award, CheckCircle2, X as XIcon, Star } from 'lucide-react';
 import { useInView, animate } from 'motion/react';
 import { Link } from 'react-router-dom';
 import CourseCard, { CourseCardData } from '../components/CourseCard';
@@ -35,6 +35,11 @@ export default function Home() {
   const [courses, setCourses] = useState<CourseCardData[]>([]);
   const [loading, setLoading] = useState(true);
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>(fallbackBlogs);
+  const reviewsRef = useRef<HTMLDivElement>(null);
+
+  const scrollReviews = (dir: number) => {
+    reviewsRef.current?.scrollBy({ left: dir * 360, behavior: 'smooth' });
+  };
 
   useEffect(() => {
     fetchCourses();
@@ -304,12 +309,22 @@ export default function Home() {
       {/* Testimonials Section */}
       <section className="bg-[#f8fafc] py-16 border-t-[3px] border-[#0b1120]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl lg:text-3xl font-black text-[#0b1120] mb-2 max-w-[18rem] md:max-w-none mx-auto leading-tight">Student Reviews &amp; Shared Experiences</h2>
-            <p className="text-gray-600 text-sm font-medium">Discover honest reviews and inspiring stories from students across India.</p>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
+            <div className="text-center sm:text-left">
+              <h2 className="text-2xl lg:text-3xl font-black text-[#0b1120] mb-2 max-w-[18rem] sm:max-w-none mx-auto sm:mx-0 leading-tight">Student Reviews &amp; Shared Experiences</h2>
+              <p className="text-gray-600 text-sm font-medium">Discover honest reviews and inspiring stories from students across India.</p>
+            </div>
+            <div className="hidden sm:flex gap-3 shrink-0">
+              <button aria-label="Previous reviews" onClick={() => scrollReviews(-1)} className="w-11 h-11 flex items-center justify-center bg-white border-[3px] border-[#0b1120] rounded-xl shadow-[3px_3px_0px_#0b1120] hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_#0b1120] transition-all">
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button aria-label="Next reviews" onClick={() => scrollReviews(1)} className="w-11 h-11 flex items-center justify-center bg-white border-[3px] border-[#0b1120] rounded-xl shadow-[3px_3px_0px_#0b1120] hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_#0b1120] transition-all">
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div ref={reviewsRef} className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory hide-scrollbar scroll-smooth">
             {[
               {
                 text: "The reattempt batch was a game changer. The mock tests were exactly like the real exam pattern and helped me clear comfortably!",
@@ -354,7 +369,7 @@ export default function Home() {
                 color: "bg-teal-100 text-teal-700"
               }
             ].map((review, i) => (
-              <div key={i} className="bg-white border-[3px] border-[#0b1120] rounded-2xl p-6 shadow-[4px_4px_0px_#0b1120] flex flex-col h-full hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_#0b1120] transition-all">
+              <div key={i} className="snap-start shrink-0 w-[300px] md:w-[360px] bg-white border-[3px] border-[#0b1120] rounded-2xl p-6 shadow-[4px_4px_0px_#0b1120] flex flex-col hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_#0b1120] transition-all">
                 <p className="text-gray-700 font-bold text-base mb-6 flex-grow">"{review.text}"</p>
 
                 <div className="flex items-center justify-between mt-auto pt-6 border-t-2 border-gray-100">

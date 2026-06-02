@@ -1,9 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
 import {
-  ShoppingBag, IndianRupee, MessageCircle, Settings, Share2, RefreshCw,
-  Mail, Info, Phone, Shield, FileText, RotateCcw,
-  Instagram, Youtube, Linkedin, LogIn, LogOut,
-  ChevronRight, ArrowUpRight, User as UserIcon, LayoutDashboard, Gift,
+  BookOpen, FolderOpen, ListChecks, ClipboardList, Newspaper, Compass,
+  ShoppingCart, Gift, LayoutDashboard, ShieldCheck,
+  Mail, Info, Phone, Briefcase, Shield, FileText, RotateCcw,
+  Instagram, Youtube, Linkedin, MessageCircle, LogIn, LogOut,
+  ChevronRight, ArrowUpRight, User as UserIcon,
 } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { useAuth } from '../context/AuthContext';
@@ -59,15 +60,6 @@ export default function Menu() {
 
   const displayName = profile?.name || user?.email?.split('@')[0] || 'Guest';
 
-  const shareApp = async () => {
-    const url = window.location.origin;
-    if (navigator.share) {
-      try { await navigator.share({ title: 'Gen-Z IITian', url }); } catch { /* dismissed */ }
-    } else {
-      navigator.clipboard?.writeText(url);
-    }
-  };
-
   return (
     <div className="bg-[#F1F3F7] min-h-screen">
       <div className="max-w-md mx-auto px-4 pt-5 pb-4">
@@ -89,31 +81,39 @@ export default function Menu() {
           <ChevronRight className="w-[18px] h-[18px] text-white" />
         </button>
 
-        <Group label="GENERAL">
-          <MenuRow Icon={ShoppingBag} tint="#E7EEFF" glyph="#2563EB" label="Store" to="/courses" />
-          <MenuRow Icon={IndianRupee} tint="#E4F7EE" glyph="#0E9E6A" label="Transactions" to="/profile" />
+        <Group label="EXPLORE">
+          <MenuRow Icon={BookOpen} tint="#E7EEFF" glyph="#2563EB" label="Courses" to="/courses" />
+          <MenuRow Icon={FolderOpen} tint="#E4F7EE" glyph="#0E9E6A" label="Resources (PYQs & Notes)" to="/resources" />
+          <MenuRow Icon={ListChecks} tint="#FEF1DF" glyph="#FF7A00" label="Syllabus" to="/syllabus" />
+          <MenuRow Icon={ClipboardList} tint="#FBE3EE" glyph="#EC1E79" label="Graded Assignment" to="/graded-assignment" />
+          <MenuRow Icon={Newspaper} tint="#E7EEFF" glyph="#2563EB" label="Blog" to="/blog" />
+          <MenuRow Icon={FileText} tint="#E4F7EE" glyph="#0E9E6A" label="Docs" to="/docs" />
+          <MenuRow Icon={Compass} tint="#FEF1DF" glyph="#FF7A00" label="Knowledge Hub" to="/knowledge" />
+        </Group>
+
+        <Group label="ACCOUNT">
+          {user && <MenuRow Icon={UserIcon} tint="#E7EEFF" glyph="#2563EB" label="My Profile" to="/profile" />}
           <MenuRow Icon={Gift} tint="#FEF1DF" glyph="#FF7A00" label="Refer & Earn" to="/refer" />
-          <MenuRow Icon={MessageCircle} tint="#FBE3EE" glyph="#EC1E79" label="Support" to="/contact" />
-          {isManager && <MenuRow Icon={LayoutDashboard} tint="#FCE4E4" glyph="#FF2424" label="Manager Panel" to="/manager" />}
-          <MenuRow Icon={Settings} tint="#F1F3F7" glyph="#0b1120" label="Settings" to="/profile" />
-          <MenuRow Icon={Share2} tint="#E7EEFF" glyph="#2563EB" label="Share App" onClick={shareApp} />
-          <MenuRow Icon={RefreshCw} tint="#FEF1DF" glyph="#FF7A00" label="Check for Updates" onClick={() => window.location.reload()} />
+          <MenuRow Icon={ShoppingCart} tint="#FBE3EE" glyph="#EC1E79" label="Cart" to="/cart" />
+          {user && <MenuRow Icon={LayoutDashboard} tint="#E4F7EE" glyph="#0E9E6A" label="Class Dashboard" href="https://class.genziitian.in" external />}
+          {isManager && <MenuRow Icon={ShieldCheck} tint="#FCE4E4" glyph="#FF2424" label="Manager Panel" to="/manager" />}
         </Group>
 
         <Group label="INFORMATION">
-          <MenuRow Icon={Mail} tint="#E7EEFF" glyph="#2563EB" label="Newsletter" to="/newsletter" />
           <MenuRow Icon={Info} tint="#E4F7EE" glyph="#0E9E6A" label="About Us" to="/about" />
           <MenuRow Icon={Phone} tint="#FBE3EE" glyph="#EC1E79" label="Contact Us" to="/contact" />
+          <MenuRow Icon={Briefcase} tint="#E7EEFF" glyph="#2563EB" label="Careers" to="/careers" />
+          <MenuRow Icon={Mail} tint="#FEF1DF" glyph="#FF7A00" label="Newsletter" to="/newsletter" />
           <MenuRow Icon={Shield} tint="#E7EEFF" glyph="#2563EB" label="Privacy Policy" to="/privacy" />
           <MenuRow Icon={FileText} tint="#F1F3F7" glyph="#0b1120" label="Terms & Conditions" to="/terms" />
           <MenuRow Icon={RotateCcw} tint="#FEF1DF" glyph="#FF7A00" label="Refund Policy" to="/refund" />
         </Group>
 
         <Group label="SOCIAL">
-          <MenuRow Icon={Instagram} tint="#FBE3EE" glyph="#EC1E79" label="Instagram" href="https://www.instagram.com/genz_iitian/" external />
           <MenuRow Icon={Youtube} tint="#FCE4E4" glyph="#FF2424" label="YouTube" href="https://youtube.com/@Gen-ZIITian/" external />
-          <MenuRow Icon={Linkedin} tint="#E7EEFF" glyph="#2563EB" label="LinkedIn" href="https://www.linkedin.com/company/102554405/" external />
           <MenuRow Icon={MessageCircle} tint="#E4F7EE" glyph="#0E9E6A" label="WhatsApp Community" href="https://chat.whatsapp.com/Gi4D9yAd99p7q1XeVh0J1e" external />
+          <MenuRow Icon={Instagram} tint="#FBE3EE" glyph="#EC1E79" label="Instagram" href="https://www.instagram.com/genz_iitian/" external />
+          <MenuRow Icon={Linkedin} tint="#E7EEFF" glyph="#2563EB" label="LinkedIn" href="https://www.linkedin.com/company/102554405/" external />
         </Group>
 
         <Group label="SESSION">
