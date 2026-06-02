@@ -600,7 +600,7 @@ export default function CourseSelection() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-16 pb-6 px-6 text-[#0b1120]">
+    <div className="min-h-screen bg-gray-50 pt-8 sm:pt-16 pb-10 px-4 sm:px-6 text-[#0b1120]">
       <AnimatePresence>
         {isProcessing && (
           <motion.div
@@ -631,12 +631,12 @@ export default function CourseSelection() {
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 50 }}
-            className="fixed bottom-10 left-1/2 -translate-x-1/2 z-[200] bg-white border-[4px] border-[#0b1120] rounded-2xl p-4 shadow-[8px_8px_0px_#10b981] flex items-center gap-4 whitespace-nowrap"
+            className="fixed bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-[200] w-[calc(100vw-2rem)] max-w-sm bg-white border-[4px] border-[#0b1120] rounded-2xl p-4 shadow-[8px_8px_0px_#10b981] flex items-center gap-3 sm:gap-4"
           >
-            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center border-2 border-[#0b1120]">
+            <div className="w-11 h-11 sm:w-12 sm:h-12 shrink-0 bg-green-100 rounded-full flex items-center justify-center border-2 border-[#0b1120]">
               <span className="text-2xl">🎉</span>
             </div>
-            <div className="text-left pr-4">
+            <div className="text-left pr-2">
               <h4 className="font-black text-[#0b1120] uppercase tracking-tight text-base">Discount Applied!</h4>
               <p className="font-bold text-gray-500 text-xs uppercase">Your savings are securely locked in</p>
             </div>
@@ -647,8 +647,8 @@ export default function CourseSelection() {
 
       <div className="max-w-6xl mx-auto">
         <div className="mb-4 text-center">
-            <h1 className="text-3xl lg:text-4xl font-black mb-2 tracking-tight">Complete <span className="text-blue-600">Enrollment</span></h1>
-            <p className="text-[10px] sm:text-xs lg:text-sm text-gray-500 font-bold mx-auto italic whitespace-nowrap">You're just one step away from joining {course.name}. Follow the steps below.</p>
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black mb-2 tracking-tight">Complete <span className="text-blue-600">Enrollment</span></h1>
+            <p className="text-xs lg:text-sm text-gray-500 font-bold mx-auto italic max-w-md sm:max-w-none px-2 sm:px-0">You're just one step away from joining {course.name}. Follow the steps below.</p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
@@ -667,8 +667,8 @@ export default function CourseSelection() {
                 <BookOpen className="w-6 h-6" />
                 <span className="font-black text-[10px] md:text-sm uppercase tracking-wider">Step 2: Checkout</span>
             </button>
-            <div className="md:col-span-2 bg-white border-2 border-dashed border-gray-300 rounded-xl p-3 lg:p-4 flex items-center justify-center border-[#0b1120]/10">
-                <div className="flex items-center gap-2 text-gray-500 font-black text-sm lg:text-base">
+            <div className="col-span-2 md:col-span-2 bg-white border-2 border-dashed border-gray-300 rounded-xl p-3 lg:p-4 flex items-center justify-center border-[#0b1120]/10">
+                <div className="flex items-center gap-2 text-gray-500 font-black text-xs sm:text-sm lg:text-base">
                     <ShieldCheck className="w-6 h-6" />
                     Secure Checkout by Razorpay
                 </div>
