@@ -5,6 +5,7 @@ node_modules/
 
 # Production
 dist/
+dist-ssr/
 build/
 
 # Database journals (not the db itself)

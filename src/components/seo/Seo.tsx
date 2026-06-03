@@ -1,13 +1,7 @@
 import { useEffect } from 'react';
+import { __ssrHead, type HeadData } from './ssrHead';
 
-type Props = {
-  title: string;
-  description: string;
-  canonical: string;
-  /** JSON-LD object or array of objects, injected as <script type="application/ld+json"> */
-  jsonLd?: object | object[];
-  image?: string;
-};
+type Props = HeadData;
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
   let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
@@ -35,6 +29,11 @@ function upsertLink(rel: string, href: string) {
  * SSG/prerender step (the head it produces is what a prerender will capture).
  */
 export default function Seo({ title, description, canonical, jsonLd, image }: Props) {
+  // During prerender (no DOM) record the head so the build can emit it statically.
+  if (typeof document === 'undefined') {
+    __ssrHead.current = { title, description, canonical, jsonLd, image };
+  }
+
   useEffect(() => {
     document.title = title;
     upsertMeta('name', 'description', description);
@@ -48,6 +47,9 @@ export default function Seo({ title, description, canonical, jsonLd, image }: Pr
       upsertMeta('property', 'og:image', image);
       upsertMeta('name', 'twitter:image', image);
     }
+
+    // Drop any prerendered JSON-LD (no data-seo marker) so we don't duplicate it.
+    document.head.querySelectorAll('script[type="application/ld+json"]:not([data-seo])').forEach((n) => n.remove());
 
     const blocks = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
     const nodes = blocks.map((obj) => {
