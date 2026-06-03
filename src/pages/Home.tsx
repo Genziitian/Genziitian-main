@@ -31,10 +31,17 @@ function AnimatedNumber({ value, decimals = 0, suffix = "" }: { value: number, d
   return <span ref={nodeRef}>{displayValue}{suffix}</span>;
 }
 
-const COMPARISON_FEATURES = [
-  "Affordable", "Live Lec + Recordings", "Premium Notes",
-  "Live Doubt Session", "Revision Session", "Mentorship Session",
-  "Resume + LinkedIn Workshops", "Short Notes", "Subject wise blueprint",
+// GenZ IITian is always ✓; YT / Others have a realistic mix of ✓ and ✗.
+const COMPARISON_FEATURES: { feature: string; yt: boolean; others: boolean }[] = [
+  { feature: "Affordable", yt: true, others: false },
+  { feature: "Live Lec + Recordings", yt: false, others: true },
+  { feature: "Premium Notes", yt: false, others: true },
+  { feature: "Live Doubt Session", yt: false, others: false },
+  { feature: "Revision Session", yt: false, others: true },
+  { feature: "Mentorship Session", yt: false, others: false },
+  { feature: "Resume + LinkedIn Workshops", yt: false, others: false },
+  { feature: "Short Notes", yt: true, others: false },
+  { feature: "Subject wise blueprint", yt: false, others: true },
 ];
 
 export default function Home() {
@@ -280,22 +287,26 @@ export default function Home() {
                   </tr>
                 </thead>
                 <tbody className="divide-y-[3px] divide-[#0b1120]">
-                  {COMPARISON_FEATURES.map((feature, i) => (
+                  {COMPARISON_FEATURES.map((row, i) => (
                     <tr key={i} className="group hover:bg-gray-50 transition-colors">
                       <td className="p-6 font-black text-[#0b1120] text-lg flex items-center gap-3">
                         <div className="w-2 h-2 rounded-full bg-[#0b1120]"></div>
-                        {feature}
+                        {row.feature}
                       </td>
                       <td className="p-6 text-center bg-[#f0fdf4] border-x-[3px] border-[#0b1120]/10">
                         <div className="inline-flex items-center justify-center w-10 h-10 rounded-full border-[3px] border-[#10b981] bg-white shadow-[2px_2px_0px_#10b981]">
                           <CheckCircle2 className="w-6 h-6 text-[#10b981]" />
                         </div>
                       </td>
-                      <td className="p-6 text-center grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
-                        <XIcon className="w-8 h-8 text-red-400 mx-auto" />
+                      <td className="p-6 text-center">
+                        {row.yt
+                          ? <CheckCircle2 className="w-7 h-7 text-[#10b981] mx-auto" />
+                          : <XIcon className="w-8 h-8 text-red-400 mx-auto" />}
                       </td>
-                      <td className="p-6 text-center grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
-                        <XIcon className="w-8 h-8 text-red-400 mx-auto" />
+                      <td className="p-6 text-center">
+                        {row.others
+                          ? <CheckCircle2 className="w-7 h-7 text-[#10b981] mx-auto" />
+                          : <XIcon className="w-8 h-8 text-red-400 mx-auto" />}
                       </td>
                     </tr>
                   ))}
@@ -316,17 +327,21 @@ export default function Home() {
                 </tr>
               </thead>
               <tbody className="divide-y-2 divide-[#0b1120]/10">
-                {COMPARISON_FEATURES.map((feature, i) => (
+                {COMPARISON_FEATURES.map((row, i) => (
                   <tr key={i}>
-                    <td className="py-2.5 px-3 font-black text-[#0b1120] text-[11.5px] leading-tight">{feature}</td>
+                    <td className="py-2.5 px-3 font-black text-[#0b1120] text-[11.5px] leading-tight">{row.feature}</td>
                     <td className="py-2.5 px-1 text-center bg-[#f0fdf4] border-x-2 border-[#0b1120]/10">
                       <CheckCircle2 className="w-5 h-5 text-[#10b981] mx-auto" />
                     </td>
                     <td className="py-2.5 px-1 text-center">
-                      <XIcon className="w-4 h-4 text-red-300 mx-auto" />
+                      {row.yt
+                        ? <CheckCircle2 className="w-5 h-5 text-[#10b981] mx-auto" />
+                        : <XIcon className="w-4 h-4 text-red-300 mx-auto" />}
                     </td>
                     <td className="py-2.5 px-1 text-center">
-                      <XIcon className="w-4 h-4 text-red-300 mx-auto" />
+                      {row.others
+                        ? <CheckCircle2 className="w-5 h-5 text-[#10b981] mx-auto" />
+                        : <XIcon className="w-4 h-4 text-red-300 mx-auto" />}
                     </td>
                   </tr>
                 ))}
