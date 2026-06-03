@@ -35,6 +35,10 @@ import PaymentSuccess from './pages/PaymentSuccess';
 import PaymentFailed from './pages/PaymentFailed';
 import Menu from './pages/Menu';
 import Ecosystem from './pages/Ecosystem';
+import IitmBsPillar from './pages/iitm-bs/Pillar';
+import LevelHub from './pages/iitm-bs/LevelHub';
+import CoursePage from './pages/iitm-bs/CoursePage';
+import ExamAssetPage from './pages/iitm-bs/ExamAssetPage';
 import LoginModal from './components/LoginModal';
 import WelcomeModal from './components/WelcomeModal';
 
@@ -73,6 +77,11 @@ function AppContent() {
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/ecosystem" element={<Ecosystem />} />
+          {/* IITM BS programmatic SEO pages (mirror the program tree) */}
+          <Route path="/iitm-bs" element={<IitmBsPillar />} />
+          <Route path="/iitm-bs/:level" element={<LevelHub />} />
+          <Route path="/iitm-bs/:level/:course" element={<CoursePage />} />
+          <Route path="/iitm-bs/:level/:course/:exam" element={<ExamAssetPage />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/syllabus" element={<Syllabus />} />
           <Route path="/courses/:id" element={<CourseDetail />} />
