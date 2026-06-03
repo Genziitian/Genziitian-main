@@ -31,6 +31,12 @@ function AnimatedNumber({ value, decimals = 0, suffix = "" }: { value: number, d
   return <span ref={nodeRef}>{displayValue}{suffix}</span>;
 }
 
+const COMPARISON_FEATURES = [
+  "Affordable", "Live Lec + Recordings", "Premium Notes",
+  "Live Doubt Session", "Revision Session", "Mentorship Session",
+  "Resume + LinkedIn Workshops", "Short Notes", "Subject wise blueprint",
+];
+
 export default function Home() {
   const [courses, setCourses] = useState<CourseCardData[]>([]);
   const [loading, setLoading] = useState(true);
@@ -243,21 +249,21 @@ export default function Home() {
       </section>
 
       {/* Comparison Section */}
-      <section className="py-20 bg-white relative overflow-hidden">
+      <section className="py-12 md:py-20 bg-white relative overflow-hidden">
         {/* Decorative Shapes */}
         <div className="absolute top-20 left-[5%] w-16 h-16 bg-yellow-200 rounded-full border-[3px] border-[#0b1120] shadow-[4px_4px_0px_#0b1120] opacity-50 animate-pulse"></div>
         <div className="absolute bottom-40 right-[8%] w-20 h-20 bg-blue-200 rounded-2xl border-[3px] border-[#0b1120] shadow-[6px_6px_0px_#0b1120] opacity-50 rotate-12"></div>
 
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <div className="inline-block px-5 py-2 bg-[#f3e8ff] text-[#7c3aed] border-[2px] border-[#7c3aed] rounded-full font-black text-sm mb-4">
               The Clear Choice
             </div>
-            <h2 className="text-4xl lg:text-6xl font-black text-[#0b1120] mb-4">Why Gen-Z IITian?</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-6xl font-black text-[#0b1120] mb-4">Why Gen-Z IITian?</h2>
             <p className="text-gray-500 font-bold text-lg">Compare and see the difference for yourself.</p>
           </div>
 
-          <div className="relative overflow-x-auto pb-8">
+          <div className="hidden md:block relative overflow-x-auto pb-8">
             <div className="min-w-[800px] border-[4px] border-[#0b1120] rounded-[2rem] bg-white shadow-[12px_12px_0px_#0b1120] overflow-hidden">
               <table className="w-full text-left border-collapse">
                 <thead>
@@ -274,11 +280,7 @@ export default function Home() {
                   </tr>
                 </thead>
                 <tbody className="divide-y-[3px] divide-[#0b1120]">
-                  {[
-                    "Affordable", "Live Lec + Recordings", "Premium Notes",
-                    "Live Doubt Session", "Revision Session", "Mentorship Session",
-                    "Resume + LinkedIn Workshops", "Short Notes", "Subject wise blueprint"
-                  ].map((feature, i) => (
+                  {COMPARISON_FEATURES.map((feature, i) => (
                     <tr key={i} className="group hover:bg-gray-50 transition-colors">
                       <td className="p-6 font-black text-[#0b1120] text-lg flex items-center gap-3">
                         <div className="w-2 h-2 rounded-full bg-[#0b1120]"></div>
@@ -299,6 +301,39 @@ export default function Home() {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          {/* Mobile comparison — compact, no horizontal scroll */}
+          <div className="md:hidden border-[3px] border-[#0b1120] rounded-2xl bg-white shadow-[6px_6px_0px_#0b1120] overflow-hidden">
+            <table className="w-full text-left border-collapse">
+              <thead>
+                <tr className="bg-[#0b1120] text-white">
+                  <th className="py-3 px-3 text-xs font-black">Features</th>
+                  <th className="py-3 px-1 w-[52px] text-[10px] font-black text-center bg-[#dcfce7] text-[#0b1120]">GenZ</th>
+                  <th className="py-3 px-1 w-[42px] text-[10px] font-black text-center">YT</th>
+                  <th className="py-3 px-1 w-[52px] text-[10px] font-black text-center leading-tight">Others</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y-2 divide-[#0b1120]/10">
+                {COMPARISON_FEATURES.map((feature, i) => (
+                  <tr key={i}>
+                    <td className="py-2.5 px-3 font-black text-[#0b1120] text-[11.5px] leading-tight">{feature}</td>
+                    <td className="py-2.5 px-1 text-center bg-[#f0fdf4] border-x-2 border-[#0b1120]/10">
+                      <CheckCircle2 className="w-5 h-5 text-[#10b981] mx-auto" />
+                    </td>
+                    <td className="py-2.5 px-1 text-center">
+                      <XIcon className="w-4 h-4 text-red-300 mx-auto" />
+                    </td>
+                    <td className="py-2.5 px-1 text-center">
+                      <XIcon className="w-4 h-4 text-red-300 mx-auto" />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div className="bg-[#10b981] text-white text-center py-2 text-[10px] font-black uppercase tracking-wider border-t-2 border-[#0b1120]">
+              GenZ IITian — Your Best Bet
             </div>
           </div>
         </div>
