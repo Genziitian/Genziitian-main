@@ -34,6 +34,7 @@ import RefundPolicy from './pages/RefundPolicy';
 import PaymentSuccess from './pages/PaymentSuccess';
 import PaymentFailed from './pages/PaymentFailed';
 import Menu from './pages/Menu';
+import Ecosystem from './pages/Ecosystem';
 import LoginModal from './components/LoginModal';
 import WelcomeModal from './components/WelcomeModal';
 
@@ -71,6 +72,7 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
+          <Route path="/ecosystem" element={<Ecosystem />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/syllabus" element={<Syllabus />} />
           <Route path="/courses/:id" element={<CourseDetail />} />
