@@ -250,9 +250,9 @@ export default function Home() {
 
       {/* Comparison Section */}
       <section className="py-12 md:py-20 bg-white relative overflow-hidden">
-        {/* Decorative Shapes */}
-        <div className="absolute top-20 left-[5%] w-16 h-16 bg-yellow-200 rounded-full border-[3px] border-[#0b1120] shadow-[4px_4px_0px_#0b1120] opacity-50 animate-pulse"></div>
-        <div className="absolute bottom-40 right-[8%] w-20 h-20 bg-blue-200 rounded-2xl border-[3px] border-[#0b1120] shadow-[6px_6px_0px_#0b1120] opacity-50 rotate-12"></div>
+        {/* Decorative Shapes (desktop only — they overlap the table on mobile) */}
+        <div className="hidden md:block absolute top-20 left-[5%] w-16 h-16 bg-yellow-200 rounded-full border-[3px] border-[#0b1120] shadow-[4px_4px_0px_#0b1120] opacity-50 animate-pulse"></div>
+        <div className="hidden md:block absolute bottom-40 right-[8%] w-20 h-20 bg-blue-200 rounded-2xl border-[3px] border-[#0b1120] shadow-[6px_6px_0px_#0b1120] opacity-50 rotate-12"></div>
 
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-10 md:mb-16">
