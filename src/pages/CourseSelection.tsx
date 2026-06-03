@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { supabase } from '../lib/supabase';
@@ -16,6 +16,58 @@ interface SubCourse {
 }
 
 import { CheckCircle2, Star, Quote } from 'lucide-react';
+
+// Batch descriptions shown on the Qualifier checkout (prices come from the
+// manager's pricing options; these are the per-plan feature lists).
+const QUALIFIER_PLAN_FEATURES: Record<string, { highlight?: string; subjects: string; items: string[]; footnote?: string }> = {
+  recorded: {
+    subjects: 'CT, Stats 1, Maths 1, Eng 1',
+    items: [
+      'Week 1–4 Detailed Recording Lectures',
+      'Recorded PYQs Session',
+      'Weekly Doubt Session',
+      'Graded Assignment Recordings',
+      'Best Handwritten Notes',
+      'Important Questions & Blueprint',
+    ],
+  },
+  live: {
+    subjects: 'CT, Stats 1, Maths 1, Eng 1',
+    items: [
+      'Week 1–4 Detailed Recording + Live Lectures',
+      'Live PYQs Session',
+      'Live Revision Session',
+      'Weekly Doubt Session',
+      'Graded Assignment Recordings',
+      'Resume & LinkedIn Workshops',
+      'Access to Exam Platform',
+    ],
+  },
+  champion: {
+    highlight: 'Full Refund if Not Qualified!',
+    subjects: 'CT, Stats 1, Maths 1, Eng 1',
+    items: [
+      'All 4 Subjects + Live & Mentorship Sessions',
+      'Recordings + Activities',
+      'PYQs + Graded Assignments',
+      'Dedicated Personal Mentorship',
+      'Career Guidance & Support',
+      'Lifetime Reattempt Support',
+      'Access to Exam Platform',
+    ],
+    footnote: '*Terms & Conditions apply',
+  },
+};
+
+// Map a manager-defined pricing option to its Qualifier feature set by name/type.
+function getQualifierPlan(opt: any) {
+  const n = (opt?.name || '').toLowerCase();
+  const t = (opt?.type || '').toLowerCase();
+  if (n.includes('champion')) return QUALIFIER_PLAN_FEATURES.champion;
+  if (n.includes('live') || n.includes('advanced') || t === 'live') return QUALIFIER_PLAN_FEATURES.live;
+  if (n.includes('record') || n.includes('basic') || t === 'recorded') return QUALIFIER_PLAN_FEATURES.recorded;
+  return null;
+}
 
 export default function CourseSelection() {
   const { id } = useParams<{ id: string }>();
@@ -44,6 +96,7 @@ export default function CourseSelection() {
   const [coinsApplied, setCoinsApplied] = useState(0);
   const [coinsToApply, setCoinsToApply] = useState(0);
   const [selectedPricingTier, setSelectedPricingTier] = useState<number | null>(null);
+  const summaryRef = useRef<HTMLDivElement>(null);
 
   // 🔄 Auto-recovery for mobile users:
   // If the page reloads after a mobile redirect payment, check if any order was successfully PAID
@@ -599,6 +652,9 @@ export default function CourseSelection() {
     );
   }
 
+  const isQualifier = course?.courseCategory === 'QUALIFIER';
+  const goToSummary = () => summaryRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
   return (
     <div className="min-h-screen bg-gray-50 pt-8 sm:pt-16 pb-10 px-4 sm:px-6 text-[#0b1120]">
       <AnimatePresence>
@@ -800,7 +856,7 @@ export default function CourseSelection() {
               key="selection"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="space-y-6"
+              className={`space-y-6 ${isQualifier ? 'pb-24 lg:pb-0' : ''}`}
             >
               {course.isBundle && hasBundleDiscount && (
                   <div className={`p-3 md:p-5 rounded-3xl border-[4px] transition-all duration-500 shadow-[8px_8px_0px_#0b1120] ${isAllBundleSelected ? 'bg-green-50 border-[#10b981]' : 'bg-blue-50 border-[#0b1120]'}`}>
@@ -886,42 +942,71 @@ export default function CourseSelection() {
                     <h3 className="text-xl font-black text-[#0b1120] uppercase tracking-tight">Select Your Plan</h3>
                   </div>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {course.pricing_options.map((opt: any, idx: number) => (
-                      <button
-                        key={idx}
-                        onClick={() => setSelectedPricingTier(idx)}
-                        className={`relative p-6 rounded-[2rem] border-[4px] transition-all text-left flex flex-col gap-3 group ${
-                          selectedPricingTier === idx 
-                            ? 'bg-blue-600 border-[#0b1120] text-white shadow-[8px_8px_0px_#0b1120]' 
-                            : 'bg-white border-gray-100 hover:border-blue-200 text-[#0b1120]'
-                        }`}
-                      >
-                        {opt.tag && (
-                          <div className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest w-fit border-2 ${
-                            selectedPricingTier === idx 
-                              ? 'bg-white/20 border-white text-white' 
-                              : 'bg-blue-50 border-blue-100 text-blue-600'
-                          }`}>
-                            {opt.tag}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
+                    {course.pricing_options.map((opt: any, idx: number) => {
+                      const selected = selectedPricingTier === idx;
+                      const plan = isQualifier ? getQualifierPlan(opt) : null;
+                      return (
+                        <button
+                          key={idx}
+                          onClick={() => setSelectedPricingTier(idx)}
+                          className={`relative p-5 md:p-6 rounded-[2rem] border-[4px] transition-all text-left flex flex-col gap-3 ${
+                            selected
+                              ? 'bg-blue-600 border-[#0b1120] text-white shadow-[8px_8px_0px_#0b1120]'
+                              : 'bg-white border-gray-100 hover:border-blue-200 text-[#0b1120]'
+                          }`}
+                        >
+                          {opt.tag && (
+                            <div className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest w-fit border-2 ${
+                              selected ? 'bg-white/20 border-white text-white' : 'bg-blue-50 border-blue-100 text-blue-600'
+                            }`}>
+                              {opt.tag}
+                            </div>
+                          )}
+
+                          <div className="flex items-baseline justify-between gap-2 pr-7">
+                            <div className="text-lg md:text-xl font-black leading-tight uppercase">{opt.name}</div>
+                            <div className={`text-xl md:text-2xl font-black shrink-0 ${selected ? 'text-white' : 'text-blue-600'}`}>₹{opt.price}</div>
                           </div>
-                        )}
-                        <div className="text-xl font-black leading-tight uppercase group-hover:translate-x-1 transition-transform">
-                          {opt.name}
-                        </div>
-                        <div className={`text-2xl font-black mt-2 ${selectedPricingTier === idx ? 'text-white' : 'text-blue-600'}`}>
-                          ₹{opt.price}
-                        </div>
-                        {selectedPricingTier === idx && (
-                          <div className="absolute top-4 right-4 bg-white rounded-full p-1 border-2 border-[#0b1120]">
-                            <Check className="w-4 h-4 text-blue-600" />
-                          </div>
-                        )}
-                      </button>
-                    ))}
+
+                          {plan ? (
+                            <div className="space-y-2.5">
+                              {plan.highlight && (
+                                <div className={`text-xs font-black uppercase tracking-tight ${selected ? 'text-green-200' : 'text-[#10b981]'}`}>{plan.highlight}</div>
+                              )}
+                              <div className={`h-px w-full ${selected ? 'bg-white/25' : 'bg-gray-100'}`} />
+                              <div className={`text-[11px] font-black uppercase tracking-tight ${selected ? 'text-white/80' : 'text-gray-500'}`}>
+                                Subjects: <span className={selected ? 'text-white' : 'text-[#0b1120]'}>{plan.subjects}</span>
+                              </div>
+                              <ul className="space-y-1.5">
+                                {plan.items.map((f) => (
+                                  <li key={f} className="flex items-start gap-2">
+                                    <Check className={`w-3.5 h-3.5 mt-0.5 shrink-0 ${selected ? 'text-white' : 'text-[#10b981]'}`} strokeWidth={3} />
+                                    <span className={`text-[11.5px] font-bold leading-snug ${selected ? 'text-white/95' : 'text-gray-700'}`}>{f}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                              {plan.footnote && (
+                                <div className={`text-[10px] font-bold italic ${selected ? 'text-white/70' : 'text-gray-400'}`}>{plan.footnote}</div>
+                              )}
+                            </div>
+                          ) : (
+                            opt.description && (
+                              <p className={`text-xs font-bold leading-relaxed ${selected ? 'text-white/90' : 'text-gray-500'}`}>{opt.description}</p>
+                            )
+                          )}
+
+                          {selected && (
+                            <div className="absolute top-4 right-4 bg-white rounded-full p-1 border-2 border-[#0b1120]">
+                              <Check className="w-4 h-4 text-blue-600" />
+                            </div>
+                          )}
+                        </button>
+                      );
+                    })}
                   </div>
 
-                  {course.pricing_options && course.pricing_options[selectedPricingTier]?.description && (
+                  {!isQualifier && course.pricing_options[selectedPricingTier]?.description && (
                     <div className="mt-4 p-4 bg-blue-50 border-2 border-blue-200 rounded-2xl">
                       <p className="text-sm font-bold text-gray-700 leading-relaxed">
                         {course.pricing_options[selectedPricingTier].description}
@@ -985,7 +1070,7 @@ export default function CourseSelection() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5">
+              <div ref={summaryRef} className="lg:col-span-5 scroll-mt-24">
                 <div className="bg-white border-[3px] border-[#0b1120] rounded-2xl p-5 shadow-[8px_8px_0px_#10b981] sticky top-24">
                     <h3 className="text-lg font-black text-[#0b1120] mb-4 border-b-2 border-gray-100 pb-2.5">Enrollment Summary</h3>
                     
@@ -1129,6 +1214,19 @@ export default function CourseSelection() {
                 </div>
               </div>
             </div>
+
+            {/* Mobile sticky "Continue with [plan]" bar — Qualifier only */}
+            {isQualifier && getSelectedPricingOption() && (
+              <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t-[3px] border-[#0b1120] p-3">
+                <button
+                  onClick={goToSummary}
+                  className="w-full flex items-center justify-between gap-3 px-4 py-3.5 bg-[#10b981] text-[#0b1120] rounded-xl font-black border-[3px] border-[#0b1120] shadow-[4px_4px_0px_#0b1120] active:translate-y-0.5 active:shadow-[1px_1px_0px_#0b1120] transition-all"
+                >
+                  <span className="truncate uppercase tracking-tight">Continue with {getSelectedPricingOption()?.name}</span>
+                  <span className="flex items-center gap-1.5 shrink-0">₹{getSelectedPricingOption()?.price} <ArrowRight className="w-4 h-4" /></span>
+                </button>
+              </div>
+            )}
             </motion.div>
           )}
         </AnimatePresence>
