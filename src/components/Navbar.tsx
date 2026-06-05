@@ -77,6 +77,7 @@ export default function Navbar() {
             </button>
             {resourcesOpen && (
               <div className="absolute top-full left-0 mt-3 w-48 bg-white border-[3px] border-[#0b1120] rounded-xl shadow-[6px_6px_0px_#0b1120] py-2 z-50">
+                <Link to="/iitm-bs" className="block px-4 py-2.5 text-sm font-bold text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors">IITM BS Degree</Link>
                 <Link to="/resources" className="block px-4 py-2.5 text-sm font-bold text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors">PYQs & Notes</Link>
                 <Link to="/syllabus" className="block px-4 py-2.5 text-sm font-bold text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors">Syllabus</Link>
                 <Link to="/graded-assignment" className="block px-4 py-2.5 text-sm font-bold text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors">Graded Assignment</Link>
@@ -181,6 +182,7 @@ export default function Navbar() {
             </button>
             {mobileResourcesOpen && (
               <div className="flex flex-col gap-3 pl-4 pt-2 pb-2 border-l-2 border-gray-100 ml-2 mt-1">
+                <Link to="/iitm-bs" className="text-sm font-bold text-gray-600 hover:text-blue-600">IITM BS Degree</Link>
                 <Link to="/resources" className="text-sm font-bold text-gray-600 hover:text-blue-600">PYQs & Notes</Link>
                 <Link to="/syllabus" className="text-sm font-bold text-gray-600 hover:text-blue-600">Syllabus</Link>
                 <Link to="/graded-assignment" className="text-sm font-bold text-gray-600 hover:text-blue-600">Graded Assignment</Link>

@@ -7,9 +7,10 @@ import { useNavigate, useLocation, NavLink } from 'react-router-dom';
 import { apiService } from '../lib/api';
 import DeleteConfirmationModal from '../components/DeleteConfirmationModal';
 import BlogsManager from '../components/manager/BlogsManager';
+import PyqManager from '../components/manager/PyqManager';
 
 
-type Tab = 'users' | 'courses' | 'discounts' | 'payments' | 'catalog' | 'referrals' | 'blogs';
+type Tab = 'users' | 'courses' | 'discounts' | 'payments' | 'catalog' | 'referrals' | 'blogs' | 'pyqs';
 
 function sanitizeCourseId(value: string) {
   return value
@@ -29,7 +30,7 @@ export default function Manager() {
   const activeTab = (location.pathname.split('/').pop() || 'users') as Tab;
   
   // Validate tab - if path is just /manager, it's users. If invalid, could redirect.
-  const validTabs: Tab[] = ['users', 'courses', 'discounts', 'payments', 'referrals', 'blogs'];
+  const validTabs: Tab[] = ['users', 'courses', 'discounts', 'payments', 'referrals', 'blogs', 'pyqs'];
   const effectiveTab = validTabs.includes(activeTab) ? activeTab : 'users';
   const [data, setData] = useState<any>([]);
   const [loading, setLoading] = useState(true);
@@ -199,7 +200,7 @@ export default function Manager() {
   const fetchData = async () => {
     // Blogs are managed entirely inside BlogsManager (direct Supabase CRUD),
     // so the shared server-backed fetch is skipped for this tab.
-    if (effectiveTab === 'blogs') {
+    if (effectiveTab === 'blogs' || effectiveTab === 'pyqs') {
       setLoading(false);
       return;
     }
@@ -589,7 +590,8 @@ export default function Manager() {
             { id: 'discounts', icon: ShoppingBag, path: '/manager/discounts' },
             { id: 'payments', icon: CreditCard, path: '/manager/payments' },
             { id: 'referrals', icon: Gift, path: '/manager/referrals' },
-            { id: 'blogs', icon: ScrollText, path: '/manager/blogs' }
+            { id: 'blogs', icon: ScrollText, path: '/manager/blogs' },
+            { id: 'pyqs', icon: BookOpen, path: '/manager/pyqs' }
           ].map((tab) => (
             <NavLink
               key={tab.id}
@@ -694,6 +696,8 @@ export default function Manager() {
             <div className="space-y-8">
 
               {effectiveTab === 'blogs' && <BlogsManager />}
+
+              {effectiveTab === 'pyqs' && <PyqManager />}
 
               {effectiveTab === 'users' && (
                 <div className="space-y-8">

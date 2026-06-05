@@ -5,6 +5,7 @@ import {
   SITE, getLevel, getCourse, examsForCourse, examSeo, EXAM_META, type ExamSlug,
 } from '../../data/iitmBs';
 import { Breadcrumbs, Shell, Faq, FinalCta, Disclaimer, Updated, breadcrumbLd, courseLd, faqLd, type Crumb } from './parts';
+import PyqPapers from './PyqPapers';
 
 const EXAM_SLUGS: ExamSlug[] = ['pyq', 'quiz-1', 'quiz-2', 'end-term', 'oppe', 'graded-assignment'];
 
@@ -65,10 +66,7 @@ export default function ExamAssetPage() {
       <h2 className="text-2xl font-black mb-3">
         {validExam === 'graded-assignment' ? `${c.short} graded assignment answers (Week 1–12)` : `${c.short} ${m.label} — term-wise papers`}
       </h2>
-      <div className="border-[3px] border-dashed border-gray-300 rounded-2xl p-8 text-center text-gray-500 font-bold mb-10">
-        Papers &amp; worked solutions for {c.short} load here, newest term first.
-        <div className="text-xs font-medium text-gray-400 mt-1">Managed from the panel and refreshed every term — never replaced.</div>
-      </div>
+      <PyqPapers level={c.level} course={c.slug} exam={validExam} courseShort={c.short} />
 
       {/* Most-repeated topics */}
       {c.topics && validExam !== 'graded-assignment' && (

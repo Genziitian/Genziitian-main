@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import {
-  BookOpen, FolderOpen, ListChecks, ClipboardList, Newspaper, Compass,
+  BookOpen, GraduationCap, FolderOpen, ListChecks, ClipboardList, Newspaper, Compass,
   Gift, LayoutDashboard, ShieldCheck,
   Mail, Info, Phone, Briefcase, Shield, FileText, RotateCcw,
   Instagram, Youtube, Linkedin, MessageCircle, LogIn, LogOut,
@@ -82,6 +82,7 @@ export default function Menu() {
         </button>
 
         <Group label="EXPLORE">
+          <MenuRow Icon={GraduationCap} tint="#E4F2FB" glyph="#1FA0E0" label="IITM BS Degree" to="/iitm-bs" />
           <MenuRow Icon={BookOpen} tint="#E7EEFF" glyph="#2563EB" label="Courses" to="/courses" />
           <MenuRow Icon={FolderOpen} tint="#E4F7EE" glyph="#0E9E6A" label="Resources (PYQs & Notes)" to="/resources" />
           <MenuRow Icon={ListChecks} tint="#FEF1DF" glyph="#FF7A00" label="Syllabus" to="/syllabus" />

@@ -8,7 +8,7 @@
     "admin": "node server/index.js",
     "start": "node server/index.js",
     "build": "export NODE_OPTIONS=\"--max-old-space-size=2048\" && vite build && npm run build:ssg",
-    "build:ssg": "vite build --ssr src/prerender.tsx --outDir dist-ssr --emptyOutDir && node seo/run-prerender.mjs",
+    "build:ssg": "vite build --ssr src/prerender.tsx --outDir dist-ssr --emptyOutDir && node seo/run-prerender.mjs && node seo/generate-sitemap.mjs",
     "postinstall": "npm run build",
     "preview": "vite preview",
     "clean": "rm -rf dist dist-ssr",

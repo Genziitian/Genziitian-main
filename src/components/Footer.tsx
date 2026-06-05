@@ -40,6 +40,7 @@ export default function Footer() {
             <div>
               <h4 className="text-xl font-black text-white mb-6">Additional Links</h4>
               <ul className="space-y-4">
+                <li><Link to="/iitm-bs" className="text-gray-400 font-bold hover:text-[#10b981] transition-colors">IITM BS Degree</Link></li>
                 <li><Link to="/courses" className="text-gray-400 font-bold hover:text-[#10b981] transition-colors">Courses</Link></li>
                 <li><Link to="/resources" className="text-gray-400 font-bold hover:text-[#10b981] transition-colors">Resources</Link></li>
                 <li><Link to="/blog" className="text-gray-400 font-bold hover:text-[#10b981] transition-colors">Blog</Link></li>
