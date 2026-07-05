@@ -1082,11 +1082,41 @@ export default function Manager() {
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-black text-[#0b1120] uppercase mb-3">Display Price / Starts From (₹)</label>
-                      <input type="number" defaultValue={editingCourse?.price} id="c-price" className="w-full px-6 py-4 border-[3px] border-[#0b1120] rounded-2xl font-bold focus:ring-[6px] ring-blue-100 outline-none" />
+                      <input 
+                        type="number" 
+                        defaultValue={editingCourse?.price} 
+                        id="c-price" 
+                        onChange={(e) => {
+                          if (!isBundle && bundleCourses[0]) {
+                            const discountVal = (document.getElementById('c-discount') as HTMLInputElement)?.value;
+                            if (!discountVal) {
+                              updateBundleCourse(0, 'price', parseInt(e.target.value) || 0);
+                            }
+                          }
+                        }}
+                        className="w-full px-6 py-4 border-[3px] border-[#0b1120] rounded-2xl font-bold focus:ring-[6px] ring-blue-100 outline-none" 
+                      />
                     </div>
                     <div>
                       <label className="block text-sm font-black text-[#0b1120] uppercase mb-3">Discount Display Price (₹)</label>
-                      <input type="number" defaultValue={editingCourse?.discountPrice} id="c-discount" placeholder="Optional" className="w-full px-6 py-4 border-[3px] border-[#0b1120] rounded-2xl font-bold focus:ring-[6px] ring-blue-100 outline-none" />
+                      <input 
+                        type="number" 
+                        defaultValue={editingCourse?.discountPrice} 
+                        id="c-discount" 
+                        placeholder="Optional" 
+                        onChange={(e) => {
+                          if (!isBundle && bundleCourses[0]) {
+                            const val = parseInt(e.target.value);
+                            if (val) {
+                              updateBundleCourse(0, 'price', val);
+                            } else {
+                              const mainPrice = parseInt((document.getElementById('c-price') as HTMLInputElement)?.value) || 0;
+                              updateBundleCourse(0, 'price', mainPrice);
+                            }
+                          }
+                        }}
+                        className="w-full px-6 py-4 border-[3px] border-[#0b1120] rounded-2xl font-bold focus:ring-[6px] ring-blue-100 outline-none" 
+                      />
                     </div>
                   </div>
                   
@@ -1475,7 +1505,19 @@ export default function Manager() {
                                 <input 
                                   type="number" 
                                   value={bc.price} 
-                                  onChange={e => updateBundleCourse(idx, 'price', parseInt(e.target.value) || 0)} 
+                                  onChange={e => {
+                                     const newPrice = parseInt(e.target.value) || 0;
+                                     updateBundleCourse(idx, 'price', newPrice);
+                                     if (!isBundle) {
+                                       const discountInput = document.getElementById('c-discount') as HTMLInputElement;
+                                       const priceInput = document.getElementById('c-price') as HTMLInputElement;
+                                       if (discountInput && discountInput.value) {
+                                         discountInput.value = String(newPrice);
+                                       } else if (priceInput) {
+                                         priceInput.value = String(newPrice);
+                                       }
+                                     }
+                                   }} 
                                   className="w-full pl-12 pr-6 py-4 border-2 border-gray-200 rounded-2xl font-black text-lg outline-none focus:border-[#10b981] transition-all" 
                                 />
                               </div>
@@ -1508,8 +1550,19 @@ export default function Manager() {
                     const name = (document.getElementById('c-name') as HTMLInputElement).value;
                     const subtitle = (document.getElementById('c-subtitle') as HTMLTextAreaElement).value;
                     const cohortContent = (document.getElementById('c-cohort') as HTMLTextAreaElement).value;
-                    const price = (document.getElementById('c-price') as HTMLInputElement).value;
-                    const discountPrice = (document.getElementById('c-discount') as HTMLInputElement).value;
+                    let price = (document.getElementById('c-price') as HTMLInputElement).value;
+                    let discountPrice = (document.getElementById('c-discount') as HTMLInputElement).value;
+
+                    // Keep SQL columns price/discountPrice in sync with Main Enrollment price for single courses
+                    if (!isBundle && bundleCourses.length > 0) {
+                      const mainPrice = bundleCourses[0].price || 0;
+                      if (discountPrice) {
+                        discountPrice = String(mainPrice);
+                      } else {
+                        price = String(mainPrice);
+                      }
+                    }
+
                     const isPinned = (document.getElementById('c-pinned') as HTMLSelectElement)?.value === 'true';
                     const category = (document.getElementById('c-category') as HTMLInputElement).value;
                     const class_type = (document.getElementById('c-class-type') as HTMLSelectElement)?.value || 'recorded';
