@@ -196,7 +196,8 @@ export default function CourseSelection() {
       
       // Auto-select behavior:
       if (!data.isBundle) {
-          setSelectedCourses([data.id]);
+          const lmsCourseIds = data.bundleCourses?.map((bc: any) => bc.courseId).filter(Boolean);
+          setSelectedCourses(lmsCourseIds?.length > 0 ? lmsCourseIds : [data.id]);
       } else if (data.isFixedBundle) {
           // Mandatory selection for fixed bundles
           setSelectedCourses(data.bundleCourses?.map((bc: any) => bc.courseId) || []);
