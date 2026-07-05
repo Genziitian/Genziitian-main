@@ -153,7 +153,8 @@ export default async function handler(req: any, res: any) {
           purchasedAt: orderData?.created_at || new Date().toISOString(),
           finalPrice: orderData?.total_amount || 0,
           courseIds,
-          courseDetails
+          courseDetails,
+          courseId: courseIds[0] || null
         }),
       });
 

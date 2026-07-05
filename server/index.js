@@ -722,7 +722,7 @@ async function enrollUserInLMS({ email, courseIds, razorpay_order_id, razorpay_p
     // Update status to PAID immediately to prevent race conditions
     await supabase.from('website_orders').update({ status: 'PAID' }).eq('order_id', razorpay_order_id);
     
-    const { data: profile } = await supabase.from('profiles').select('id, name, phone').eq('email', email).single();
+    const { data: profile } = await supabase.from('profiles').select('id, name, phone, gender').eq('email', email).single();
 
     // === STEP 1: LMS ENROLLMENT (isolated — failures must NOT block referral/coin processing) ===
     let lmsEnrollmentSucceeded = false;
@@ -748,8 +748,14 @@ async function enrollUserInLMS({ email, courseIds, razorpay_order_id, razorpay_p
                 email,
                 name: profile?.name || "Student",
                 phone: profile?.phone || "N/A",
+                gender: profile?.gender || "MALE",
+                orderId: razorpay_order_id,
+                paymentId: razorpay_payment_id,
+                purchasedAt: existingOrder?.created_at || new Date().toISOString(),
+                finalPrice: existingOrder?.total_amount || 0,
                 courseIds, // Kept for backward compatibility during transition
-                courseDetails // New format
+                courseDetails, // New format
+                courseId: courseIds[0] || null
             })
         });
 
