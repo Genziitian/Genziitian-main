@@ -77,15 +77,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white text-[#0b1120] font-sans selection:bg-blue-100 overflow-hidden">
-      {/* Sale Announcement Bar */}
-      <div className="w-full bg-[#0b1120] text-white py-2 px-4 text-center border-b-[2px] border-yellow-400 relative z-50 flex items-center justify-center gap-6">
-        <span className="text-yellow-400 font-black text-xs md:text-sm tracking-[0.1em] animate-pulse">
-          ⚡ MAY TERM EARLY BIRD SALE ENDS ON 15 JUNE ⚡
-        </span>
-        <Link to="/courses" className="px-4 py-1 bg-yellow-400 text-[#0b1120] text-[10px] md:text-xs font-black rounded-full hover:bg-yellow-300 transition-all transform hover:scale-105 shadow-[0_0_10px_rgba(250,204,21,0.2)]">
-          Enroll Now
-        </Link>
-      </div>
+
 
       {/* Mobile hero/stats/ecosystem (md:hidden) — matches the Gen-Z IITian mobile design */}
       <MobileHome />

@@ -20,6 +20,30 @@ const getRazorpaySecret = () => {
   return secret;
 };
 
+async function sendToGoogleSheet(payload: Record<string, any>) {
+  const url = process.env.GOOGLE_SHEET_WEBHOOK_URL;
+  if (!url) {
+    console.warn('[verify-payment] GOOGLE_SHEET_WEBHOOK_URL not set, skipping GSheet log.');
+    return;
+  }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000); // 15s timeout for serverless
+
+  try {
+    await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...payload, timestamp: new Date().toISOString() }),
+      signal: controller.signal,
+    });
+  } catch (err: any) {
+    console.error('[verify-payment] Google Sheet log error:', err.message);
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -72,7 +96,7 @@ export default async function handler(req: any, res: any) {
       .eq('email', email)
       .single();
 
-    const lmsEnrollUrl = process.env.LMS_ENROLL_URL || 'https://class.genziitian.in/api/external-purchase';
+    const lmsEnrollUrl = process.env.LMS_ENROLL_URL || 'https://class.genziitian.in/api/external-enroll';
     const externalEnrollSecret = process.env.EXTERNAL_ENROLL_SECRET;
 
     // === STEP 1: LMS ENROLLMENT (isolated — failures here must NOT block referral/coin processing) ===
@@ -108,6 +132,7 @@ export default async function handler(req: any, res: any) {
     const courseDetails = courseIds.map(id => {
       const rawType = orderData?.selected_class_type || selectedClassType || coursesData?.find(c => c.id === id)?.class_type;
       return {
+        id,
         ...(rawType ? { type: String(rawType).toUpperCase() } : {})
       };
     });
@@ -164,6 +189,40 @@ export default async function handler(req: any, res: any) {
       }));
 
       await supabase.from('activity_logs').insert(failureLogs);
+    }
+
+    // === STEP 1b: GOOGLE SHEET LOGGING (runs regardless of LMS result) ===
+    try {
+      // Fetch course names for the sheet log
+      const { data: coursesForLog } = await supabase.from('courses').select('id, name, class_type').in('id', courseIds);
+      const courseNames = coursesForLog && coursesForLog.length > 0
+        ? [...new Set(coursesForLog.map(c => c.name))].join(', ')
+        : 'Unknown Course';
+      const classTypesStr = coursesForLog && coursesForLog.length > 0
+        ? [...new Set(coursesForLog.map(c => c.class_type).filter(Boolean))].join(', ')
+        : '';
+
+      // Fetch order details for price
+      const { data: orderForLog } = await supabase.from('website_orders')
+        .select('total_amount, referral_code, discount_code, coins_applied')
+        .eq('order_id', razorpay_order_id).single();
+
+      sendToGoogleSheet({
+        name: profile?.name || 'Student',
+        email,
+        phone: profile?.phone || 'N/A',
+        course_name: courseNames,
+        price: orderForLog?.total_amount || 0,
+        status: lmsEnrollmentSucceeded ? 'SUCCESS' : 'ENROLLMENT_FAILED',
+        payment_id: razorpay_payment_id,
+        order_id: razorpay_order_id,
+        referral_code: orderForLog?.referral_code || referralCode || 'N/A',
+        discount_code: orderForLog?.discount_code || discountCode || 'N/A',
+        coins_applied: orderForLog?.coins_applied || actualCoinsApplied || 0,
+        class_type: selectedClassType || classTypesStr,
+      }).catch(err => console.error('Background Sheet Log Error:', err));
+    } catch (sheetErr) {
+      console.error('[verify-payment] Sheet logging error (non-fatal):', sheetErr);
     }
 
     // === STEP 2: RECORD COUPON USAGE (runs regardless of LMS result) ===

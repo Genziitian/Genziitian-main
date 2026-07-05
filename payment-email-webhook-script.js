@@ -248,7 +248,152 @@ function doPost(e) {
         name: "GenZ IITIAN"
       });
 
-    } else if ((status === 'FAILED' || status === 'ENROLLMENT_FAILED') && email) {
+    } else if (status === 'ENROLLMENT_FAILED' && email) {
+      const enrollmentFailHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body style="margin:0; padding:0; background-color:#e8edf5; font-family:Arial, sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#e8edf5; padding:24px 12px;">
+    <tr>
+      <td align="center">
+        <!-- Card -->
+        <table role="presentation" align="center" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px; margin:0 auto; background:#ffffff; border:1px solid #d0ddf5; border-radius:16px; overflow:hidden;">
+          <!-- Header -->
+          <tr>
+            <td style="background-color:#1e4d96; background:linear-gradient(135deg,#0f2a5c 0%,#1e4d96 60%,#1a5fa8 100%); padding:32px; text-align:left;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:22px;">
+                <tr>
+                  <td style="background:rgba(255,255,255,0.12); border-radius:6px; width:30px; height:30px; text-align:center; vertical-align:middle;">
+                    <span style="font-size:14px; color:#ffffff;">&#127891;</span>
+                  </td>
+                  <td style="padding-left:8px; color:#ffffff; font-size:16px; font-weight:700;">
+                    GenZ<span style="color:#90c4ff;">IITIAN</span>
+                  </td>
+                </tr>
+              </table>
+
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:16px;">
+                <tr>
+                  <td style="background:rgba(245,158,11,0.15); border:1px solid rgba(245,158,11,0.35); border-radius:20px; padding:5px 13px;">
+                    <span style="color:#f59e0b; font-size:12px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase;">&#x25CF; Payment Successful - Setup Pending</span>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin:0 0 6px; font-size:28px;">⏳</p>
+              <p style="margin:0 0 10px; color:#ffffff; font-size:26px; font-weight:400; line-height:1.25; font-family:Georgia, serif;">
+                Payment received!<br>Course access is pending setup.
+              </p>
+              <div style="width:36px; height:2px; background:#90c4ff; margin-bottom:10px;"></div>
+              <p style="margin:0; color:#a8ccee; font-size:13px; line-height:1.6;">
+                Don't worry &mdash; we have received your payment. Our systems are working on provisioning your access manually.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:26px 32px; background:#ffffff;">
+              <p style="margin:0 0 12px; font-size:15px; font-weight:600; color:#1a3a6e;">
+                Hey ${studentName} &#128075;
+              </p>
+              <p style="margin:0 0 20px; font-size:14px; color:#555555; line-height:1.8;">
+                Your payment was processed successfully, but we encountered a small glitch while automatically creating your LMS account. We are resolving this right now and will set it up for you manually.
+              </p>
+
+              <!-- Info Box -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f5f8ff; border:1px solid #dde9ff; border-radius:10px; margin-bottom:18px;">
+                <tr>
+                  <td style="padding:14px 16px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td style="padding-bottom:7px; border-bottom:1px solid #eaf0ff; font-size:11px; color:#8aabda; font-weight:600; text-transform:uppercase; letter-spacing:0.4px; width:100px;">&#128218; Course</td>
+                        <td style="padding-bottom:7px; border-bottom:1px solid #eaf0ff; font-size:13px; font-weight:600; color:#1a3a6e;">${courseName}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding:7px 0; border-bottom:1px solid #eaf0ff; font-size:11px; color:#8aabda; font-weight:600; text-transform:uppercase; letter-spacing:0.4px; width:100px;">&#128231; Email</td>
+                        <td style="padding:7px 0; border-bottom:1px solid #eaf0ff; font-size:13px; font-weight:600; color:#1a3a6e;">${email}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding-top:7px; font-size:11px; color:#8aabda; font-weight:600; text-transform:uppercase; letter-spacing:0.4px; width:100px;">&#129534; Order ID</td>
+                        <td style="padding-top:7px; font-size:13px; font-weight:600; color:#1a3a6e;">${orderIdStr}</td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Warning Box -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#fffbeb; border:1px solid #fef3c7; border-radius:10px; margin-bottom:18px;">
+                <tr>
+                  <td style="padding:13px 15px; font-size:13px; color:#b45309; line-height:1.7;">
+                    &#9888; <strong>No action is required from your side.</strong> Our support team is already notified, and your course access will be activated within the next <strong>1&ndash;2 hours</strong>.
+                  </td>
+                </tr>
+              </table>
+
+              <div style="border-top:1px dashed #cdd9f0; margin:20px 0;"></div>
+
+              <!-- Contact -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f5f8ff; border:1px solid #d0ddf5; border-radius:12px; margin-bottom:16px;">
+                <tr>
+                  <td style="padding:15px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="42" valign="top">
+                          <div style="width:34px; height:34px; background:#1a3a6e; border-radius:50%; color:#ffffff; font-weight:700; text-align:center; line-height:34px; font-size:14px;">S</div>
+                        </td>
+                        <td valign="top">
+                          <p style="margin:0 0 2px; font-size:12px; font-weight:700; color:#1a3a6e;">Sriram &mdash; Founder, GenZ IITIAN</p>
+                          <p style="margin:0 0 10px; font-size:11px; color:#6a89bf;">Need immediate help? Ping us below:</p>
+                          <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              <td style="padding-right:10px;">
+                                <a href="https://wa.me/917970495447?text=Hi Sriram, my payment for ${courseName} was successful but enrollment is pending. Order ID: ${orderIdStr}" style="display:inline-block; background:#1a3a6e; color:#ffffff; font-size:11px; font-weight:700; padding:7px 14px; border-radius:8px; text-decoration:none;">📲 WhatsApp Us</a>
+                              </td>
+                              <td>
+                                <a href="mailto:admin@genziitian.org?subject=Enrollment Pending - ${orderIdStr}" style="display:inline-block; background:#f5f8ff; color:#1a3a6e; font-size:11px; font-weight:700; padding:7px 14px; border-radius:8px; text-decoration:none; border:1px solid #d0ddf5;">✉️ Email Us</a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin:0 0 4px; font-size:13px; color:#666666;">Thank you for your patience. Let's get that CGPA &#128640;</p>
+              <p style="margin:0; font-size:13px; font-weight:700; color:#1a3a6e;">Team GenZ IITIAN</p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background:#eef3fd; border-top:1px solid #d0ddf5; padding:13px 20px; text-align:center;">
+              <p style="margin:0; font-size:11px; color:#7a9ac5;">
+                &copy; 2026 GenZ IITIAN &middot; <a href="https://app.genziitian.in/" style="color:#1a3a6e;">app.genziitian.in</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+
+      MailApp.sendEmail({
+        to: email,
+        subject: "Action Required: Course Setup Pending - GenZ IITIAN",
+        htmlBody: enrollmentFailHtml,
+        name: "GenZ IITIAN"
+      });
+
+    } else if (status === 'FAILED' && email) {
       const failHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
