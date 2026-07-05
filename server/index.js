@@ -799,14 +799,22 @@ async function enrollUserInLMS({ email, courseIds, razorpay_order_id, razorpay_p
 
         lmsEnrollmentSucceeded = true;
 
-        const successLogs = courseIds.map(cid => ({
-            userId: profile?.id,
-            email,
-            action: 'ENROLLMENT_SUCCESS',
-            courseId: cid,
-            created_at: new Date().toISOString(),
-            metadata: { order_id: razorpay_order_id, payment_id: razorpay_payment_id, source: 'system', class_type: courseDetails.find(c => c.id === cid)?.type }
-        }));
+        const successLogs = courseIds.map(cid => {
+            const matchedDetail = lmsCourseDetails.find(c => c.id === cid);
+            return {
+                userId: profile?.id,
+                email,
+                action: 'ENROLLMENT_SUCCESS',
+                courseId: cid,
+                created_at: new Date().toISOString(),
+                metadata: { 
+                    order_id: razorpay_order_id, 
+                    payment_id: razorpay_payment_id, 
+                    source: 'system', 
+                    class_type: matchedDetail?.type || selectedClassType 
+                }
+            };
+        });
         await supabase.from('activity_logs').insert(successLogs);
     } catch (lmsErr) {
         console.error('LMS Enrollment Error:', lmsErr);

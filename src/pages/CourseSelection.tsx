@@ -117,11 +117,25 @@ export default function CourseSelection() {
           .limit(1);
 
         if (recentOrders && recentOrders.length > 0) {
-          const courseTitle = course.isBundle 
-            ? course.bundleCourses.filter((bc: any) => selectedCourses.includes(bc.courseId)).map((bc: any) => bc.courseName).join(', ')
-            : course.name;
+          const order = recentOrders[0];
+          const recentCourseIds = Array.isArray(order.course_ids) ? order.course_ids : [];
+          
+          // Calculate the course IDs currently being checked out
+          const currentCourseIds = course.isBundle && Array.isArray(course.bundleCourses)
+            ? course.bundleCourses
+                .filter((bc: any) => selectedCourses.includes(bc.courseId))
+                .flatMap((bc: any) => [bc.courseId, bc.courseId2, bc.courseId3].filter(Boolean))
+            : selectedCourses;
 
-          navigate("/payment-success", { state: { courseTitle } });
+          // Only auto-recover and redirect if the paid order actually matches the current selection
+          const hasOverlap = currentCourseIds.some(id => recentCourseIds.includes(id));
+          if (hasOverlap) {
+            const courseTitle = course.isBundle 
+              ? course.bundleCourses.filter((bc: any) => selectedCourses.includes(bc.courseId)).map((bc: any) => bc.courseName).join(', ')
+              : course.name;
+
+            navigate("/payment-success", { state: { courseTitle } });
+          }
         }
       } catch (err) {
         console.error("Auto-recovery check failed:", err);
