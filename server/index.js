@@ -730,12 +730,27 @@ async function enrollUserInLMS({ email, courseIds, razorpay_order_id, razorpay_p
         // Fetch class types for the selected courses
         const { data: coursesData } = await supabase.from('courses').select('*').in('id', courseIds);
         
+        // Translate website slugs to LMS course IDs
+        const lmsCourseIds = courseIds.flatMap(id => {
+            const dbCourse = coursesData?.find(c => c.id === id);
+            if (dbCourse && Array.isArray(dbCourse.bundleCourses) && dbCourse.bundleCourses.length > 0) {
+                return dbCourse.bundleCourses.map(bc => bc.courseId).filter(Boolean);
+            }
+            return [id]; // Fallback to slug if not configured
+        });
+
         // Construct detailed payload for the new LMS format while keeping courseIds for backward compatibility
-        const courseDetails = courseIds.map(id => {
-            const course = coursesData?.find(c => c.id === id);
-            const rawType = selectedClassType || course?.class_type;
+        const lmsCourseDetails = lmsCourseIds.map(lmsId => {
+            const parentCourse = coursesData?.find(c => {
+                if (c.id === lmsId) return true;
+                if (Array.isArray(c.bundleCourses)) {
+                    return c.bundleCourses.some(bc => bc.courseId === lmsId);
+                }
+                return false;
+            });
+            const rawType = selectedClassType || parentCourse?.class_type;
             return {
-                id: id,
+                id: lmsId,
                 ...(rawType ? { type: String(rawType).toUpperCase() } : {})
             };
         });
@@ -753,9 +768,9 @@ async function enrollUserInLMS({ email, courseIds, razorpay_order_id, razorpay_p
                 paymentId: razorpay_payment_id,
                 purchasedAt: existingOrder?.created_at || new Date().toISOString(),
                 finalPrice: existingOrder?.total_amount || 0,
-                courseIds, // Kept for backward compatibility during transition
-                courseDetails, // New format
-                courseId: courseIds[0] || null
+                courseIds: lmsCourseIds, 
+                courseDetails: lmsCourseDetails, 
+                courseId: lmsCourseIds[0] || null
             })
         });
 

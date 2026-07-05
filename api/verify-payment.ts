@@ -125,14 +125,30 @@ export default async function handler(req: any, res: any) {
       orderData = orderWithClassType.data;
     }
 
-    // Fetch course details for class types
-    const { data: coursesData } = await supabase.from('courses').select('id, class_type').in('id', courseIds);
+    // Fetch course details for class types and LMS IDs
+    const { data: coursesData } = await supabase.from('courses').select('id, class_type, bundleCourses').in('id', courseIds);
     
+    // Translate website slugs to LMS course IDs
+    const lmsCourseIds = courseIds.flatMap(id => {
+      const dbCourse = coursesData?.find(c => c.id === id);
+      if (dbCourse && Array.isArray(dbCourse.bundleCourses) && dbCourse.bundleCourses.length > 0) {
+        return dbCourse.bundleCourses.map((bc: any) => bc.courseId).filter(Boolean);
+      }
+      return [id]; // Fallback to slug if not configured
+    });
+
     // Use only class types provided by the website/order data. Do not invent a default type.
-    const courseDetails = courseIds.map(id => {
-      const rawType = orderData?.selected_class_type || selectedClassType || coursesData?.find(c => c.id === id)?.class_type;
+    const lmsCourseDetails = lmsCourseIds.map(lmsId => {
+      const parentCourse = coursesData?.find(c => {
+        if (c.id === lmsId) return true;
+        if (Array.isArray(c.bundleCourses)) {
+          return c.bundleCourses.some((bc: any) => bc.courseId === lmsId);
+        }
+        return false;
+      });
+      const rawType = orderData?.selected_class_type || selectedClassType || parentCourse?.class_type;
       return {
-        id,
+        id: lmsId,
         ...(rawType ? { type: String(rawType).toUpperCase() } : {})
       };
     });
@@ -152,9 +168,9 @@ export default async function handler(req: any, res: any) {
           paymentId: razorpay_payment_id,
           purchasedAt: orderData?.created_at || new Date().toISOString(),
           finalPrice: orderData?.total_amount || 0,
-          courseIds,
-          courseDetails,
-          courseId: courseIds[0] || null
+          courseIds: lmsCourseIds,
+          courseDetails: lmsCourseDetails,
+          courseId: lmsCourseIds[0] || null
         }),
       });
 
