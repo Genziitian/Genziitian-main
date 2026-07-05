@@ -131,8 +131,18 @@ export default async function handler(req: any, res: any) {
     // Translate website slugs to LMS course IDs
     const lmsCourseIds = courseIds.flatMap(id => {
       const dbCourse = coursesData?.find(c => c.id === id);
-      if (dbCourse && Array.isArray(dbCourse.bundleCourses) && dbCourse.bundleCourses.length > 0) {
-        return dbCourse.bundleCourses.map((bc: any) => bc.courseId).filter(Boolean);
+      if (dbCourse) {
+        let bundleCourses = dbCourse.bundleCourses;
+        if (typeof bundleCourses === 'string') {
+          try {
+            bundleCourses = JSON.parse(bundleCourses);
+          } catch (e) {
+            bundleCourses = [];
+          }
+        }
+        if (Array.isArray(bundleCourses) && bundleCourses.length > 0) {
+          return bundleCourses.map((bc: any) => bc.courseId).filter(Boolean);
+        }
       }
       return [id]; // Fallback to slug if not configured
     });
@@ -141,8 +151,16 @@ export default async function handler(req: any, res: any) {
     const lmsCourseDetails = lmsCourseIds.map(lmsId => {
       const parentCourse = coursesData?.find(c => {
         if (c.id === lmsId) return true;
-        if (Array.isArray(c.bundleCourses)) {
-          return c.bundleCourses.some((bc: any) => bc.courseId === lmsId);
+        let bundleCourses = c.bundleCourses;
+        if (typeof bundleCourses === 'string') {
+          try {
+            bundleCourses = JSON.parse(bundleCourses);
+          } catch (e) {
+            bundleCourses = [];
+          }
+        }
+        if (Array.isArray(bundleCourses)) {
+          return bundleCourses.some((bc: any) => bc.courseId === lmsId);
         }
         return false;
       });
