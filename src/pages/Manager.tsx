@@ -48,7 +48,7 @@ export default function Manager() {
   const [pricingOptions, setPricingOptions] = useState<{name: string, price: number, type: 'live' | 'recorded', tag?: string, description?: string, banner_text?: string}[]>([]);
   const [courseTags, setCourseTags] = useState<string[]>([]);
   const [courseCategory, setCourseCategory] = useState<'QUALIFIER' | 'LIVE' | 'RECORDED' | 'NONE'>('NONE');
-  const [courseTerm, setCourseTerm] = useState<'Re-attempt' | 'Foundation' | 'DIPLOMA' | 'NONE'>('NONE');
+  const [courseTerm, setCourseTerm] = useState<'Re-attempt' | 'Foundation' | 'DIPLOMA' | 'Qualifier' | 'NONE'>('NONE');
 
   // Discount Coupons state
   const [showAddDiscount, setShowAddDiscount] = useState(false);
@@ -1181,6 +1181,7 @@ export default function Manager() {
                         <option value="Re-attempt">Re-attempt</option>
                         <option value="Foundation">Foundation</option>
                         <option value="DIPLOMA">DIPLOMA</option>
+                        <option value="Qualifier">Qualifier</option>
                       </select>
                     </div>
                   </div>

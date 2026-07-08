@@ -532,7 +532,7 @@ export default function EmployeesManager() {
       {/* Add / Edit Form Modal */}
       {editingEmployee && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl border-2 border-[#0b1120] max-w-lg w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-150">
+          <div className="bg-white rounded-3xl border-2 border-[#0b1120] max-w-4xl w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-150">
             {/* Modal Header */}
             <div className="border-b-2 border-gray-100 px-6 py-5 flex items-center justify-between bg-gray-50/50">
               <h3 className="text-lg font-black text-[#0b1120]">
@@ -555,154 +555,155 @@ export default function EmployeesManager() {
                 </div>
               )}
 
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                    EMPLOYEE ID
-                  </label>
-                  <input 
-                    disabled 
-                    type="text" 
-                    value={editingEmployee.id ? editingEmployee.employee_id : getNextEmployeeId()}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 bg-gray-50 outline-none font-mono font-bold text-sm text-gray-400" 
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                    FULL NAME *
-                  </label>
-                  <input 
-                    required 
-                    type="text" 
-                    value={editingEmployee.full_name}
-                    onChange={(e) => setEditingEmployee({ ...editingEmployee, full_name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 placeholder-gray-400" 
-                    placeholder="e.g. Raj Singh"
-                  />
-                </div>
-              </div>
-
-              {/* Email and Phone */}
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                    EMAIL ADDRESS
-                  </label>
-                  <input 
-                    type="email" 
-                    value={editingEmployee.email || ''}
-                    onChange={(e) => setEditingEmployee({ ...editingEmployee, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 placeholder-gray-400" 
-                    placeholder="e.g. raj@genziitian.in"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                    PHONE NUMBER
-                  </label>
-                  <input 
-                    type="text" 
-                    value={editingEmployee.phone || ''}
-                    onChange={(e) => setEditingEmployee({ ...editingEmployee, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 placeholder-gray-400" 
-                    placeholder="e.g. +91 98765 43210"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                    DEPARTMENT *
-                  </label>
-                  <input 
-                    required 
-                    type="text" 
-                    value={editingEmployee.department}
-                    onChange={(e) => setEditingEmployee({ ...editingEmployee, department: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 placeholder-gray-400" 
-                    placeholder="e.g. Programming"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                    ROLE *
-                  </label>
-                  <select 
-                    value={editingEmployee.role}
-                    onChange={(e) => setEditingEmployee({ ...editingEmployee, role: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800"
-                  >
-                    {AVAILABLE_ROLES.map(role => (
-                      <option key={role} value={role}>
-                        {role}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </div>
-
-              {/* Tenure Selection with calendar dates */}
-              <div className="bg-gray-50/50 border border-gray-200 rounded-2xl p-4.5 space-y-4">
-                <div className="text-xs font-black text-gray-500 uppercase tracking-wider">TENURE / DURATION</div>
-                <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+                {/* Left Column */}
+                <div className="space-y-5">
                   <div>
-                    <label className="block text-[11px] font-bold text-gray-500 mb-1.5">START DATE *</label>
+                    <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
+                      FULL NAME *
+                    </label>
                     <input 
-                      required
-                      type="date"
-                      value={startD}
-                      onChange={(e) => setStartD(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-xs transition-all text-gray-800 bg-white"
+                      required 
+                      type="text" 
+                      value={editingEmployee.full_name}
+                      onChange={(e) => setEditingEmployee({ ...editingEmployee, full_name: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 placeholder-gray-400" 
+                      placeholder="e.g. Raj Singh"
                     />
                   </div>
+
                   <div>
-                    <label className="block text-[11px] font-bold text-gray-500 mb-1.5">END DATE</label>
+                    <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
+                      EMAIL ADDRESS
+                    </label>
                     <input 
-                      disabled={isPresent}
-                      required={!isPresent}
-                      type="date"
-                      value={endD}
-                      onChange={(e) => setEndD(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-xs transition-all text-gray-800 bg-white disabled:bg-gray-100 disabled:text-gray-400"
+                      type="email" 
+                      value={editingEmployee.email || ''}
+                      onChange={(e) => setEditingEmployee({ ...editingEmployee, email: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 placeholder-gray-400" 
+                      placeholder="e.g. raj@genziitian.in"
                     />
                   </div>
-                </div>
-                <div className="flex items-center gap-2 pt-1">
-                  <input 
-                    type="checkbox"
-                    id="is-present-checkbox"
-                    checked={isPresent}
-                    onChange={(e) => {
-                      setIsPresent(e.target.checked);
-                      if (e.target.checked) setEndD('');
-                    }}
-                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                  />
-                  <label htmlFor="is-present-checkbox" className="text-xs text-gray-700 font-bold select-none cursor-pointer">
-                    Currently working here (Present)
-                  </label>
-                </div>
-              </div>
 
-              <div>
-                <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                  CURRENT STATUS *
-                </label>
-                <select 
-                  value={editingEmployee.status.toUpperCase()}
-                  onChange={(e) => setEditingEmployee({ ...editingEmployee, status: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800"
-                >
-                  {AVAILABLE_STATUSES.map(status => (
-                    <option key={status} value={status}>
-                      {status}
-                    </option>
-                  ))}
-                </select>
+                  <div>
+                    <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
+                      DEPARTMENT *
+                    </label>
+                    <input 
+                      required 
+                      type="text" 
+                      value={editingEmployee.department}
+                      onChange={(e) => setEditingEmployee({ ...editingEmployee, department: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 placeholder-gray-400" 
+                      placeholder="e.g. Programming"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
+                      CURRENT STATUS *
+                    </label>
+                    <select 
+                      value={editingEmployee.status.toUpperCase()}
+                      onChange={(e) => setEditingEmployee({ ...editingEmployee, status: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 bg-white"
+                    >
+                      {AVAILABLE_STATUSES.map(status => (
+                        <option key={status} value={status}>
+                          {status}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                {/* Right Column */}
+                <div className="space-y-5">
+                  <div>
+                    <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
+                      EMPLOYEE ID
+                    </label>
+                    <input 
+                      disabled 
+                      type="text" 
+                      value={editingEmployee.id ? editingEmployee.employee_id : getNextEmployeeId()}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 bg-gray-50 outline-none font-mono font-bold text-sm text-gray-400" 
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
+                      PHONE NUMBER
+                    </label>
+                    <input 
+                      type="text" 
+                      value={editingEmployee.phone || ''}
+                      onChange={(e) => setEditingEmployee({ ...editingEmployee, phone: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 placeholder-gray-400" 
+                      placeholder="e.g. +91 98765 43210"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
+                      ROLE *
+                    </label>
+                    <select 
+                      value={editingEmployee.role}
+                      onChange={(e) => setEditingEmployee({ ...editingEmployee, role: e.target.value })}
+                      className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 bg-white"
+                    >
+                      {AVAILABLE_ROLES.map(role => (
+                        <option key={role} value={role}>
+                          {role}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Tenure Selection with calendar dates */}
+                  <div className="bg-gray-50/50 border border-gray-200 rounded-2xl p-4 space-y-4">
+                    <div className="text-xs font-black text-gray-500 uppercase tracking-wider">TENURE / DURATION</div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-[11px] font-bold text-gray-500 mb-1.5">START DATE *</label>
+                        <input 
+                          required
+                          type="date"
+                          value={startD}
+                          onChange={(e) => setStartD(e.target.value)}
+                          className="w-full px-3 py-2 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-xs transition-all text-gray-800 bg-white"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-[11px] font-bold text-gray-500 mb-1.5">END DATE</label>
+                        <input 
+                          disabled={isPresent}
+                          required={!isPresent}
+                          type="date"
+                          value={endD}
+                          onChange={(e) => setEndD(e.target.value)}
+                          className="w-full px-3 py-2 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-xs transition-all text-gray-800 bg-white disabled:bg-gray-100 disabled:text-gray-400"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 pt-1">
+                      <input 
+                        type="checkbox"
+                        id="is-present-checkbox"
+                        checked={isPresent}
+                        onChange={(e) => {
+                          setIsPresent(e.target.checked);
+                          if (e.target.checked) setEndD('');
+                        }}
+                        className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                      />
+                      <label htmlFor="is-present-checkbox" className="text-xs text-gray-700 font-bold select-none cursor-pointer">
+                        Currently working here (Present)
+                      </label>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Action Buttons */}
