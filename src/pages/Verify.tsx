@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
-import { Link } from 'react-router-dom';
-import { ChevronDown, ChevronUp, Printer, CheckCircle2, AlertCircle, ArrowLeft, Search, ShieldCheck } from 'lucide-react';
+import { ChevronDown, ChevronUp, Printer, CheckCircle2, AlertCircle, Search, ShieldCheck } from 'lucide-react';
 
 interface Employee {
   employee_id: string;
@@ -174,10 +173,7 @@ export default function Verify() {
     <div className="min-h-screen bg-gray-50/50 py-12 px-6">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Navigation / Header (Hidden when printing) */}
-        <div className="flex items-center justify-between border-b-2 border-gray-100 pb-6 no-print">
-          <Link to="/careers" className="flex items-center gap-2 text-gray-600 font-bold hover:text-[#0b1120] transition-colors">
-            <ArrowLeft className="w-5 h-5" /> Back to Careers
-          </Link>
+        <div className="flex items-center justify-end border-b-2 border-gray-100 pb-6 no-print">
           <div className="flex items-center gap-2 text-xs font-black bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg border">
             <ShieldCheck className="w-4 h-4 text-emerald-500" /> SECURE REGISTRY
           </div>
@@ -189,22 +185,22 @@ export default function Verify() {
           {/* Left Column: Info Text */}
           <div className="lg:col-span-6 space-y-6 text-left">
             <h1 className="text-4xl md:text-5xl font-black text-[#0b1120] tracking-tight leading-tight">
-              Personnel Verification
+              Employment Verification Portal
             </h1>
             <p className="text-gray-600 font-medium text-lg leading-relaxed">
-              Official portal for validating internship and employment records of Gen-Z IITians. Data is retrieved in real-time from the central HR registry.
+              The trusted source for verifying employment and internship records issued by Gen-Z IITian. Results are generated directly from official company records.
             </p>
           </div>
 
           {/* Right Column: Verification Form */}
           <div className="lg:col-span-6 bg-white border-2 border-gray-200 rounded-3xl p-8 shadow-sm">
             <h2 className="text-xs font-black text-gray-400 tracking-widest uppercase mb-6 text-left">
-              SEARCH REGISTRY
+              SECURE RECORD LOOKUP
             </h2>
             <form onSubmit={handleSearch} className="space-y-6 text-left">
               <div>
                 <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                  EMPLOYEE / INTERN ID
+                  GENZ CANDIDATE ID
                 </label>
                 <input 
                   required 
@@ -218,7 +214,7 @@ export default function Verify() {
 
               <div>
                 <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                  FULL LEGAL NAME
+                  ASSOCIATE FULL NAME
                 </label>
                 <input 
                   required 
@@ -235,7 +231,7 @@ export default function Verify() {
                 disabled={searching}
                 className="w-full py-4 bg-[#0b1120] text-white font-black rounded-xl hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 shadow-[4px_4px_0px_#0b1120] hover:shadow-[4px_4px_0px_#10b981]"
               >
-                {searching ? 'VALIDATING...' : 'VALIDATE RECORD'}
+                {searching ? 'VERIFYING...' : 'VERIFY AUTHENTICITY'}
               </button>
             </form>
           </div>
