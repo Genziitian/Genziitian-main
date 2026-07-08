@@ -48,8 +48,8 @@ export default function Courses() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#0b1120] text-white flex flex-col justify-center items-center py-20 px-6">
-        <Loader2 className="w-12 h-12 animate-spin text-white mb-4" />
+      <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center py-20 px-6">
+        <Loader2 className="w-12 h-12 animate-spin text-[#0b1120] mb-4" />
         <span className="font-black text-gray-400">Loading courses...</span>
       </div>
     );
@@ -61,40 +61,40 @@ export default function Courses() {
       id: 'Qualifier',
       name: 'Qualifier',
       icon: BookOpen,
-      color: 'border-[#1f2937] hover:border-yellow-500 shadow-[8px_8px_0px_#1f2937] hover:shadow-[8px_8px_0px_#eab308]',
-      textColor: 'text-yellow-400 group-hover:text-yellow-400',
-      bgColor: 'bg-yellow-950/20 border-yellow-500/50',
-      iconColor: 'text-yellow-400',
+      color: 'border-[#0b1120] hover:shadow-[8px_8px_0px_#eab308]',
+      textColor: 'text-yellow-600',
+      bgColor: 'bg-yellow-50 border-yellow-300',
+      iconColor: 'text-yellow-600',
       desc: 'Crack the qualifier exam. Get comprehensive study plans, live tutorials, and mock papers to guarantee your admission.'
     },
     {
       id: 'Re-attempt',
       name: 'Re-attempt',
       icon: RefreshCcw,
-      color: 'border-[#1f2937] hover:border-red-500 shadow-[8px_8px_0px_#1f2937] hover:shadow-[8px_8px_0px_#ef4444]',
-      textColor: 'text-red-400 group-hover:text-red-400',
-      bgColor: 'bg-red-950/20 border-red-500/50',
-      iconColor: 'text-red-400',
+      color: 'border-[#0b1120] hover:shadow-[8px_8px_0px_#ef4444]',
+      textColor: 'text-red-600',
+      bgColor: 'bg-red-50 border-red-300',
+      iconColor: 'text-red-600',
       desc: 'Ready to try again? Get targeted preparation strategies, intensive practice, and guidance to ace your next attempt.'
     },
     {
       id: 'Foundation',
       name: 'Foundation',
       icon: BookOpen,
-      color: 'border-[#1f2937] hover:border-blue-500 shadow-[8px_8px_0px_#1f2937] hover:shadow-[8px_8px_0px_#3b82f6]',
-      textColor: 'text-blue-400 group-hover:text-blue-400',
-      bgColor: 'bg-blue-950/20 border-blue-500/50',
-      iconColor: 'text-blue-400',
+      color: 'border-[#0b1120] hover:shadow-[8px_8px_0px_#3b82f6]',
+      textColor: 'text-blue-600',
+      bgColor: 'bg-blue-50 border-blue-300',
+      iconColor: 'text-blue-600',
       desc: 'Build a rock-solid academic base. Master core fundamentals with senior IITM BS students and conceptual live sessions.'
     },
     {
       id: 'DIPLOMA',
       name: 'DIPLOMA',
       icon: GraduationCap,
-      color: 'border-[#1f2937] hover:border-emerald-500 shadow-[8px_8px_0px_#1f2937] hover:shadow-[8px_8px_0px_#10b981]',
-      textColor: 'text-emerald-400 group-hover:text-emerald-400',
-      bgColor: 'bg-emerald-950/20 border-emerald-500/50',
-      iconColor: 'text-emerald-400',
+      color: 'border-[#0b1120] hover:shadow-[8px_8px_0px_#10b981]',
+      textColor: 'text-emerald-600',
+      bgColor: 'bg-emerald-50 border-emerald-300',
+      iconColor: 'text-emerald-600',
       desc: 'Deep-dive into advanced coursework. Excel in project labs, coding assignments, and specialized diploma curriculum.'
     }
   ];
@@ -108,12 +108,7 @@ export default function Courses() {
 
   if (!selectedTerm) {
     return (
-      <div className="min-h-screen bg-[#0b1120] text-white flex flex-col justify-center items-center py-20 px-6 relative overflow-hidden">
-        {/* Abstract blur circles for premium background */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full blur-[120px]"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500 rounded-full blur-[120px]"></div>
-        </div>
+      <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center py-20 px-6">
 
         <div className="max-w-6xl w-full text-center relative z-10">
           <motion.div
@@ -122,10 +117,10 @@ export default function Courses() {
             transition={{ duration: 0.6 }}
             className="mb-12"
           >
-            <h1 className="text-4xl md:text-5xl font-black mb-4 leading-tight tracking-tight">
-              Please Select Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Term</span>
+            <h1 className="text-4xl md:text-5xl font-black text-[#0b1120] mb-4 leading-tight tracking-tight">
+              Please Select Your <span className="text-blue-600">Term</span>
             </h1>
-            <p className="text-gray-400 font-bold max-w-xl mx-auto text-sm md:text-base">
+            <p className="text-gray-500 font-bold max-w-xl mx-auto text-sm md:text-base">
               Choose your academic tier to explore the courses, schedules, and guidance curated specifically for you.
             </p>
           </motion.div>
@@ -141,16 +136,16 @@ export default function Courses() {
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   whileHover={{ scale: 1.03, y: -5 }}
                   onClick={() => handleSelectTerm(term.id)}
-                  className={`group bg-[#111827] border-[4px] rounded-[32px] p-8 cursor-pointer transition-all flex flex-col justify-between ${term.color}`}
+                  className={`group bg-white border-[4px] rounded-[2rem] p-8 cursor-pointer transition-all flex flex-col justify-between shadow-[6px_6px_0px_#0b1120] hover:translate-y-1 ${term.color}`}
                 >
                   <div>
                     <div className={`w-14 h-14 border-[3px] rounded-2xl flex items-center justify-center mb-6 ${term.bgColor}`}>
                       <IconComponent className={`w-6 h-6 ${term.iconColor}`} />
                     </div>
-                    <h3 className={`text-2xl font-black mb-3 text-white tracking-tight transition-colors ${term.textColor}`}>
+                    <h3 className={`text-2xl font-black mb-3 text-[#0b1120] tracking-tight`}>
                       {term.name}
                     </h3>
-                    <p className="text-gray-400 font-bold text-sm leading-relaxed mb-6">
+                    <p className="text-gray-500 font-bold text-sm leading-relaxed mb-6">
                       {term.desc}
                     </p>
                   </div>
