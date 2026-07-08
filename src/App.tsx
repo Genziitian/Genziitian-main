@@ -63,6 +63,7 @@ function ScrollToTop() {
 function AppContent() {
   const location = useLocation();
   const isCheckoutPage = location.pathname.startsWith('/checkout/');
+  const isCoursesPage = location.pathname === '/courses';
 
   return (
     <div className="min-h-screen bg-white text-[#0b1120] font-sans selection:bg-blue-100 flex flex-col">
@@ -105,7 +106,7 @@ function AppContent() {
         </Routes>
       </main>
       {/* Footer is hidden on mobile — the bottom-nav Menu tab covers all links there */}
-      {!isCheckoutPage && (
+      {!isCheckoutPage && !isCoursesPage && (
         <div className="hidden md:block">
           <Footer />
         </div>
