@@ -232,25 +232,7 @@ export default function Verify() {
   return (
     <div className="min-h-screen bg-gray-50/50 py-12 px-6">
       <div className="max-w-6xl mx-auto space-y-12">
-        {/* Navigation / Header (Hidden when printing) */}
-        <div className="flex items-center justify-between border-b-2 border-gray-100 pb-6 no-print">
-          {user ? (
-            <div className="flex items-center gap-2 text-xs font-bold text-gray-500">
-              <User className="w-4 h-4 text-blue-500" />
-              Logged in as <span className="font-black text-[#0b1120]">{user.email}</span>
-            </div>
-          ) : (
-            <button
-              onClick={openLoginModal}
-              className="flex items-center gap-2 text-xs font-black text-gray-500 hover:text-[#0b1120] transition-colors"
-            >
-              <LogIn className="w-4 h-4" /> Sign In to Verify
-            </button>
-          )}
-          <div className="flex items-center gap-2 text-xs font-black bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg border">
-            <ShieldCheck className="w-4 h-4 text-emerald-500" /> SECURE REGISTRY
-          </div>
-        </div>
+
 
         {/* Two Column Layout: Info and Form (Hidden when printing) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start no-print">
