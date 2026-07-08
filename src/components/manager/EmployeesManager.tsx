@@ -612,8 +612,8 @@ export default function EmployeesManager() {
 
       {/* Add / Edit Form Modal */}
       {editingEmployee && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-start justify-center px-4 pt-12 pb-12 overflow-y-auto">
-          <div className="bg-white rounded-3xl border-2 border-[#0b1120] max-w-4xl w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-150">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[150] flex items-start justify-center px-4 pt-12 pb-12 overflow-y-auto">
+          <div className="bg-white rounded-xl border-2 border-[#0b1120] max-w-4xl w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-150">
             {/* Modal Header */}
             <div className="border-b-2 border-gray-100 px-6 py-5 flex items-center justify-between bg-gray-50/50">
               <h3 className="text-lg font-black text-[#0b1120]">
@@ -812,8 +812,8 @@ export default function EmployeesManager() {
 
       {/* Delete Confirmation Modal */}
       {deleteTarget && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl border-2 border-[#0b1120] max-w-sm w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-150">
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[150] flex items-center justify-center p-4">
+          <div className="bg-white rounded-xl border-2 border-[#0b1120] max-w-sm w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-150">
             <div className="p-6 space-y-4">
               <h3 className="text-lg font-black text-[#0b1120]">Delete Record?</h3>
               <p className="text-sm text-gray-500 font-bold leading-relaxed">
