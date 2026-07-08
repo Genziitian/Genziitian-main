@@ -1176,6 +1176,16 @@ app.get('/api/manager-fetch', authMiddleware, async (req, res) => {
     const { tab, filter } = req.query;
 
     try {
+        if (tab === 'employees') {
+            let query = supabase.from('employees').select('*').order('created_at', { ascending: false });
+            const { search } = req.query;
+            if (search) {
+                query = query.or(`full_name.ilike.%${search}%,employee_id.ilike.%${search}%`);
+            }
+            const { data, error } = await query;
+            if (error) throw error;
+            return res.json(data);
+        }
         if (tab === 'courses') {
             const { data, error } = await supabase.from('courses').select('*').order('name');
             if (error) throw error;

@@ -286,4 +286,22 @@ CREATE POLICY "ref_ms_select" ON public.referral_milestones FOR SELECT USING (tr
 UPDATE public.profiles SET role = 'MANAGER' 
 WHERE email IN ('laxmikant.p@genziitian.com', 'genziitian@gmail.com', 'lkiitmng2428@gmail.com');
 
+-- === SETTINGS TABLE ===
+-- Create settings table if not exists
+CREATE TABLE IF NOT EXISTS public.settings (
+  key TEXT PRIMARY KEY,
+  value TEXT NOT NULL
+);
+
+-- Enable Row Level Security (RLS)
+ALTER TABLE public.settings ENABLE ROW LEVEL SECURITY;
+
+-- RLS Policies for settings table
+DROP POLICY IF EXISTS "settings_select" ON public.settings;
+CREATE POLICY "settings_select" ON public.settings FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "settings_write_manager" ON public.settings;
+CREATE POLICY "settings_write_manager" ON public.settings FOR ALL USING (public.is_manager()) WITH CHECK (public.is_manager());
+
 -- Done!
+

@@ -40,6 +40,16 @@ export const apiService = {
     } else {
       // Direct Supabase Mode (Hostinger/Production)
       try {
+        if (tab === 'employees') {
+          let query = supabase.from('employees').select('*').order('created_at', { ascending: false });
+          if (search) {
+            query = query.or(`full_name.ilike.%${search}%,employee_id.ilike.%${search}%`);
+          }
+          const { data, error } = await query;
+          if (error) throw error;
+          return data || [];
+        }
+
         if (tab === 'courses') {
           let query = supabase.from('courses').select('*').order('name');
           if (search) {

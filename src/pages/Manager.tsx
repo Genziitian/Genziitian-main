@@ -1,15 +1,17 @@
 import { useAuth } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
-import { LayoutDashboard, ShoppingBag, ScrollText, BookOpen, Plus, Search, Trash2, Edit, Save, X, Loader2, AlertCircle, User, Download, TrendingUp, TrendingDown, Users, ShieldCheck, CreditCard, RefreshCw, Gift, ArrowRight, Copy, Coins, Eye } from 'lucide-react';
+import { LayoutDashboard, ShoppingBag, ScrollText, BookOpen, Plus, Search, Trash2, Edit, Save, X, Loader2, AlertCircle, User, Download, TrendingUp, TrendingDown, Users, ShieldCheck, CreditCard, RefreshCw, Gift, ArrowRight, Copy, Coins, Eye, Settings } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useNavigate, useLocation, NavLink } from 'react-router-dom';
 import { apiService } from '../lib/api';
 import DeleteConfirmationModal from '../components/DeleteConfirmationModal';
 import BlogsManager from '../components/manager/BlogsManager';
+import EmployeesManager from '../components/manager/EmployeesManager';
+import { getYouTubeId } from '../utils/youtube';
 
 
-type Tab = 'users' | 'courses' | 'discounts' | 'payments' | 'catalog' | 'referrals' | 'blogs';
+type Tab = 'users' | 'courses' | 'discounts' | 'payments' | 'catalog' | 'referrals' | 'blogs' | 'settings' | 'employees';
 
 function sanitizeCourseId(value: string) {
   return value
@@ -29,7 +31,7 @@ export default function Manager() {
   const activeTab = (location.pathname.split('/').pop() || 'users') as Tab;
   
   // Validate tab - if path is just /manager, it's users. If invalid, could redirect.
-  const validTabs: Tab[] = ['users', 'courses', 'discounts', 'payments', 'referrals', 'blogs'];
+  const validTabs: Tab[] = ['users', 'courses', 'discounts', 'payments', 'referrals', 'blogs', 'settings', 'employees'];
   const effectiveTab = validTabs.includes(activeTab) ? activeTab : 'users';
   const [data, setData] = useState<any>([]);
   const [loading, setLoading] = useState(true);
@@ -46,6 +48,7 @@ export default function Manager() {
   const [pricingOptions, setPricingOptions] = useState<{name: string, price: number, type: 'live' | 'recorded', tag?: string, description?: string, banner_text?: string}[]>([]);
   const [courseTags, setCourseTags] = useState<string[]>([]);
   const [courseCategory, setCourseCategory] = useState<'QUALIFIER' | 'LIVE' | 'RECORDED' | 'NONE'>('NONE');
+  const [courseTerm, setCourseTerm] = useState<'Re-attempt' | 'Foundation' | 'DIPLOMA' | 'NONE'>('NONE');
 
   // Discount Coupons state
   const [showAddDiscount, setShowAddDiscount] = useState(false);
@@ -101,6 +104,7 @@ export default function Manager() {
       setPricingOptions(editingCourse.pricing_options || []);
       setCourseTags(editingCourse.tags || []);
       setCourseCategory(editingCourse.courseCategory || 'NONE');
+      setCourseTerm(editingCourse.term || 'NONE');
     } else {
       setIsBundle(false);
       setBundleCourses([{ courseId: '', courseName: '', price: 0 }]);
@@ -110,6 +114,7 @@ export default function Manager() {
       setPricingOptions([]);
       setCourseTags([]);
       setCourseCategory('NONE');
+      setCourseTerm('NONE');
     }
   }, [editingCourse, showAddCourse]);
 
@@ -197,9 +202,7 @@ export default function Manager() {
   };
 
   const fetchData = async () => {
-    // Blogs are managed entirely inside BlogsManager (direct Supabase CRUD),
-    // so the shared server-backed fetch is skipped for this tab.
-    if (effectiveTab === 'blogs') {
+    if (effectiveTab === 'blogs' || effectiveTab === 'settings') {
       setLoading(false);
       return;
     }
@@ -400,6 +403,7 @@ export default function Manager() {
         subject: course.category || null,
         tags: course.tags || [],
         courseCategory: course.courseCategory || 'NONE',
+        term: course.term === 'NONE' ? null : course.term || null,
         startDate: course.startDate || null,
         endDate: course.endDate || null,
       };
@@ -585,11 +589,13 @@ export default function Manager() {
         <nav className="space-y-4 flex-grow">
           {[
             { id: 'users', icon: User, path: '/manager/users' },
+            { id: 'employees', icon: ShieldCheck, path: '/manager/employees' },
             { id: 'courses', icon: BookOpen, path: '/manager/courses' },
             { id: 'discounts', icon: ShoppingBag, path: '/manager/discounts' },
             { id: 'payments', icon: CreditCard, path: '/manager/payments' },
             { id: 'referrals', icon: Gift, path: '/manager/referrals' },
-            { id: 'blogs', icon: ScrollText, path: '/manager/blogs' }
+            { id: 'blogs', icon: ScrollText, path: '/manager/blogs' },
+            { id: 'settings', icon: Settings, path: '/manager/settings' }
           ].map((tab) => (
             <NavLink
               key={tab.id}
@@ -694,6 +700,10 @@ export default function Manager() {
             <div className="space-y-8">
 
               {effectiveTab === 'blogs' && <BlogsManager />}
+
+              {effectiveTab === 'employees' && <EmployeesManager />}
+
+              {effectiveTab === 'settings' && <SettingsManager />}
 
               {effectiveTab === 'users' && (
                 <div className="space-y-8">
@@ -1165,6 +1175,18 @@ export default function Manager() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div>
+                      <label className="block text-sm font-black text-[#0b1120] uppercase mb-3">Select Term</label>
+                      <select value={courseTerm} onChange={(e) => setCourseTerm(e.target.value as any)} className="w-full px-6 py-4 border-[3px] border-[#0b1120] rounded-2xl font-black focus:ring-[6px] ring-blue-100 outline-none bg-white">
+                        <option value="NONE">None</option>
+                        <option value="Re-attempt">Re-attempt</option>
+                        <option value="Foundation">Foundation</option>
+                        <option value="DIPLOMA">DIPLOMA</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
                       <label className="block text-sm font-black text-[#0b1120] uppercase mb-3">Start Date</label>
                       <input type="datetime-local" defaultValue={editingCourse?.startDate ? new Date(editingCourse.startDate).toISOString().slice(0, 16) : ''} id="c-start" className="w-full px-6 py-4 border-[3px] border-[#0b1120] rounded-2xl font-bold focus:ring-[6px] ring-blue-100 outline-none bg-white" />
                     </div>
@@ -1603,6 +1625,7 @@ export default function Manager() {
                       pricing_options: isBundle && isFixedBundle ? pricingOptions : [],
                       tags: courseTags,
                       courseCategory,
+                      term: courseTerm,
                       startDate: startDate ? new Date(startDate).toISOString() : null,
                       endDate: endDate ? new Date(endDate).toISOString() : null,
                     });
@@ -1948,4 +1971,152 @@ export default function Manager() {
     </div>
   );
 }
+
+function SettingsManager() {
+  const [videoUrl, setVideoUrl] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  useEffect(() => {
+    async function loadSettings() {
+      try {
+        setLoading(true);
+        // Query Settings from Supabase
+        const { data, error } = await supabase
+          .from('settings')
+          .select('*')
+          .eq('key', 'homepage_video_url')
+          .maybeSingle();
+        
+        if (error) throw error;
+        if (data) {
+          setVideoUrl(data.value);
+        }
+      } catch (err: any) {
+        console.error('Failed to load settings:', err);
+        setError('Failed to load homepage video settings');
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadSettings();
+  }, []);
+
+  const handleSave = async () => {
+    try {
+      setSaving(true);
+      setError('');
+      setSuccess('');
+
+      // Upsert the setting key to Supabase
+      const { error } = await supabase
+        .from('settings')
+        .upsert({ key: 'homepage_video_url', value: videoUrl.trim() });
+
+      if (error) throw error;
+      setSuccess('Settings updated successfully!');
+    } catch (err: any) {
+      console.error('Failed to save settings:', err);
+      setError(err.message || 'Failed to save settings');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const videoId = getYouTubeId(videoUrl);
+
+  return (
+    <div className="space-y-8">
+      <div className="bg-white border-[4px] border-[#0b1120] rounded-[2.5rem] p-8 md:p-12 shadow-[12px_12px_0px_#0b1120] space-y-8">
+        <div className="border-b-4 border-[#0b1120] pb-6">
+          <h2 className="text-3xl font-black text-[#0b1120] mb-2">Homepage Video Modal</h2>
+          <p className="text-gray-500 font-bold text-sm">
+            Configure the YouTube video popup shown to homepage visitors.
+          </p>
+        </div>
+
+        {loading ? (
+          <div className="flex items-center justify-center p-12 text-gray-300 animate-pulse font-black text-lg uppercase">
+            Loading Settings...
+          </div>
+        ) : (
+          <div className="space-y-6">
+            {error && (
+              <div className="p-4 bg-red-50 border-[3px] border-red-500 text-red-700 rounded-2xl font-bold flex items-center gap-3">
+                <AlertCircle className="w-6 h-6 shrink-0" />
+                <span>{error}</span>
+              </div>
+            )}
+            {success && (
+              <div className="p-4 bg-green-50 border-[3px] border-green-500 text-green-700 rounded-2xl font-bold flex items-center gap-3">
+                <ShieldCheck className="w-6 h-6 shrink-0" />
+                <span>{success}</span>
+              </div>
+            )}
+
+            <div className="space-y-2">
+              <label className="text-xs font-black uppercase tracking-widest text-gray-400 block">
+                YouTube Video URL
+              </label>
+              <input
+                type="text"
+                placeholder="e.g. https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                value={videoUrl}
+                onChange={(e) => setVideoUrl(e.target.value)}
+                className="w-full px-6 py-4 bg-gray-50 border-[3px] border-[#0b1120] rounded-2xl font-black text-[#0b1120] outline-none focus:bg-white transition-all placeholder:text-gray-300"
+              />
+              <p className="text-xs text-gray-400 font-bold">
+                Supports normal links, short links, or embed links. Clear the URL to disable the popup entirely.
+              </p>
+            </div>
+
+            {/* Video Preview */}
+            {videoId ? (
+              <div className="space-y-2">
+                <label className="text-xs font-black uppercase tracking-widest text-gray-400 block">
+                  Player Preview
+                </label>
+                <div className="max-w-md aspect-video border-[3px] border-[#0b1120] rounded-2xl overflow-hidden bg-black shadow-[6px_6px_0px_#0b1120]">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${videoId}`}
+                    title="YouTube video player preview"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+              </div>
+            ) : videoUrl.trim() ? (
+              <div className="p-4 bg-yellow-50 border-[3px] border-yellow-500 text-yellow-700 rounded-2xl font-bold text-sm">
+                ⚠️ Invalid YouTube URL. Preview not available. Please make sure the link is a valid YouTube video.
+              </div>
+            ) : null}
+
+            <div className="pt-4 border-t-2 border-gray-100 flex justify-end">
+              <button
+                onClick={handleSave}
+                disabled={saving}
+                className="flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-2xl font-black border-[3px] border-[#0b1120] shadow-[6px_6px_0px_#0b1120] hover:translate-y-0.5 hover:shadow-[4px_4px_0px_#0b1120] active:translate-y-1 active:shadow-none transition-all cursor-pointer disabled:opacity-50"
+              >
+                {saving ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" /> Saving...
+                  </>
+                ) : (
+                  <>
+                    <Save className="w-5 h-5" /> Save Settings
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 

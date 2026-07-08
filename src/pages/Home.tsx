@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence, useInView, animate } from 'motion/react';
 import { ChevronRight, ChevronLeft, Award, CheckCircle2, X as XIcon, Star } from 'lucide-react';
-import { useInView, animate } from 'motion/react';
 import { Link } from 'react-router-dom';
 import CourseCard, { CourseCardData } from '../components/CourseCard';
 import HeroAnimation from '../components/HeroAnimation';
@@ -9,6 +8,7 @@ import HiringSection from '../components/HiringSection';
 import MobileHome from '../components/mobile/MobileHome';
 import { supabase } from '../lib/supabase';
 import { BlogPost, fallbackBlogs } from '../data/blogsData';
+import { getYouTubeId } from '../utils/youtube';
 
 function AnimatedNumber({ value, decimals = 0, suffix = "" }: { value: number, decimals?: number, suffix?: string }) {
   const [displayValue, setDisplayValue] = useState("0");
@@ -49,9 +49,49 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>(fallbackBlogs);
   const reviewsRef = useRef<HTMLDivElement>(null);
+  
+  const [showVideoModal, setShowVideoModal] = useState(false);
+  const [videoModalUrl, setVideoModalUrl] = useState('');
 
   const scrollReviews = (dir: number) => {
     reviewsRef.current?.scrollBy({ left: dir * 360, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    async function checkVideoModal() {
+      try {
+        const { data, error } = await supabase
+          .from('settings')
+          .select('value')
+          .eq('key', 'homepage_video_url')
+          .maybeSingle();
+
+        if (error) throw error;
+        if (data && data.value && data.value.trim() !== '') {
+          const urlVal = data.value.trim();
+          setVideoModalUrl(urlVal);
+
+          const lastDismissed = localStorage.getItem('last_dismissed_video_modal');
+          const now = Date.now();
+          const oneDay = 24 * 60 * 60 * 1000; // 24 hours
+
+          if (!lastDismissed || now - parseInt(lastDismissed, 10) > oneDay) {
+            const timer = setTimeout(() => {
+              setShowVideoModal(true);
+            }, 1500);
+            return () => clearTimeout(timer);
+          }
+        }
+      } catch (err) {
+        console.error('Failed to load video modal settings:', err);
+      }
+    }
+    checkVideoModal();
+  }, []);
+
+  const dismissVideoModal = () => {
+    localStorage.setItem('last_dismissed_video_modal', Date.now().toString());
+    setShowVideoModal(false);
   };
 
   useEffect(() => {
@@ -591,6 +631,74 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Video Modal Popup */}
+      <AnimatePresence>
+        {showVideoModal && (
+          <div className="fixed inset-0 z-[250] flex items-center justify-center p-4 md:p-6 text-[#0b1120]">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={dismissVideoModal}
+              className="absolute inset-0 bg-[#0b1120]/75 backdrop-blur-sm"
+            />
+
+            {/* Modal Card */}
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 350 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white border-[4px] border-[#0b1120] rounded-[2rem] w-full max-w-2xl p-6 md:p-8 relative shadow-[12px_12px_0px_#0b1120] overflow-visible z-10"
+            >
+              {/* Close Button overlapping the top right */}
+              <button
+                onClick={dismissVideoModal}
+                className="absolute -top-4 -right-4 p-2 bg-[#0b1120] text-white hover:bg-red-500 hover:text-white rounded-full transition-all border-4 border-white shadow-[2px_2px_0px_#0b1120] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] z-20 cursor-pointer"
+                title="Close"
+              >
+                <XIcon className="w-5 h-5 stroke-[3px]" />
+              </button>
+
+              {/* YouTube Video Player Embed */}
+              {getYouTubeId(videoModalUrl) ? (
+                <div className="w-full aspect-video rounded-2xl border-4 border-[#0b1120] shadow-[6px_6px_0px_#0b1120] overflow-hidden bg-black relative">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${getYouTubeId(videoModalUrl)}?autoplay=1`}
+                    title="YouTube Video Player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="absolute inset-0 w-full h-full"
+                  ></iframe>
+                </div>
+              ) : (
+                <div className="w-full aspect-video rounded-2xl border-4 border-[#0b1120] flex items-center justify-center bg-gray-100 font-black text-center p-4">
+                  Failed to load video player. Invalid YouTube link.
+                </div>
+              )}
+
+              {/* Action Button */}
+              {getYouTubeId(videoModalUrl) && (
+                <div className="flex justify-center mt-6">
+                  <a
+                    href={`https://www.youtube.com/watch?v=${getYouTubeId(videoModalUrl)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={dismissVideoModal}
+                    className="px-8 py-4 bg-blue-600 text-white rounded-xl font-black text-lg border-[3px] border-[#0b1120] shadow-[4px_4px_0px_#0b1120] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[6px_6px_0px_#0b1120] transition-all flex items-center gap-2 hover:bg-blue-700 active:translate-x-0 active:translate-y-0 active:shadow-none cursor-pointer"
+                  >
+                    Watch Now
+                  </a>
+                </div>
+              )}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
     </div>
   );

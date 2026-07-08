@@ -95,8 +95,13 @@ function CohortCard({ course, accent }: { course: CourseCardData; accent?: boole
   );
 }
 
+interface MobileCoursesProps {
+  selectedTerm: string | null;
+  onClearTerm: () => void;
+}
+
 /** Mobile-only Courses screen — featured cohort cards on a navy background. */
-export default function MobileCourses() {
+export default function MobileCourses({ selectedTerm, onClearTerm }: MobileCoursesProps) {
   const [courses, setCourses] = useState<CourseCardData[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -112,9 +117,30 @@ export default function MobileCourses() {
       });
   }, []);
 
+  const filteredCourses = courses.filter(
+    (course) => !selectedTerm || !course.term || course.term === selectedTerm
+  );
+
   return (
     <div className="md:hidden bg-[#0b1120] min-h-screen">
       <div className="px-4 py-5">
+        {selectedTerm && (
+          <div className="flex items-center justify-between bg-[#111827] border-[2px] border-white/10 rounded-xl px-4 py-3 mb-6 shadow-lg">
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] font-black text-gray-400 uppercase tracking-wider">Active Term:</span>
+              <span className="text-xs font-black text-white uppercase tracking-wide bg-blue-600/50 px-2.5 py-0.5 rounded-md border border-blue-500/70 shadow-[2px_2px_0px_rgba(37,99,235,0.4)]">
+                {selectedTerm}
+              </span>
+            </div>
+            <button 
+              onClick={onClearTerm}
+              className="flex items-center gap-1.5 text-[11px] font-black text-gray-400 hover:text-white uppercase transition-colors"
+            >
+              <RefreshCcw className="w-3 h-3" /> Change
+            </button>
+          </div>
+        )}
+
         <div className="flex items-end justify-between gap-3 mb-4">
           <h2 className="font-black text-[25px] leading-tight text-white">Featured Cohorts</h2>
           <Link to="/courses" className="shrink-0 inline-flex items-center gap-1 bg-white text-[#0b1120] border-[2.5px] border-[#0b1120] rounded-[10px] px-3 py-2 text-xs font-black shadow-[2px_2px_0px_#0b1120]">
@@ -127,13 +153,13 @@ export default function MobileCourses() {
             <Loader2 className="w-9 h-9 animate-spin text-white" />
             <span className="font-black text-white/60 text-sm">Loading courses...</span>
           </div>
-        ) : courses.length === 0 ? (
-          <div className="bg-white border-[2.5px] border-[#0b1120] rounded-2xl p-6 text-center shadow-[4px_4px_0px_#15B981]">
-            <h3 className="text-lg font-black text-[#0b1120] mb-1">No courses published yet</h3>
-            <p className="text-xs font-bold text-gray-500">New cohorts will appear here as soon as they go live.</p>
+        ) : filteredCourses.length === 0 ? (
+          <div className="bg-white border-[2.5px] border-[#0b1120] rounded-2xl p-6 text-center shadow-[4px_4px_0px_#FF2424]">
+            <h3 className="text-lg font-black text-[#0b1120] mb-1">No courses found</h3>
+            <p className="text-xs font-bold text-gray-500">No cohorts found matching your selected term.</p>
           </div>
         ) : (
-          courses.map((course, i) => <CohortCard key={course.id} course={course} accent={i === 0} />)
+          filteredCourses.map((course, i) => <CohortCard key={course.id} course={course} accent={i === 0} />)
         )}
       </div>
     </div>

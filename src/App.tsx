@@ -17,6 +17,7 @@ import ResourceDetail from './pages/ResourceDetail';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Careers from './pages/Careers';
+import Verify from './pages/Verify';
 import Newsletter from './pages/Newsletter';
 import SEODirectory from './pages/SEODirectory';
 import SEOPage from './pages/SEOPage';
@@ -86,6 +87,7 @@ function AppContent() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/verify" element={<Verify />} />
           <Route path="/newsletter" element={<Newsletter />} />
           <Route path="/knowledge" element={<SEODirectory />} />
           <Route path="/cart" element={<Cart />} />

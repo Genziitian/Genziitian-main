@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronUp, Briefcase, Star, Users, BrainCircuit, Rocket, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function HiringSection() {
@@ -117,164 +118,248 @@ export default function HiringSection() {
             <BrainCircuit className="text-blue-600" /> Current Openings
           </h3>
 
-          {/* Accordion Item: Subject Tutor */}
-          <div className="bg-white rounded-2xl border-2 border-[#0b1120] shadow-[8px_8px_0px_#0b1120] overflow-hidden transition-all">
-            <button 
-              onClick={() => {
-                const isOpening = openJob !== 'tutor';
-                setOpenJob(isOpening ? 'tutor' : null);
-                if (!isOpening) setShowForm(false);
-              }}
-              className="w-full px-8 py-6 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors text-left"
-            >
-              <div>
-                <h4 className="text-xl md:text-2xl font-black text-[#0b1120] mb-2">Subject Tutor (Faculty)</h4>
-                <div className="flex gap-3 text-sm font-bold">
-                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-lg">Part-time / Paid</span>
-                  <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-lg">Remote</span>
+          <div className="space-y-6">
+            {/* Accordion Item: Subject Tutor */}
+            <div className="bg-white rounded-2xl border-2 border-[#0b1120] shadow-[8px_8px_0px_#0b1120] overflow-hidden transition-all">
+              <button 
+                onClick={() => {
+                  const isOpening = openJob !== 'tutor';
+                  setOpenJob(isOpening ? 'tutor' : null);
+                  if (!isOpening) setShowForm(false);
+                }}
+                className="w-full px-8 py-6 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors text-left"
+              >
+                <div>
+                  <h4 className="text-xl md:text-2xl font-black text-[#0b1120] mb-2">Subject Tutor (Faculty)</h4>
+                  <div className="flex gap-3 text-sm font-bold">
+                    <span className="bg-green-100 text-green-700 px-3 py-1 rounded-lg">Part-time / Paid</span>
+                    <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-lg">Remote</span>
+                  </div>
                 </div>
-              </div>
-              {openJob === 'tutor' ? <ChevronUp className="w-8 h-8" /> : <ChevronDown className="w-8 h-8" />}
-            </button>
+                {openJob === 'tutor' ? <ChevronUp className="w-8 h-8" /> : <ChevronDown className="w-8 h-8" />}
+              </button>
 
-            {openJob === 'tutor' && (
-              <div className="px-8 py-6 border-t-2 border-gray-100 bg-gray-50/50">
-                <div className="mb-10 text-gray-700 prose prose-blue max-w-none">
-                  <p className="font-medium text-lg mb-6 text-[#0b1120]">
-                    Are you passionate about educating peers and simplifying tough subjects? We are looking for dedicated Subject Tutors to guide students towards academic excellence. Share your knowledge, earn while you learn, and build a stellar profile!
-                  </p>
-                  
-                  <h5 className="font-bold text-[#0b1120] text-lg mt-6 mb-3">Roles & Responsibilities:</h5>
-                  <ul className="list-disc pl-5 space-y-2 font-medium">
-                    <li>Deliver high-quality lessons in <strong>Hindi, English, or comfortably blended (Both)</strong>.</li>
-                    <li>Teach foundational or diploma-level subjects aligned with the curriculum.</li>
-                    <li>Solve student doubts and create engaging academic content.</li>
-                  </ul>
-
-                  <h5 className="font-bold text-[#0b1120] text-lg mt-6 mb-3">What We Need From You:</h5>
-                  <ul className="list-disc pl-5 space-y-2 font-medium">
-                    <li><strong>Tech-Ready:</strong> A digital pen tablet/graphic pad, a laptop, good microphone, and stable internet are mandatory.</li>
-                    <li><strong>Academic Excellence:</strong> CGPA of 7.5+ in the subject you wish to teach is highly preferred.</li>
-                    <li><strong>Background:</strong> Being an IIT Madras BS student is a bonus (but completely optional).</li>
-                    <li>Unwavering passion for teaching!</li>
-                  </ul>
-
-                  <h5 className="font-bold text-[#0b1120] text-lg mt-6 mb-3">Perks & Compensation:</h5>
-                  <ul className="space-y-2 font-medium">
-                    <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" /> <strong>Stipend:</strong> ₹5,000 to ₹10,000 per month (based on interview & merit).</li>
-                    <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" /> <strong>Experience:</strong> Add a highly valued teaching internship to your CV.</li>
-                    <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" /> <strong>Visibility:</strong> Open doors to immense future career prospects!</li>
-                  </ul>
-                  
-                  <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-100 flex items-center gap-4">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube" className="w-[40px] h-[30px] object-contain" />
-                    <p className="font-bold text-[#0b1120] m-0">
-                      Check out our teaching style: <br/>
-                      <a href="https://www.youtube.com/@Gen-ZIITian/videos" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">youtube.com/@Gen-ZIITian/videos</a>
+              {openJob === 'tutor' && (
+                <div className="px-8 py-6 border-t-2 border-gray-100 bg-gray-50/50">
+                  <div className="mb-10 text-gray-700 prose prose-blue max-w-none">
+                    <p className="font-medium text-lg mb-6 text-[#0b1120]">
+                      Are you passionate about educating peers and simplifying tough subjects? We are looking for dedicated Subject Tutors to guide students towards academic excellence. Share your knowledge, earn while you learn, and build a stellar profile!
                     </p>
-                  </div>
+                    
+                    <h5 className="font-bold text-[#0b1120] text-lg mt-6 mb-3">Roles & Responsibilities:</h5>
+                    <ul className="list-disc pl-5 space-y-2 font-medium">
+                      <li>Deliver high-quality lessons in <strong>Hindi, English, or comfortably blended (Both)</strong>.</li>
+                      <li>Teach foundational or diploma-level subjects aligned with the curriculum.</li>
+                      <li>Solve student doubts and create engaging academic content.</li>
+                    </ul>
 
-                  {!showForm && (
-                    <div className="mt-8 flex justify-center">
-                      <button 
-                        onClick={() => setShowForm(true)}
-                        className="px-8 py-4 bg-blue-600 text-white font-black rounded-xl hover:bg-blue-700 transition-colors border-2 border-transparent shadow-[4px_4px_0px_#0b1120] text-lg"
-                      >
-                        Apply for this role
-                      </button>
+                    <h5 className="font-bold text-[#0b1120] text-lg mt-6 mb-3">What We Need From You:</h5>
+                    <ul className="list-disc pl-5 space-y-2 font-medium">
+                      <li><strong>Tech-Ready:</strong> A digital pen tablet/graphic pad, a laptop, good microphone, and stable internet are mandatory.</li>
+                      <li><strong>Academic Excellence:</strong> CGPA of 7.5+ in the subject you wish to teach is highly preferred.</li>
+                      <li><strong>Background:</strong> Being an IIT Madras BS student is a bonus (but completely optional).</li>
+                      <li>Unwavering passion for teaching!</li>
+                    </ul>
+
+                    <h5 className="font-bold text-[#0b1120] text-lg mt-6 mb-3">Perks & Compensation:</h5>
+                    <ul className="space-y-2 font-medium">
+                      <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" /> <strong>Stipend:</strong> ₹5,000 to ₹10,000 per month (based on interview & merit).</li>
+                      <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" /> <strong>Experience:</strong> Add a highly valued teaching internship to your CV.</li>
+                      <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" /> <strong>Visibility:</strong> Open doors to immense future career prospects!</li>
+                    </ul>
+                    
+                    <div className="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-100 flex items-center gap-4">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" alt="YouTube" className="w-[40px] h-[30px] object-contain" />
+                      <p className="font-bold text-[#0b1120] m-0">
+                        Check out our teaching style: <br/>
+                        <a href="https://www.youtube.com/@Gen-ZIITian/videos" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">youtube.com/@Gen-ZIITian/videos</a>
+                      </p>
                     </div>
-                  )}
-                </div>
 
-                {/* Application Form */}
-                {showForm && (
-                <div className="bg-white p-6 md:p-8 rounded-2xl border-2 border-gray-200 mt-6 inline-block w-full">
-                  <div className="flex justify-between items-center mb-6">
-                    <h4 className="text-2xl font-black text-[#0b1120]">Apply Now!</h4>
-                    <button onClick={() => setShowForm(false)} className="text-sm font-bold text-gray-500 hover:text-gray-800">Close Form</button>
-                  </div>
-                  
-                  {submitted ? (
-                    <div className="text-center py-10 bg-green-50 rounded-xl border-2 border-green-200">
-                      <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <CheckCircle2 className="w-8 h-8" />
+                    {!showForm && (
+                      <div className="mt-8 flex justify-center">
+                        <button 
+                          onClick={() => setShowForm(true)}
+                          className="px-8 py-4 bg-blue-600 text-white font-black rounded-xl hover:bg-blue-700 transition-colors border-2 border-transparent shadow-[4px_4px_0px_#0b1120] text-lg"
+                        >
+                          Apply for this role
+                        </button>
                       </div>
-                      <h4 className="text-2xl font-bold text-green-800 mb-2">Thank you!</h4>
-                      <p className="font-medium text-green-700">Your application has been received. We will contact you soon!</p>
-                      <button onClick={() => setSubmitted(false)} className="mt-6 font-bold text-blue-600 hover:text-blue-800">Submit another application</button>
+                    )}
+                  </div>
+
+                  {/* Application Form */}
+                  {showForm && (
+                  <div className="bg-white p-6 md:p-8 rounded-2xl border-2 border-gray-200 mt-6 inline-block w-full">
+                    <div className="flex justify-between items-center mb-6">
+                      <h4 className="text-2xl font-black text-[#0b1120]">Apply Now!</h4>
+                      <button onClick={() => setShowForm(false)} className="text-sm font-bold text-gray-500 hover:text-gray-800">Close Form</button>
                     </div>
-                  ) : (
-                    <form onSubmit={handleSubmit} className="space-y-5">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        <div>
-                          <label className="block text-sm font-bold text-gray-700 mb-2">Full Name *</label>
-                          <input required type="text" name="name" value={formData.name} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none" placeholder="John Doe" />
+                    
+                    {submitted ? (
+                      <div className="text-center py-10 bg-green-50 rounded-xl border-2 border-green-200">
+                        <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                          <CheckCircle2 className="w-8 h-8" />
                         </div>
-                        <div>
-                          <label className="block text-sm font-bold text-gray-700 mb-2">Email Address *</label>
-                          <input required type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none" placeholder="john@example.com" />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-bold text-gray-700 mb-2">Phone / WhatsApp *</label>
-                          <input required type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none" placeholder="+91 9876543210" />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-bold text-gray-700 mb-2">Are you an IITM BS Student? *</label>
-                          <select required name="isIITM" value={formData.isIITM} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                          </select>
+                        <h4 className="text-2xl font-bold text-green-800 mb-2">Thank you!</h4>
+                        <p className="font-medium text-green-700">Your application has been received. We will contact you soon!</p>
+                        <button onClick={() => setSubmitted(false)} className="mt-6 font-bold text-blue-600 hover:text-blue-800">Submit another application</button>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleSubmit} className="space-y-5">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                          <div>
+                            <label className="block text-sm font-bold text-gray-700 mb-2">Full Name *</label>
+                            <input required type="text" name="name" value={formData.name} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none" placeholder="John Doe" />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-bold text-gray-700 mb-2">Email Address *</label>
+                            <input required type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none" placeholder="john@example.com" />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-bold text-gray-700 mb-2">Phone / WhatsApp *</label>
+                            <input required type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none" placeholder="+91 9876543210" />
+                          </div>
+                          <div>
+                            <label className="block text-sm font-bold text-gray-700 mb-2">Are you an IITM BS Student? *</label>
+                            <select required name="isIITM" value={formData.isIITM} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none">
+                              <option value="Yes">Yes</option>
+                              <option value="No">No</option>
+                            </select>
+                          </div>
+                          
+                          <div>
+                            <label className="block text-sm font-bold text-gray-700 mb-2">Teaching Level *</label>
+                            <select required name="level" value={formData.level} onChange={(e) => { handleInputChange(e); setFormData(prev => ({...prev, subject: subjects[e.target.value as keyof typeof subjects][0] })) }} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none">
+                              <option value="Foundation">Foundation</option>
+                              <option value="Diploma">Diploma</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-sm font-bold text-gray-700 mb-2">Target Subject *</label>
+                            <select required name="subject" value={formData.subject} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none">
+                              <option value="" disabled>Select a subject...</option>
+                              {subjects[formData.level as keyof typeof subjects].map(sub => (
+                                <option key={sub} value={sub}>{sub}</option>
+                              ))}
+                            </select>
+                          </div>
+
+                          <div>
+                            <label className="block text-sm font-bold text-gray-700 mb-2">Preferred Teaching Language *</label>
+                            <select required name="language" value={formData.language} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none">
+                              <option value="English">English</option>
+                              <option value="Hindi">Hindi</option>
+                              <option value="Both (English + Hindi)">Both (English + Hindi)</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-sm font-bold text-gray-700 mb-2">Subject CGPA / Grade *</label>
+                            <input required type="text" name="cgpa" value={formData.cgpa} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none" placeholder="e.g. 8.5 or S Grade" />
+                          </div>
                         </div>
                         
                         <div>
-                          <label className="block text-sm font-bold text-gray-700 mb-2">Teaching Level *</label>
-                          <select required name="level" value={formData.level} onChange={(e) => { handleInputChange(e); setFormData(prev => ({...prev, subject: subjects[e.target.value as keyof typeof subjects][0] })) }} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none">
-                            <option value="Foundation">Foundation</option>
-                            <option value="Diploma">Diploma</option>
-                          </select>
-                        </div>
-                        <div>
-                          <label className="block text-sm font-bold text-gray-700 mb-2">Target Subject *</label>
-                          <select required name="subject" value={formData.subject} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none">
-                            <option value="" disabled>Select a subject...</option>
-                            {subjects[formData.level as keyof typeof subjects].map(sub => (
-                              <option key={sub} value={sub}>{sub}</option>
-                            ))}
-                          </select>
+                          <label className="block text-sm font-bold text-gray-700 mb-2">Resume / CV Link *</label>
+                          <input required type="url" name="resumeLink" value={formData.resumeLink} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none" placeholder="Google Drive / Dropbox link (Make sure it's public)" />
                         </div>
 
-                        <div>
-                          <label className="block text-sm font-bold text-gray-700 mb-2">Preferred Teaching Language *</label>
-                          <select required name="language" value={formData.language} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none">
-                            <option value="English">English</option>
-                            <option value="Hindi">Hindi</option>
-                            <option value="Both (English + Hindi)">Both (English + Hindi)</option>
-                          </select>
-                        </div>
-                        <div>
-                          <label className="block text-sm font-bold text-gray-700 mb-2">Subject CGPA / Grade *</label>
-                          <input required type="text" name="cgpa" value={formData.cgpa} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none" placeholder="e.g. 8.5 or S Grade" />
-                        </div>
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-bold text-gray-700 mb-2">Resume / CV Link *</label>
-                        <input required type="url" name="resumeLink" value={formData.resumeLink} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border-2 border-gray-300 focus:border-blue-500 focus:ring-0 transition-colors font-medium outline-none" placeholder="Google Drive / Dropbox link (Make sure it's public)" />
-                      </div>
-
-                      <button 
-                        type="submit" 
-                        disabled={isSubmitting}
-                        className="w-full py-4 bg-[#0b1120] text-white font-black rounded-xl hover:bg-gray-800 transition-colors border-2 border-transparent disabled:opacity-70 flex items-center justify-center gap-2"
-                      >
-                        {isSubmitting ? 'Submitting Application...' : 'Submit Application'}
-                      </button>
-                    </form>
+                        <button 
+                          type="submit" 
+                          disabled={isSubmitting}
+                          className="w-full py-4 bg-[#0b1120] text-white font-black rounded-xl hover:bg-gray-800 transition-colors border-2 border-transparent disabled:opacity-70 flex items-center justify-center gap-2"
+                        >
+                          {isSubmitting ? 'Submitting Application...' : 'Submit Application'}
+                        </button>
+                      </form>
+                    )}
+                  </div>
                   )}
                 </div>
-                )}
-              </div>
-            )}
+              )}
+            </div>
+
+            {/* Accordion Item: Campus Leaders */}
+            <div className="bg-white rounded-2xl border-2 border-[#0b1120] shadow-[8px_8px_0px_#0b1120] overflow-hidden transition-all">
+              <button 
+                onClick={() => {
+                  const isOpening = openJob !== 'campus-leader';
+                  setOpenJob(isOpening ? 'campus-leader' : null);
+                }}
+                className="w-full px-8 py-6 flex items-center justify-between bg-white hover:bg-gray-50 transition-colors text-left"
+              >
+                <div>
+                  <h4 className="text-xl md:text-2xl font-black text-[#0b1120] mb-2">Campus Leaders</h4>
+                  <div className="flex gap-3 text-sm font-bold">
+                    <span className="bg-green-100 text-green-700 px-3 py-1 rounded-lg font-bold">Part-time / Performance-based</span>
+                    <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-lg font-bold">Remote</span>
+                  </div>
+                </div>
+                {openJob === 'campus-leader' ? <ChevronUp className="w-8 h-8" /> : <ChevronDown className="w-8 h-8" />}
+              </button>
+
+              {openJob === 'campus-leader' && (
+                <div className="px-8 py-6 border-t-2 border-gray-100 bg-gray-50/50">
+                  <div className="mb-10 text-gray-700 prose prose-blue max-w-none text-left">
+                    <h4 className="text-xl md:text-2xl font-black text-[#0b1120] mb-4">We're Looking for Campus Leaders | GenZ IITian</h4>
+                    <p className="font-semibold text-lg mb-6 text-[#0b1120]">
+                      Do you own or manage an <strong>IIT Madras BS Degree</strong> WhatsApp, Telegram, Discord, or any other student community?
+                    </p>
+                    <p className="font-medium text-lg mb-6 text-[#0b1120]">
+                      If yes, we'd love to work with you.
+                    </p>
+
+                    <p className="font-medium text-gray-700 mb-4">
+                      At <strong>GenZ IITian</strong>, we're building a unified ecosystem for IIT Madras BS students through high-quality resources, mentorship, and community-driven initiatives. Over the past few months, we've launched:
+                    </p>
+                    <ul className="list-disc pl-5 space-y-2 font-medium mb-6">
+                      <li><strong>exam.genziitian.in</strong> – Previous Year Questions, video solutions, PDFs, and exam resources.</li>
+                      <li><strong>genziitian.in/resources</strong> – Completely free study materials.</li>
+                      <li><strong>Free YouTube Marathon Classes</strong> before exams.</li>
+                      <li><strong>genziitian.live</strong> – A dedicated social platform for IIT Madras BS students with better privacy and organized discussions than traditional WhatsApp groups.</li>
+                    </ul>
+
+                    <p className="font-medium text-gray-700 mb-6">
+                      Instead of communities working in isolation, we believe they can grow together while continuing to serve students independently.
+                    </p>
+
+                    <h5 className="font-bold text-[#0b1120] text-lg mt-6 mb-3">Who Can Apply?</h5>
+                    <ul className="list-disc pl-5 space-y-2 font-medium mb-6">
+                      <li>You must be the <strong>owner or primary administrator</strong> of an IIT Madras BS student community.</li>
+                      <li>Your community should actively serve IIT Madras BS Degree students.</li>
+                      <li>You should be interested in building a long-term partnership with GenZ IITian.</li>
+                    </ul>
+
+                    <h5 className="font-bold text-[#0b1120] text-lg mt-6 mb-3">What You'll Get:</h5>
+                    <ul className="space-y-3 font-medium mb-6">
+                      <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" /> <span>Official <strong>GenZ IITian Campus Leader</strong> recognition.</span></li>
+                      <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" /> <span>Your own referral code with earning opportunities.</span></li>
+                      <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" /> <span>Students using your code receive <strong>5% OFF</strong> on courses.</span></li>
+                      <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" /> <span>You earn rewards on every successful referral.</span></li>
+                      <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" /> <span>Free onboarding course worth approximately <strong>₹500</strong>.</span></li>
+                      <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" /> <span>Opportunity to earn <strong>performance-based stipends up to ₹5,000 per month</strong>.</span></li>
+                      <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" /> <span>Priority consideration for future <strong>paid internships, part-time roles, and leadership opportunities</strong> within GenZ IITian.</span></li>
+                      <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" /> <span>Direct access to our core team and upcoming projects.</span></li>
+                    </ul>
+
+                    <p className="font-medium text-gray-700 mb-6">
+                      If you're passionate about helping the IIT Madras BS community and want to grow with us, we'd love to hear from you.
+                    </p>
+
+                    <div className="mt-8 flex justify-center">
+                      <a 
+                        href="https://forms.gle/bQL5p6Bb9zX3pk2n8" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="px-8 py-4 bg-blue-600 text-white font-black rounded-xl hover:bg-blue-700 transition-colors border-2 border-transparent shadow-[4px_4px_0px_#0b1120] text-lg text-center"
+                      >
+                        Apply Now
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -326,6 +411,54 @@ export default function HiringSection() {
                <button onClick={nextTestimonial} className="w-12 h-12 rounded-full border-2 border-[#0b1120] bg-[#0b1120] text-white flex items-center justify-center hover:bg-gray-800 transition-colors shadow-[4px_4px_0px_#0b1120]">
                  <ChevronRight className="w-6 h-6 text-white" />
                </button>
+            </div>
+          </div>
+        </div>
+
+        {/* 4. Recruiter Portal Section */}
+        <div className="max-w-4xl mx-auto mt-20">
+          <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden text-left">
+            {/* Grid Pattern Background */}
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0b1120 1.5px, transparent 1.5px)', backgroundSize: '24px 24px' }}></div>
+            
+            <div className="flex-grow z-10 pr-0 md:pr-4">
+              <h3 className="text-3xl font-black text-[#0b1120] mb-4">Recruiter Portal</h3>
+              <p className="text-gray-600 font-bold leading-relaxed mb-6 max-w-lg">
+                Instantly validate candidate career histories, contract durations, and department roles. Query our secure ledger for authenticated digital records.
+              </p>
+              <Link 
+                to="/verify" 
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#0b1120] text-white font-black rounded-xl hover:bg-gray-800 transition-all shadow-[4px_4px_0px_#10b981] hover:translate-y-[-2px] active:translate-y-[0px]"
+              >
+                Get Details <ChevronRight className="w-5 h-5" />
+              </Link>
+            </div>
+            
+            <div className="w-full md:w-auto flex justify-center z-10 flex-shrink-0">
+              <div className="relative w-56 h-40 bg-white border-2 border-gray-200 rounded-2xl p-5 shadow-lg flex flex-col justify-between hover:scale-[1.02] transition-transform">
+                <div className="flex items-start justify-between">
+                  <div className="space-y-2">
+                    <div className="w-12 h-3 bg-gray-200 rounded"></div>
+                    <div className="w-24 h-2.5 bg-gray-100 rounded"></div>
+                    <div className="w-16 h-2 bg-gray-100 rounded"></div>
+                  </div>
+                  <div className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center border border-gray-100 text-gray-400">
+                    <Users className="w-5 h-5" />
+                  </div>
+                </div>
+                
+                {/* Horizontal lines to mimic layout */}
+                <div className="space-y-1.5">
+                  <div className="w-full h-1 bg-gray-200 rounded-full"></div>
+                  <div className="w-5/6 h-1 bg-gray-200 rounded-full"></div>
+                  <div className="w-4/6 h-1 bg-gray-200 rounded-full"></div>
+                </div>
+                
+                {/* Check Badge Icon */}
+                <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-emerald-500 rounded-full border-4 border-white flex items-center justify-center text-white shadow-lg shadow-emerald-200">
+                  <CheckCircle2 className="w-6 h-6" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
