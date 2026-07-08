@@ -16,7 +16,7 @@ interface Employee {
 
 const DEFAULT_EMPLOYEES: Employee[] = [
   {
-    employee_id: 'GENZ-I-0000',
+    employee_id: 'GENZ-EMP-0000',
     full_name: 'Raj Singh',
     email: 'raj@genziitian.in',
     phone: '+91 98765 43210',
@@ -26,7 +26,7 @@ const DEFAULT_EMPLOYEES: Employee[] = [
     status: 'ACTIVE'
   },
   {
-    employee_id: 'GENZ-I-0001',
+    employee_id: 'GENZ-EMP-0001',
     full_name: 'Vaibhav',
     email: 'vaibhav@genziitian.in',
     phone: '+91 99887 76655',
@@ -36,7 +36,7 @@ const DEFAULT_EMPLOYEES: Employee[] = [
     status: 'ACTIVE'
   },
   {
-    employee_id: 'GENZ-I-0002',
+    employee_id: 'GENZ-EMP-0002',
     full_name: 'Ayush',
     email: 'ayush@genziitian.in',
     phone: '+91 88776 65544',
@@ -46,7 +46,7 @@ const DEFAULT_EMPLOYEES: Employee[] = [
     status: 'ACTIVE'
   },
   {
-    employee_id: 'GENZ-I-0003',
+    employee_id: 'GENZ-EMP-0003',
     full_name: 'Ankit K.',
     email: 'ankit@genziitian.in',
     phone: '+91 77665 54433',
@@ -56,7 +56,7 @@ const DEFAULT_EMPLOYEES: Employee[] = [
     status: 'INACTIVE'
   },
   {
-    employee_id: 'GENZ-I-0004',
+    employee_id: 'GENZ-INT-0000N',
     full_name: 'Neha Sharma',
     email: 'neha@genziitian.in',
     phone: '+91 66554 43322',
@@ -151,9 +151,23 @@ export default function EmployeesManager() {
     return '';
   };
 
-  const getNextEmployeeId = () => {
+  const getNextEmployeeId = (role: string, name: string) => {
+    const initial = name ? name.trim().charAt(0).toUpperCase() : 'X';
+    const roleLower = role.toLowerCase();
+    
+    let prefix = 'GENZ-EMP';
+    let suffix = '';
+    
+    if (roleLower === 'intern') {
+      prefix = 'GENZ-INT';
+      suffix = initial;
+    } else if (roleLower === 'campus leader') {
+      prefix = 'GENZ-CLS';
+      suffix = initial;
+    }
+
     let maxNum = -1;
-    const pattern = /^GENZ-I-(\d{4})$/i;
+    const pattern = new RegExp(`^${prefix}-(\\d{4})`, 'i');
     
     employees.forEach(emp => {
       const match = emp.employee_id.match(pattern);
@@ -167,7 +181,7 @@ export default function EmployeesManager() {
 
     const nextNum = maxNum + 1;
     const padded = String(nextNum).padStart(4, '0');
-    return `GENZ-I-${padded}`;
+    return `${prefix}-${padded}${suffix}`;
   };
 
   const fetchEmployees = async () => {
@@ -257,7 +271,7 @@ export default function EmployeesManager() {
     if (!editingEmployee) return;
 
     const isNew = !editingEmployee.id;
-    const empId = isNew ? getNextEmployeeId() : editingEmployee.employee_id.trim();
+    const empId = isNew ? getNextEmployeeId(editingEmployee.role, editingEmployee.full_name) : editingEmployee.employee_id.trim();
     const fullName = editingEmployee.full_name.trim();
     const dept = editingEmployee.department.trim();
     
@@ -630,7 +644,7 @@ export default function EmployeesManager() {
                     <input 
                       disabled 
                       type="text" 
-                      value={editingEmployee.id ? editingEmployee.employee_id : getNextEmployeeId()}
+                      value={editingEmployee.id ? editingEmployee.employee_id : getNextEmployeeId(editingEmployee.role, editingEmployee.full_name)}
                       className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 bg-gray-50 outline-none font-mono font-bold text-sm text-gray-400" 
                     />
                   </div>

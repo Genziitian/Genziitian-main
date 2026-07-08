@@ -14,7 +14,7 @@ interface Employee {
 
 const DEFAULT_EMPLOYEES: Employee[] = [
   {
-    employee_id: 'GENZ-I-0000',
+    employee_id: 'GENZ-EMP-0000',
     full_name: 'Raj Singh',
     department: 'Programming',
     role: 'Educator',
@@ -22,7 +22,7 @@ const DEFAULT_EMPLOYEES: Employee[] = [
     status: 'ACTIVE'
   },
   {
-    employee_id: 'GENZ-I-0001',
+    employee_id: 'GENZ-EMP-0001',
     full_name: 'Vaibhav',
     department: 'Academics',
     role: 'Educator',
@@ -30,7 +30,7 @@ const DEFAULT_EMPLOYEES: Employee[] = [
     status: 'ACTIVE'
   },
   {
-    employee_id: 'GENZ-I-0002',
+    employee_id: 'GENZ-EMP-0002',
     full_name: 'Ayush',
     department: 'Academics',
     role: 'Educator',
@@ -38,7 +38,7 @@ const DEFAULT_EMPLOYEES: Employee[] = [
     status: 'ACTIVE'
   },
   {
-    employee_id: 'GENZ-I-0003',
+    employee_id: 'GENZ-EMP-0003',
     full_name: 'Ankit K.',
     department: 'Academics',
     role: 'Educator',
@@ -46,7 +46,7 @@ const DEFAULT_EMPLOYEES: Employee[] = [
     status: 'INACTIVE'
   },
   {
-    employee_id: 'GENZ-I-0004',
+    employee_id: 'GENZ-INT-0000N',
     full_name: 'Neha Sharma',
     department: 'Operations',
     role: 'Intern',
@@ -212,7 +212,7 @@ export default function Verify() {
                   value={employeeId}
                   onChange={(e) => setEmployeeId(e.target.value)}
                   className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-200 focus:border-blue-500 focus:ring-0 transition-colors font-semibold outline-none text-gray-800 placeholder-gray-400" 
-                  placeholder="GENZ-I-0000"
+                  placeholder="GENZ-EMP-0000"
                 />
               </div>
 
