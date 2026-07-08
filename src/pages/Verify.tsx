@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
-import { Printer, CheckCircle2, AlertCircle, Search, ShieldCheck, X, ChevronDown, ChevronUp } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
+import { Printer, CheckCircle2, AlertCircle, Search, ShieldCheck, X, ChevronDown, ChevronUp, LogIn, User } from 'lucide-react';
 
 interface Employee {
   employee_id: string;
@@ -55,6 +56,7 @@ const DEFAULT_EMPLOYEES: Employee[] = [
 ];
 
 export default function Verify() {
+  const { user, openLoginModal } = useAuth();
   const [employeeId, setEmployeeId] = useState('');
   const [fullName, setFullName] = useState('');
   const [searching, setSearching] = useState(false);
@@ -62,6 +64,7 @@ export default function Verify() {
   const [searched, setSearched] = useState(false);
   const [verifyTime, setVerifyTime] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [showLoginPrompt, setShowLoginPrompt] = useState(false);
 
   // Guidelines Collapsible State
   const [dataIntegrityOpen, setDataIntegrityOpen] = useState(false);
@@ -107,9 +110,45 @@ export default function Verify() {
     };
   }, []);
 
+  // Insert audit log
+  const insertAuditLog = async (action: string, empId: string, empName: string, details: string) => {
+    const actorEmail = user?.email || 'unknown';
+    try {
+      await supabase.from('employee_logs').insert([{
+        action_type: action,
+        actor_email: actorEmail,
+        employee_id: empId,
+        employee_name: empName,
+        details
+      }]);
+    } catch (err) {
+      console.warn('Audit log insert failed (table may not exist):', err);
+    }
+    // Also save to local storage for demo/fallback
+    try {
+      const existing = JSON.parse(localStorage.getItem('gzi_employee_logs') || '[]');
+      existing.unshift({
+        id: 'log-' + Math.random().toString(36).substr(2, 9),
+        action_type: action,
+        actor_email: actorEmail,
+        employee_id: empId,
+        employee_name: empName,
+        details,
+        created_at: new Date().toISOString()
+      });
+      localStorage.setItem('gzi_employee_logs', JSON.stringify(existing));
+    } catch (e) { /* ignore */ }
+  };
+
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!employeeId.trim() || !fullName.trim()) return;
+
+    // Auth guard: require login before verification
+    if (!user) {
+      setShowLoginPrompt(true);
+      return;
+    }
 
     setSearching(true);
     setResult(null);
@@ -164,8 +203,12 @@ export default function Verify() {
         setVerifyTime(
           now.toLocaleDateString('en-GB') + ', ' + now.toLocaleTimeString('en-US', { hour12: false })
         );
+        // Log successful verification
+        await insertAuditLog('VERIFY', found.employee_id, found.full_name, `Verified record — Status: ${found.status}`);
       } else {
         setErrorMsg('No official record found matching the details provided. Please check the ID and Name.');
+        // Log failed verification attempt
+        await insertAuditLog('VERIFY', employeeId.trim(), fullName.trim(), 'Verification failed — No matching record found');
       }
     } catch (err) {
       console.error('Search error:', err);
@@ -190,7 +233,20 @@ export default function Verify() {
     <div className="min-h-screen bg-gray-50/50 py-12 px-6">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Navigation / Header (Hidden when printing) */}
-        <div className="flex items-center justify-end border-b-2 border-gray-100 pb-6 no-print">
+        <div className="flex items-center justify-between border-b-2 border-gray-100 pb-6 no-print">
+          {user ? (
+            <div className="flex items-center gap-2 text-xs font-bold text-gray-500">
+              <User className="w-4 h-4 text-blue-500" />
+              Logged in as <span className="font-black text-[#0b1120]">{user.email}</span>
+            </div>
+          ) : (
+            <button
+              onClick={openLoginModal}
+              className="flex items-center gap-2 text-xs font-black text-gray-500 hover:text-[#0b1120] transition-colors"
+            >
+              <LogIn className="w-4 h-4" /> Sign In to Verify
+            </button>
+          )}
           <div className="flex items-center gap-2 text-xs font-black bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg border">
             <ShieldCheck className="w-4 h-4 text-emerald-500" /> SECURE REGISTRY
           </div>
@@ -253,6 +309,33 @@ export default function Verify() {
             </form>
           </div>
         </div>
+
+        {/* Login Required Prompt Modal */}
+        {showLoginPrompt && (
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+            <div className="bg-white rounded-3xl border-2 border-[#0b1120] max-w-md w-full overflow-hidden shadow-2xl relative text-center p-8 space-y-5">
+              <button 
+                onClick={() => setShowLoginPrompt(false)}
+                className="absolute top-4 right-4 p-1.5 text-gray-400 hover:text-gray-700 hover:bg-gray-100 rounded-xl transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+              <div className="inline-flex p-4 bg-blue-50 text-blue-600 rounded-2xl border border-blue-100">
+                <LogIn className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-black text-[#0b1120]">Login Required</h3>
+              <p className="text-sm text-gray-500 font-bold leading-relaxed max-w-sm mx-auto">
+                To verify employment records, please sign in with your Google account. This helps us maintain a secure audit trail.
+              </p>
+              <button 
+                onClick={() => { setShowLoginPrompt(false); openLoginModal(); }}
+                className="w-full py-3.5 bg-[#0b1120] text-white font-black rounded-xl hover:bg-gray-800 transition-colors flex items-center justify-center gap-2"
+              >
+                <LogIn className="w-4 h-4" /> Sign In with Google
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* Verification Result Modal */}
         {searched && (

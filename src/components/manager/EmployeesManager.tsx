@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Plus, Edit, Trash2, Save, X, Loader2, Search, AlertCircle, Copy, Check, Database } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
+import { useAuth } from '../../context/AuthContext';
 
 interface Employee {
   id?: string;
@@ -112,6 +113,7 @@ ALTER TABLE employees ADD COLUMN IF NOT EXISTS email TEXT;
 ALTER TABLE employees ADD COLUMN IF NOT EXISTS phone TEXT;`;
 
 export default function EmployeesManager() {
+  const { user } = useAuth();
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
@@ -230,6 +232,36 @@ export default function EmployeesManager() {
     fetchEmployees();
   }, []);
 
+  // Audit log helper
+  const insertAuditLog = async (action: string, empId: string, empName: string, details: string) => {
+    const actorEmail = user?.email || 'unknown';
+    try {
+      await supabase.from('employee_logs').insert([{
+        action_type: action,
+        actor_email: actorEmail,
+        employee_id: empId,
+        employee_name: empName,
+        details
+      }]);
+    } catch (err) {
+      console.warn('Audit log insert failed:', err);
+    }
+    // Also save to local storage
+    try {
+      const existing = JSON.parse(localStorage.getItem('gzi_employee_logs') || '[]');
+      existing.unshift({
+        id: 'log-' + Math.random().toString(36).substr(2, 9),
+        action_type: action,
+        actor_email: actorEmail,
+        employee_id: empId,
+        employee_name: empName,
+        details,
+        created_at: new Date().toISOString()
+      });
+      localStorage.setItem('gzi_employee_logs', JSON.stringify(existing));
+    } catch (e) { /* ignore */ }
+  };
+
   const copySql = () => {
     navigator.clipboard.writeText(SQL_MIGRATION_CODE);
     setCopiedSql(true);
@@ -324,10 +356,23 @@ export default function EmployeesManager() {
         }
 
         if (editingEmployee.id) {
-          // Edit
+          // Edit — compute diff for logging
+          const oldEmp = employees.find(e => e.id === editingEmployee.id);
           const idx = currentList.findIndex((emp) => emp.id === editingEmployee.id);
           if (idx !== -1) {
             currentList[idx] = { ...editingEmployee, ...payload };
+          }
+          // Build diff description
+          if (oldEmp) {
+            const changes: string[] = [];
+            if (oldEmp.full_name !== payload.full_name) changes.push(`Name: ${oldEmp.full_name} → ${payload.full_name}`);
+            if (oldEmp.department !== payload.department) changes.push(`Dept: ${oldEmp.department} → ${payload.department}`);
+            if (oldEmp.role !== payload.role) changes.push(`Role: ${oldEmp.role} → ${payload.role}`);
+            if (oldEmp.status !== payload.status) changes.push(`Status: ${oldEmp.status} → ${payload.status}`);
+            if (oldEmp.tenure !== payload.tenure) changes.push(`Tenure: ${oldEmp.tenure} → ${payload.tenure}`);
+            if (oldEmp.email !== payload.email) changes.push(`Email: ${oldEmp.email || 'N/A'} → ${payload.email || 'N/A'}`);
+            if (oldEmp.phone !== payload.phone) changes.push(`Phone: ${oldEmp.phone || 'N/A'} → ${payload.phone || 'N/A'}`);
+            await insertAuditLog('UPDATE', payload.employee_id, payload.full_name, changes.length > 0 ? changes.join(', ') : 'No field changes');
           }
         } else {
           // Create
@@ -336,6 +381,7 @@ export default function EmployeesManager() {
             ...payload
           };
           currentList.unshift(newEmp);
+          await insertAuditLog('CREATE', payload.employee_id, payload.full_name, `Created new record — Role: ${payload.role}, Dept: ${payload.department}, Status: ${payload.status}`);
         }
 
         localStorage.setItem('gzi_mock_employees', JSON.stringify(currentList));
@@ -344,11 +390,25 @@ export default function EmployeesManager() {
       } else {
         // Save in Supabase
         if (editingEmployee.id) {
+          // Compute diff for update logging
+          const oldEmp = employees.find(e => e.id === editingEmployee.id);
           const { error } = await supabase
             .from('employees')
             .update(payload)
             .eq('id', editingEmployee.id);
           if (error) throw error;
+          // Build diff description
+          if (oldEmp) {
+            const changes: string[] = [];
+            if (oldEmp.full_name !== payload.full_name) changes.push(`Name: ${oldEmp.full_name} → ${payload.full_name}`);
+            if (oldEmp.department !== payload.department) changes.push(`Dept: ${oldEmp.department} → ${payload.department}`);
+            if (oldEmp.role !== payload.role) changes.push(`Role: ${oldEmp.role} → ${payload.role}`);
+            if (oldEmp.status !== payload.status) changes.push(`Status: ${oldEmp.status} → ${payload.status}`);
+            if (oldEmp.tenure !== payload.tenure) changes.push(`Tenure: ${oldEmp.tenure} → ${payload.tenure}`);
+            if (oldEmp.email !== payload.email) changes.push(`Email: ${oldEmp.email || 'N/A'} → ${payload.email || 'N/A'}`);
+            if (oldEmp.phone !== payload.phone) changes.push(`Phone: ${oldEmp.phone || 'N/A'} → ${payload.phone || 'N/A'}`);
+            await insertAuditLog('UPDATE', payload.employee_id, payload.full_name, changes.length > 0 ? changes.join(', ') : 'No field changes');
+          }
         } else {
           const { error } = await supabase
             .from('employees')
@@ -361,6 +421,7 @@ export default function EmployeesManager() {
             }
             throw error;
           }
+          await insertAuditLog('CREATE', payload.employee_id, payload.full_name, `Created new record — Role: ${payload.role}, Dept: ${payload.department}, Status: ${payload.status}`);
         }
         setEditingEmployee(null);
         fetchEmployees();
@@ -381,12 +442,14 @@ export default function EmployeesManager() {
         const currentList = employees.filter((emp) => emp.id !== deleteTarget.id);
         localStorage.setItem('gzi_mock_employees', JSON.stringify(currentList));
         setEmployees(currentList);
+        await insertAuditLog('DELETE', deleteTarget.employee_id, deleteTarget.full_name, `Deleted record — Role: ${deleteTarget.role}, Status: ${deleteTarget.status}`);
       } else {
         const { error } = await supabase
           .from('employees')
           .delete()
           .eq('id', deleteTarget.id);
         if (error) throw error;
+        await insertAuditLog('DELETE', deleteTarget.employee_id, deleteTarget.full_name, `Deleted record — Role: ${deleteTarget.role}, Status: ${deleteTarget.status}`);
         fetchEmployees();
       }
       setDeleteTarget(null);

@@ -1,7 +1,7 @@
 import { useAuth } from '../context/AuthContext';
 import { useEffect, useState } from 'react';
 import { supabase } from '../lib/supabase';
-import { LayoutDashboard, ShoppingBag, ScrollText, BookOpen, Plus, Search, Trash2, Edit, Save, X, Loader2, AlertCircle, User, Download, TrendingUp, TrendingDown, Users, ShieldCheck, CreditCard, RefreshCw, Gift, ArrowRight, Copy, Coins, Eye, Settings } from 'lucide-react';
+import { LayoutDashboard, ShoppingBag, ScrollText, BookOpen, Plus, Search, Trash2, Edit, Save, X, Loader2, AlertCircle, User, Download, TrendingUp, TrendingDown, Users, ShieldCheck, CreditCard, RefreshCw, Gift, ArrowRight, Copy, Coins, Eye, Settings, ClipboardList } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useNavigate, useLocation, NavLink } from 'react-router-dom';
 import { apiService } from '../lib/api';
@@ -11,7 +11,7 @@ import EmployeesManager from '../components/manager/EmployeesManager';
 import { getYouTubeId } from '../utils/youtube';
 
 
-type Tab = 'users' | 'courses' | 'discounts' | 'payments' | 'catalog' | 'referrals' | 'blogs' | 'settings' | 'employees';
+type Tab = 'users' | 'courses' | 'discounts' | 'payments' | 'catalog' | 'referrals' | 'blogs' | 'settings' | 'employees' | 'logs';
 
 function sanitizeCourseId(value: string) {
   return value
@@ -31,7 +31,7 @@ export default function Manager() {
   const activeTab = (location.pathname.split('/').pop() || 'users') as Tab;
   
   // Validate tab - if path is just /manager, it's users. If invalid, could redirect.
-  const validTabs: Tab[] = ['users', 'courses', 'discounts', 'payments', 'referrals', 'blogs', 'settings', 'employees'];
+  const validTabs: Tab[] = ['users', 'courses', 'discounts', 'payments', 'referrals', 'blogs', 'settings', 'employees', 'logs'];
   const effectiveTab = validTabs.includes(activeTab) ? activeTab : 'users';
   const [data, setData] = useState<any>([]);
   const [loading, setLoading] = useState(true);
@@ -202,7 +202,7 @@ export default function Manager() {
   };
 
   const fetchData = async () => {
-    if (effectiveTab === 'blogs' || effectiveTab === 'settings') {
+    if (effectiveTab === 'blogs' || effectiveTab === 'settings' || effectiveTab === 'logs') {
       setLoading(false);
       return;
     }
@@ -590,6 +590,7 @@ export default function Manager() {
           {[
             { id: 'users', icon: User, path: '/manager/users' },
             { id: 'employees', icon: ShieldCheck, path: '/manager/employees' },
+            { id: 'logs', icon: ClipboardList, path: '/manager/logs' },
             { id: 'courses', icon: BookOpen, path: '/manager/courses' },
             { id: 'discounts', icon: ShoppingBag, path: '/manager/discounts' },
             { id: 'payments', icon: CreditCard, path: '/manager/payments' },
@@ -702,6 +703,8 @@ export default function Manager() {
               {effectiveTab === 'blogs' && <BlogsManager />}
 
               {effectiveTab === 'employees' && <EmployeesManager />}
+
+              {effectiveTab === 'logs' && <LogsManager />}
 
               {effectiveTab === 'settings' && <SettingsManager />}
 
@@ -1969,6 +1972,158 @@ export default function Manager() {
         }
         entityType={deleteModal.type}
       />
+    </div>
+  );
+}
+
+function LogsManager() {
+  const [logs, setLogs] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [filterAction, setFilterAction] = useState<string>('ALL');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const fetchLogs = async () => {
+    setLoading(true);
+    try {
+      const { data, error } = await supabase
+        .from('employee_logs')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(200);
+
+      if (data && !error) {
+        setLogs(data);
+      } else {
+        // Fallback to local storage
+        const stored = localStorage.getItem('gzi_employee_logs');
+        setLogs(stored ? JSON.parse(stored) : []);
+      }
+    } catch {
+      const stored = localStorage.getItem('gzi_employee_logs');
+      setLogs(stored ? JSON.parse(stored) : []);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchLogs();
+  }, []);
+
+  const actionColors: Record<string, string> = {
+    'CREATE': 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    'UPDATE': 'bg-blue-50 text-blue-700 border-blue-200',
+    'DELETE': 'bg-red-50 text-red-700 border-red-200',
+    'VERIFY': 'bg-purple-50 text-purple-700 border-purple-200'
+  };
+
+  const filtered = logs.filter(log => {
+    const matchesAction = filterAction === 'ALL' || log.action_type === filterAction;
+    const q = searchQuery.toLowerCase().trim();
+    const matchesSearch = !q || 
+      (log.actor_email || '').toLowerCase().includes(q) ||
+      (log.employee_id || '').toLowerCase().includes(q) ||
+      (log.employee_name || '').toLowerCase().includes(q) ||
+      (log.details || '').toLowerCase().includes(q);
+    return matchesAction && matchesSearch;
+  });
+
+  if (loading) {
+    return (
+      <div className="flex justify-center p-24 text-gray-300 animate-pulse font-black text-2xl uppercase tracking-widest">
+        Loading Logs...
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-8 text-left">
+      {/* Filters */}
+      <div className="flex flex-col lg:flex-row gap-6">
+        {/* Search */}
+        <div className="flex-grow bg-white border-[4px] border-[#0b1120] rounded-[2rem] p-4 flex gap-4 items-center shadow-[6px_6px_0px_#0b1120]">
+          <Search className="w-6 h-6 text-gray-400 shrink-0 ml-2" />
+          <input
+            type="text"
+            placeholder="Search by email, employee ID, or name..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full font-black outline-none text-lg text-[#0b1120] placeholder:text-gray-300"
+          />
+        </div>
+
+        {/* Action Filter */}
+        <div className="bg-white border-[4px] border-[#0b1120] rounded-[2rem] p-2 flex gap-2 shadow-[6px_6px_0px_#0b1120] overflow-x-auto whitespace-nowrap">
+          {['ALL', 'CREATE', 'UPDATE', 'DELETE', 'VERIFY'].map(action => (
+            <button
+              key={action}
+              onClick={() => setFilterAction(action)}
+              className={`px-6 py-3 rounded-xl font-black text-sm transition-all ${
+                filterAction === action
+                  ? 'bg-[#0b1120] text-white'
+                  : 'text-gray-400 hover:bg-gray-100'
+              }`}
+            >
+              {action}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Results count */}
+      <div className="text-sm font-bold text-gray-400">
+        Showing {filtered.length} {filtered.length === 1 ? 'entry' : 'entries'}
+      </div>
+
+      {/* Logs Table */}
+      {filtered.length === 0 ? (
+        <div className="bg-white border-[4px] border-[#0b1120] rounded-[2.5rem] p-16 text-center shadow-[12px_12px_0px_#0b1120]">
+          <AlertCircle className="w-12 h-12 text-gray-200 mx-auto mb-4" />
+          <h3 className="text-xl font-black text-gray-300 mb-2">No Logs Found</h3>
+          <p className="text-gray-400 font-bold">Activity logs will appear here when employee records are created, updated, deleted, or verified.</p>
+        </div>
+      ) : (
+        <div className="bg-white border-[4px] border-[#0b1120] rounded-[2.5rem] overflow-hidden shadow-[12px_12px_0px_#0b1120]">
+          <table className="w-full text-left">
+            <thead className="bg-gray-50 border-b-[3px] border-gray-100 font-black text-sm uppercase text-gray-400">
+              <tr>
+                <th className="px-6 py-5">Timestamp</th>
+                <th className="px-6 py-5">Actor</th>
+                <th className="px-6 py-5">Action</th>
+                <th className="px-6 py-5">Employee</th>
+                <th className="px-6 py-5">Details</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y-[3px] divide-gray-50 font-bold text-sm">
+              {filtered.map((log: any, i: number) => (
+                <tr key={log.id || i} className="hover:bg-blue-50/30 transition-colors">
+                  <td className="px-6 py-4 text-gray-400 text-xs font-mono whitespace-nowrap">
+                    {log.created_at ? new Date(log.created_at).toLocaleString('en-GB', {
+                      day: '2-digit', month: '2-digit', year: 'numeric',
+                      hour: '2-digit', minute: '2-digit'
+                    }) : 'N/A'}
+                  </td>
+                  <td className="px-6 py-4 text-gray-600 text-xs max-w-[200px] truncate" title={log.actor_email}>
+                    {log.actor_email}
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className={`inline-block px-3 py-1 rounded-lg text-[10px] font-black uppercase border ${actionColors[log.action_type] || 'bg-gray-100 text-gray-700 border-gray-200'}`}>
+                      {log.action_type}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="text-[#0b1120] font-black">{log.employee_name || 'N/A'}</div>
+                    <div className="text-xs text-gray-400 font-mono">{log.employee_id}</div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-500 text-xs max-w-[300px]">
+                    {log.details}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }
