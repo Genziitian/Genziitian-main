@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
-import { Printer, CheckCircle2, AlertCircle, Search, ShieldCheck, X } from 'lucide-react';
+import { Printer, CheckCircle2, AlertCircle, Search, ShieldCheck, X, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface Employee {
   employee_id: string;
@@ -62,6 +62,10 @@ export default function Verify() {
   const [searched, setSearched] = useState(false);
   const [verifyTime, setVerifyTime] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+
+  // Guidelines Collapsible State
+  const [dataIntegrityOpen, setDataIntegrityOpen] = useState(false);
+  const [supportOpen, setSupportOpen] = useState(false);
 
   // Print style injection
   useEffect(() => {
@@ -364,23 +368,39 @@ export default function Verify() {
         <div className="max-w-4xl mx-auto pt-6 no-print text-left">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Card 1: Data Integrity */}
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-left shadow-sm">
-              <h3 className="text-xs font-black text-[#0b1120] uppercase tracking-wider mb-3 flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-emerald-500" /> Data Integrity
-              </h3>
-              <p className="text-sm text-gray-500 font-bold leading-relaxed">
-                Employment information displayed on this portal is sourced from official company records and reflects the individual's documented association with Gen-Z IITian.
-              </p>
+            <div className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+              <button 
+                onClick={() => setDataIntegrityOpen(!dataIntegrityOpen)}
+                className="w-full p-6 flex items-center justify-between font-bold text-gray-800 text-left hover:bg-gray-50/50 transition-colors"
+              >
+                <span className="text-xs font-black text-[#0b1120] uppercase tracking-wider flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-emerald-500" /> Data Integrity
+                </span>
+                {dataIntegrityOpen ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+              </button>
+              {dataIntegrityOpen && (
+                <div className="px-6 pb-6 text-sm text-gray-500 font-bold leading-relaxed border-t border-gray-100 pt-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                  Employment information displayed on this portal is sourced from official company records and reflects the individual's documented association with Gen-Z IITian.
+                </div>
+              )}
             </div>
 
             {/* Card 2: Support & Corrections */}
-            <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-left shadow-sm">
-              <h3 className="text-xs font-black text-[#0b1120] uppercase tracking-wider mb-3 flex items-center gap-2">
-                <AlertCircle className="w-4 h-4 text-blue-500" /> Support & Corrections
-              </h3>
-              <p className="text-sm text-gray-500 font-bold leading-relaxed">
-                Found an issue with the verification result? Email <a href="mailto:help@genziitian.in" className="text-blue-600 hover:underline">help@genziitian.in</a> with the relevant Employee ID and supporting documentation. Our HR team will investigate and respond accordingly.
-              </p>
+            <div className="bg-white border-2 border-gray-200 rounded-2xl overflow-hidden shadow-sm">
+              <button 
+                onClick={() => setSupportOpen(!supportOpen)}
+                className="w-full p-6 flex items-center justify-between font-bold text-gray-800 text-left hover:bg-gray-50/50 transition-colors"
+              >
+                <span className="text-xs font-black text-[#0b1120] uppercase tracking-wider flex items-center gap-2">
+                  <AlertCircle className="w-4 h-4 text-blue-500" /> Support & Corrections
+                </span>
+                {supportOpen ? <ChevronUp className="w-4 h-4 text-gray-400" /> : <ChevronDown className="w-4 h-4 text-gray-400" />}
+              </button>
+              {supportOpen && (
+                <div className="px-6 pb-6 text-sm text-gray-500 font-bold leading-relaxed border-t border-gray-100 pt-4 animate-in fade-in slide-in-from-top-2 duration-200">
+                  Found an issue with the verification result? Email <a href="mailto:help@genziitian.in" className="text-blue-600 hover:underline">help@genziitian.in</a> with the relevant Employee ID and supporting documentation. Our HR team will investigate and respond accordingly.
+                </div>
+              )}
             </div>
           </div>
         </div>
