@@ -105,7 +105,11 @@ ALTER TABLE employees ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Allow public read access" ON employees FOR SELECT USING (true);
 
 -- Allow full access to authenticated managers
-CREATE POLICY "Allow all access to authenticated users" ON employees FOR ALL USING (auth.role() = 'authenticated');`;
+CREATE POLICY "Allow all access to authenticated users" ON employees FOR ALL USING (auth.role() = 'authenticated');
+
+-- IF THE TABLE ALREADY EXISTS: Run these ALTER statements to add missing columns:
+ALTER TABLE employees ADD COLUMN IF NOT EXISTS email TEXT;
+ALTER TABLE employees ADD COLUMN IF NOT EXISTS phone TEXT;`;
 
 export default function EmployeesManager() {
   const [employees, setEmployees] = useState<Employee[]>([]);

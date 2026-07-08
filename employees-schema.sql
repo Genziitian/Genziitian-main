@@ -32,3 +32,10 @@ CREATE POLICY "Allow public read access" ON public.employees
 -- Allow full access to authenticated managers
 CREATE POLICY "Allow all access to authenticated users" ON public.employees 
     FOR ALL USING (auth.role() = 'authenticated');
+
+-- ============================================================
+-- IF THE TABLE ALREADY EXISTS FROM A PREVIOUS VERSION:
+-- Run this block instead to add the new email & phone columns:
+-- ============================================================
+ALTER TABLE public.employees ADD COLUMN IF NOT EXISTS email TEXT;
+ALTER TABLE public.employees ADD COLUMN IF NOT EXISTS phone TEXT;
