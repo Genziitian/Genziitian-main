@@ -6,6 +6,8 @@ interface Employee {
   id?: string;
   employee_id: string;
   full_name: string;
+  email?: string;
+  phone?: string;
   department: string;
   role: string;
   tenure: string;
@@ -16,54 +18,64 @@ const DEFAULT_EMPLOYEES: Employee[] = [
   {
     employee_id: 'GENZ-I-0000',
     full_name: 'Raj Singh',
+    email: 'raj@genziitian.in',
+    phone: '+91 98765 43210',
     department: 'Programming',
-    role: 'educator',
+    role: 'Educator',
     tenure: '25/09/2025 - Present',
     status: 'ACTIVE'
   },
   {
     employee_id: 'GENZ-I-0001',
     full_name: 'Vaibhav',
+    email: 'vaibhav@genziitian.in',
+    phone: '+91 99887 76655',
     department: 'Academics',
-    role: 'educator',
-    tenure: 'June 2025 - Present',
+    role: 'Educator',
+    tenure: '01/06/2025 - Present',
     status: 'ACTIVE'
   },
   {
     employee_id: 'GENZ-I-0002',
     full_name: 'Ayush',
+    email: 'ayush@genziitian.in',
+    phone: '+91 88776 65544',
     department: 'Academics',
-    role: 'educator',
-    tenure: 'July 2025 - Present',
+    role: 'Educator',
+    tenure: '01/07/2025 - Present',
     status: 'ACTIVE'
   },
   {
     employee_id: 'GENZ-I-0003',
     full_name: 'Ankit K.',
+    email: 'ankit@genziitian.in',
+    phone: '+91 77665 54433',
     department: 'Academics',
-    role: 'educator',
-    tenure: 'August 2025 - May 2026',
+    role: 'Educator',
+    tenure: '01/08/2025 - 15/05/2026',
     status: 'INACTIVE'
   },
   {
     employee_id: 'GENZ-I-0004',
     full_name: 'Neha Sharma',
+    email: 'neha@genziitian.in',
+    phone: '+91 66554 43322',
     department: 'Operations',
-    role: 'intern',
-    tenure: 'May 2025 - November 2025',
+    role: 'Intern',
+    tenure: '15/05/2025 - 15/11/2025',
     status: 'RESIGNED'
   }
 ];
 
 const AVAILABLE_ROLES = [
-  'manager',
-  'owner',
-  'founder',
-  'ceo',
-  'cto',
-  'educator',
-  'intern',
-  'campus leader'
+  'Manager',
+  'Owner',
+  'Founder',
+  'CEO',
+  'CTO',
+  'Educator',
+  'Intern',
+  'Campus Leader'
 ];
 
 const AVAILABLE_STATUSES = [
@@ -77,6 +89,8 @@ const SQL_MIGRATION_CODE = `CREATE TABLE employees (
     id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     employee_id TEXT UNIQUE NOT NULL,
     full_name TEXT NOT NULL,
+    email TEXT,
+    phone TEXT,
     department TEXT NOT NULL,
     role TEXT NOT NULL,
     tenure TEXT NOT NULL,
@@ -107,6 +121,32 @@ export default function EmployeesManager() {
   const [errorMsg, setErrorMsg] = useState('');
   const [deleteTarget, setDeleteTarget] = useState<Employee | null>(null);
 
+  // Date picker states
+  const [startD, setStartD] = useState('');
+  const [endD, setEndD] = useState('');
+  const [isPresent, setIsPresent] = useState(true);
+
+  // Date parsing helpers
+  const parseDateToYmd = (dateStr: string) => {
+    if (!dateStr) return '';
+    const parts = dateStr.split('/');
+    if (parts.length === 3) {
+      // DD/MM/YYYY -> YYYY-MM-DD
+      return `${parts[2]}-${parts[1]}-${parts[0]}`;
+    }
+    return '';
+  };
+
+  const formatYmdToDdMmYyyy = (ymd: string) => {
+    if (!ymd) return '';
+    const parts = ymd.split('-');
+    if (parts.length === 3) {
+      // YYYY-MM-DD -> DD/MM/YYYY
+      return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    }
+    return '';
+  };
+
   const getNextEmployeeId = () => {
     let maxNum = -1;
     const pattern = /^GENZ-I-(\d{4})$/i;
@@ -135,7 +175,6 @@ export default function EmployeesManager() {
         .order('created_at', { ascending: false });
 
       if (error) {
-        // Table doesn't exist (or RLS issue), fallback to local storage
         if (error.code === 'PGRST116' || error.message?.includes('does not exist') || error.code === '42P01') {
           loadLocalEmployees();
         } else {
@@ -181,11 +220,16 @@ export default function EmployeesManager() {
 
   const openCreate = () => {
     setErrorMsg('');
+    setStartD('');
+    setEndD('');
+    setIsPresent(true);
     setEditingEmployee({
       employee_id: '',
       full_name: '',
+      email: '',
+      phone: '',
       department: '',
-      role: 'educator',
+      role: 'Educator',
       tenure: '',
       status: 'ACTIVE'
     });
@@ -193,6 +237,14 @@ export default function EmployeesManager() {
 
   const openEdit = (emp: Employee) => {
     setErrorMsg('');
+    
+    // Parse tenure dates into calendar selectors
+    const tenureParts = emp.tenure.split(' - ');
+    setStartD(parseDateToYmd(tenureParts[0] || ''));
+    const present = (tenureParts[1] || '').toLowerCase() === 'present';
+    setIsPresent(present);
+    setEndD(present ? '' : parseDateToYmd(tenureParts[1] || ''));
+
     setEditingEmployee({ ...emp });
   };
 
@@ -204,10 +256,20 @@ export default function EmployeesManager() {
     const empId = isNew ? getNextEmployeeId() : editingEmployee.employee_id.trim();
     const fullName = editingEmployee.full_name.trim();
     const dept = editingEmployee.department.trim();
-    const tenureStr = editingEmployee.tenure.trim();
+    
+    if (!startD) {
+      setErrorMsg('Start date is required.');
+      return;
+    }
+    if (!isPresent && !endD) {
+      setErrorMsg('End date is required if not currently working.');
+      return;
+    }
 
-    if (!empId || !fullName || !dept || !tenureStr) {
-      setErrorMsg('All fields are required.');
+    const tenureStr = `${formatYmdToDdMmYyyy(startD)} - ${isPresent ? 'Present' : formatYmdToDdMmYyyy(endD)}`;
+
+    if (!empId || !fullName || !dept) {
+      setErrorMsg('All marked fields are required.');
       return;
     }
 
@@ -217,6 +279,8 @@ export default function EmployeesManager() {
     const payload = {
       employee_id: empId,
       full_name: fullName,
+      email: editingEmployee.email?.trim() || '',
+      phone: editingEmployee.phone?.trim() || '',
       department: dept,
       role: editingEmployee.role,
       tenure: tenureStr,
@@ -322,6 +386,8 @@ export default function EmployeesManager() {
       emp.employee_id.toLowerCase().includes(q) ||
       emp.department.toLowerCase().includes(q) ||
       emp.role.toLowerCase().includes(q) ||
+      (emp.email && emp.email.toLowerCase().includes(q)) ||
+      (emp.phone && emp.phone.includes(q)) ||
       emp.status.toLowerCase().includes(q)
     );
   });
@@ -405,6 +471,8 @@ export default function EmployeesManager() {
                 <tr className="border-b border-gray-200 bg-gray-50/50">
                   <th className="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-wider">ID</th>
                   <th className="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-wider">FULL NAME</th>
+                  <th className="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-wider">EMAIL</th>
+                  <th className="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-wider">PHONE</th>
                   <th className="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-wider">DEPARTMENT</th>
                   <th className="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-wider">ROLE</th>
                   <th className="px-6 py-4 text-xs font-black text-gray-400 uppercase tracking-wider">TENURE</th>
@@ -417,6 +485,8 @@ export default function EmployeesManager() {
                   <tr key={emp.id || emp.employee_id} className="hover:bg-gray-50/50 transition-colors">
                     <td className="px-6 py-4.5 font-mono text-xs font-bold text-gray-500">{emp.employee_id}</td>
                     <td className="px-6 py-4.5 text-[#0b1120] font-black">{emp.full_name}</td>
+                    <td className="px-6 py-4.5 text-gray-600 text-xs font-semibold">{emp.email || '-'}</td>
+                    <td className="px-6 py-4.5 text-gray-600 text-xs font-semibold">{emp.phone || '-'}</td>
                     <td className="px-6 py-4.5 text-gray-800">{emp.department}</td>
                     <td className="px-6 py-4.5 text-gray-800 capitalize">{emp.role}</td>
                     <td className="px-6 py-4.5 text-gray-600 font-mono text-xs">{emp.tenure}</td>
@@ -513,6 +583,35 @@ export default function EmployeesManager() {
                 </div>
               </div>
 
+              {/* Email and Phone */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
+                    EMAIL ADDRESS
+                  </label>
+                  <input 
+                    type="email" 
+                    value={editingEmployee.email || ''}
+                    onChange={(e) => setEditingEmployee({ ...editingEmployee, email: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 placeholder-gray-400" 
+                    placeholder="e.g. raj@genziitian.in"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
+                    PHONE NUMBER
+                  </label>
+                  <input 
+                    type="text" 
+                    value={editingEmployee.phone || ''}
+                    onChange={(e) => setEditingEmployee({ ...editingEmployee, phone: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 placeholder-gray-400" 
+                    placeholder="e.g. +91 98765 43210"
+                  />
+                </div>
+              </div>
+
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
@@ -530,22 +629,6 @@ export default function EmployeesManager() {
 
                 <div>
                   <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                    TENURE / DURATION *
-                  </label>
-                  <input 
-                    required 
-                    type="text" 
-                    value={editingEmployee.tenure}
-                    onChange={(e) => setEditingEmployee({ ...editingEmployee, tenure: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800 placeholder-gray-400" 
-                    placeholder="e.g. 25/09/2025 - Present"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
                     ROLE *
                   </label>
                   <select 
@@ -554,29 +637,72 @@ export default function EmployeesManager() {
                     className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800"
                   >
                     {AVAILABLE_ROLES.map(role => (
-                      <option key={role} value={role} className="capitalize">
+                      <option key={role} value={role}>
                         {role}
                       </option>
                     ))}
                   </select>
                 </div>
+              </div>
 
-                <div>
-                  <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                    CURRENT STATUS *
-                  </label>
-                  <select 
-                    value={editingEmployee.status.toUpperCase()}
-                    onChange={(e) => setEditingEmployee({ ...editingEmployee, status: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800"
-                  >
-                    {AVAILABLE_STATUSES.map(status => (
-                      <option key={status} value={status}>
-                        {status}
-                      </option>
-                    ))}
-                  </select>
+              {/* Tenure Selection with calendar dates */}
+              <div className="bg-gray-50/50 border border-gray-200 rounded-2xl p-4.5 space-y-4">
+                <div className="text-xs font-black text-gray-500 uppercase tracking-wider">TENURE / DURATION</div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-[11px] font-bold text-gray-500 mb-1.5">START DATE *</label>
+                    <input 
+                      required
+                      type="date"
+                      value={startD}
+                      onChange={(e) => setStartD(e.target.value)}
+                      className="w-full px-3 py-2 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-xs transition-all text-gray-800 bg-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-bold text-gray-500 mb-1.5">END DATE</label>
+                    <input 
+                      disabled={isPresent}
+                      required={!isPresent}
+                      type="date"
+                      value={endD}
+                      onChange={(e) => setEndD(e.target.value)}
+                      className="w-full px-3 py-2 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-xs transition-all text-gray-800 bg-white disabled:bg-gray-100 disabled:text-gray-400"
+                    />
+                  </div>
                 </div>
+                <div className="flex items-center gap-2 pt-1">
+                  <input 
+                    type="checkbox"
+                    id="is-present-checkbox"
+                    checked={isPresent}
+                    onChange={(e) => {
+                      setIsPresent(e.target.checked);
+                      if (e.target.checked) setEndD('');
+                    }}
+                    className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <label htmlFor="is-present-checkbox" className="text-xs text-gray-700 font-bold select-none cursor-pointer">
+                    Currently working here (Present)
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
+                  CURRENT STATUS *
+                </label>
+                <select 
+                  value={editingEmployee.status.toUpperCase()}
+                  onChange={(e) => setEditingEmployee({ ...editingEmployee, status: e.target.value })}
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-blue-500 outline-none font-semibold text-sm transition-all text-gray-800"
+                >
+                  {AVAILABLE_STATUSES.map(status => (
+                    <option key={status} value={status}>
+                      {status}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               {/* Action Buttons */}

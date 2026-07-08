@@ -194,26 +194,6 @@ export default function Verify() {
             <p className="text-gray-600 font-medium text-lg leading-relaxed">
               Official portal for validating internship and employment records of Gen-Z IITians. Data is retrieved in real-time from the central HR registry.
             </p>
-            
-            {/* Demo IDs Box for helpful user testing */}
-            <div className="bg-blue-50 border border-blue-200 rounded-2xl p-5 space-y-3 text-left">
-              <div className="flex items-center gap-2 text-blue-800 font-black text-sm">
-                <AlertCircle className="w-4 h-4" /> DEMO CREDENTIALS FOR TESTING
-              </div>
-              <p className="text-xs text-blue-700 font-semibold leading-relaxed">
-                You can test the verification system using these real sample records:
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                <div className="bg-white/80 p-2.5 rounded-xl border border-blue-100">
-                  <div className="font-bold text-gray-800">Raj Singh (Educator)</div>
-                  <div className="font-mono text-gray-500">ID: GENZ-I-0000</div>
-                </div>
-                <div className="bg-white/80 p-2.5 rounded-xl border border-blue-100">
-                  <div className="font-bold text-gray-800">Vaibhav (Educator)</div>
-                  <div className="font-mono text-gray-500">ID: GENZ-I-0001</div>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right Column: Verification Form */}

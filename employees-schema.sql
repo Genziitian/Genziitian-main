@@ -7,6 +7,8 @@ CREATE TABLE IF NOT EXISTS public.employees (
   id          UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   employee_id TEXT UNIQUE NOT NULL,
   full_name   TEXT NOT NULL,
+  email       TEXT,
+  phone       TEXT,
   department  TEXT NOT NULL,
   role        TEXT NOT NULL,
   tenure      TEXT NOT NULL,
