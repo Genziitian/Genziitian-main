@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
-import { Printer, CheckCircle2, AlertCircle, Search, ShieldCheck } from 'lucide-react';
+import { Printer, CheckCircle2, AlertCircle, Search, ShieldCheck, X } from 'lucide-react';
 
 interface Employee {
   employee_id: string;
@@ -85,6 +85,16 @@ export default function Verify() {
         .no-print {
           display: none !important;
         }
+        .modal-backdrop {
+          background: transparent !important;
+          backdrop-filter: none !important;
+          position: absolute !important;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: auto;
+          display: block !important;
+        }
       }
     `;
     document.head.appendChild(style);
@@ -166,6 +176,12 @@ export default function Verify() {
     window.print();
   };
 
+  const closeModal = () => {
+    setSearched(false);
+    setResult(null);
+    setErrorMsg('');
+  };
+
   return (
     <div className="min-h-screen bg-gray-50/50 py-12 px-6">
       <div className="max-w-6xl mx-auto space-y-12">
@@ -234,87 +250,113 @@ export default function Verify() {
           </div>
         </div>
 
-        {/* Verification Result Card (Visible during print if active) */}
+        {/* Verification Result Modal */}
         {searched && (
-          <div className="max-w-3xl mx-auto text-left" id="print-area">
-            {result ? (
-              <div className="bg-white border-2 border-gray-200 rounded-2xl shadow-sm overflow-hidden">
-                {/* Heading */}
-                <div className="border-b border-gray-100 px-6 py-4 flex items-center justify-between bg-gray-50/50">
-                  <div className="flex items-center gap-2 text-xs font-black text-emerald-600 tracking-wider">
-                    <span className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></span>
-                    RECORD FOUND
-                  </div>
-                  <div className="text-xs font-bold text-gray-400 font-mono">
-                    REF: {result.employee_id}
-                  </div>
-                </div>
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto modal-backdrop">
+            <div className="bg-white rounded-3xl border-2 border-[#0b1120] max-w-2xl w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in-95 duration-150 relative text-left" id="print-area">
+              
+              {/* Close Button (Hidden when printing) */}
+              <button 
+                onClick={closeModal}
+                className="absolute top-4 right-4 p-1.5 text-gray-400 hover:text-gray-700 hover:bg-gray-100 rounded-xl transition-colors no-print z-10"
+                title="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
 
-                {/* Table Data */}
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm border-collapse text-left">
-                    <thead>
-                      <tr className="border-b border-gray-100">
-                        <th className="px-6 py-3 text-xs font-black text-gray-400 uppercase tracking-wider bg-gray-50/30">FIELD</th>
-                        <th className="px-6 py-3 text-xs font-black text-gray-400 uppercase tracking-wider bg-gray-50/30">VALIDATED DETAIL</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-100 font-medium text-gray-700">
-                      <tr>
-                        <td className="px-6 py-4.5 text-gray-500 font-bold">Full Name</td>
-                        <td className="px-6 py-4.5 text-[#0b1120] font-black text-base">{result.full_name}</td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4.5 text-gray-500 font-bold">Department</td>
-                        <td className="px-6 py-4.5 text-gray-800">{result.department}</td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4.5 text-gray-500 font-bold">Role / Position</td>
-                        <td className="px-6 py-4.5 text-gray-800 capitalize">{result.role}</td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4.5 text-gray-500 font-bold">Tenure</td>
-                        <td className="px-6 py-4.5 text-gray-800 font-mono text-xs">{result.tenure}</td>
-                      </tr>
-                      <tr>
-                        <td className="px-6 py-4.5 text-gray-500 font-bold">Current Status</td>
-                        <td className="px-6 py-4.5">
-                          <span className={`inline-block px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider ${
-                            result.status.toUpperCase() === 'ACTIVE' 
-                              ? 'bg-emerald-50 text-emerald-700' 
-                              : result.status.toUpperCase() === 'RESIGNED'
-                              ? 'bg-orange-50 text-orange-700'
-                              : result.status.toUpperCase() === 'REMOVED'
-                              ? 'bg-red-50 text-red-700'
-                              : 'bg-gray-100 text-gray-700'
-                          }`}>
-                            {result.status}
-                          </span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                {/* Footer bar */}
-                <div className="border-t border-gray-100 px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 bg-gray-50/30">
-                  <div className="text-xs text-gray-400 font-bold">
-                    Verified at: {verifyTime}
+              {result ? (
+                <div>
+                  {/* Heading */}
+                  <div className="border-b border-gray-100 px-6 py-5 flex items-center justify-between bg-gray-50/50 pr-16">
+                    <div className="flex items-center gap-2 text-xs font-black text-emerald-600 tracking-wider">
+                      <span className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></span>
+                      RECORD FOUND
+                    </div>
+                    <div className="text-xs font-bold text-gray-400 font-mono">
+                      REF: {result.employee_id}
+                    </div>
                   </div>
-                  <button 
-                    onClick={handlePrint}
-                    className="no-print flex items-center gap-2 px-5 py-2.5 bg-[#0b1120] text-white font-black text-xs rounded-xl hover:bg-gray-800 transition-colors shadow-sm"
-                  >
-                    <Printer className="w-4 h-4" /> PRINT OFFICIAL RECORD
-                  </button>
+
+                  {/* Table Data */}
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border-collapse text-left">
+                      <thead>
+                        <tr className="border-b border-gray-100">
+                          <th className="px-6 py-3 text-xs font-black text-gray-400 uppercase tracking-wider bg-gray-50/30">FIELD</th>
+                          <th className="px-6 py-3 text-xs font-black text-gray-400 uppercase tracking-wider bg-gray-50/30">VALIDATED DETAIL</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-100 font-medium text-gray-700">
+                        <tr>
+                          <td className="px-6 py-4.5 text-gray-500 font-bold">Full Name</td>
+                          <td className="px-6 py-4.5 text-[#0b1120] font-black text-base">{result.full_name}</td>
+                        </tr>
+                        <tr>
+                          <td className="px-6 py-4.5 text-gray-500 font-bold">Department</td>
+                          <td className="px-6 py-4.5 text-gray-800">{result.department}</td>
+                        </tr>
+                        <tr>
+                          <td className="px-6 py-4.5 text-gray-500 font-bold">Role / Position</td>
+                          <td className="px-6 py-4.5 text-gray-800 capitalize">{result.role}</td>
+                        </tr>
+                        <tr>
+                          <td className="px-6 py-4.5 text-gray-500 font-bold">Tenure</td>
+                          <td className="px-6 py-4.5 text-gray-800 font-mono text-xs">{result.tenure}</td>
+                        </tr>
+                        <tr>
+                          <td className="px-6 py-4.5 text-gray-500 font-bold">Current Status</td>
+                          <td className="px-6 py-4.5">
+                            <span className={`inline-block px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider ${
+                              result.status.toUpperCase() === 'ACTIVE' 
+                                ? 'bg-emerald-50 text-emerald-700' 
+                                : result.status.toUpperCase() === 'RESIGNED'
+                                ? 'bg-orange-50 text-orange-700'
+                                : result.status.toUpperCase() === 'REMOVED'
+                                ? 'bg-red-50 text-red-700'
+                                : 'bg-gray-100 text-gray-700'
+                            }`}>
+                              {result.status}
+                            </span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  {/* Footer bar */}
+                  <div className="border-t border-gray-100 px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 bg-gray-50/30">
+                    <div className="text-xs text-gray-400 font-bold">
+                      Verified at: {verifyTime}
+                    </div>
+                    <button 
+                      onClick={handlePrint}
+                      className="no-print flex items-center gap-2 px-5 py-2.5 bg-[#0b1120] text-white font-black text-xs rounded-xl hover:bg-gray-800 transition-colors shadow-sm"
+                    >
+                      <Printer className="w-4 h-4" /> PRINT OFFICIAL RECORD
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ) : (
-              <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-6 text-center text-red-800 font-bold flex items-center justify-center gap-3">
-                <AlertCircle className="w-6 h-6 text-red-500 flex-shrink-0" />
-                <span>{errorMsg}</span>
-              </div>
-            )}
+              ) : (
+                <div className="p-8 text-center space-y-4">
+                  <div className="inline-flex p-3 bg-red-50 text-red-600 rounded-2xl border border-red-100">
+                    <AlertCircle className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-lg font-black text-[#0b1120]">Verification Failed</h3>
+                  <p className="text-sm text-gray-500 font-bold max-w-sm mx-auto leading-relaxed">
+                    {errorMsg || 'No record matching these credentials could be found in the registry.'}
+                  </p>
+                  <div className="pt-2">
+                    <button 
+                      onClick={closeModal}
+                      className="px-6 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-black text-xs rounded-xl transition-colors"
+                    >
+                      Close & Search Again
+                    </button>
+                  </div>
+                </div>
+              )}
+
+            </div>
           </div>
         )}
 
