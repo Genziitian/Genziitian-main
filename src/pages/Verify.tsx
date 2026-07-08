@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
-import { ChevronDown, ChevronUp, Printer, CheckCircle2, AlertCircle, Search, ShieldCheck } from 'lucide-react';
+import { Printer, CheckCircle2, AlertCircle, Search, ShieldCheck } from 'lucide-react';
 
 interface Employee {
   employee_id: string;
@@ -62,9 +62,6 @@ export default function Verify() {
   const [searched, setSearched] = useState(false);
   const [verifyTime, setVerifyTime] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
-
-  // Guideline Accordion States
-  const [openGuideline, setOpenGuideline] = useState<'protocol' | 'discrepancy' | null>('protocol');
 
   // Print style injection
   useEffect(() => {
@@ -200,7 +197,7 @@ export default function Verify() {
             <form onSubmit={handleSearch} className="space-y-6 text-left">
               <div>
                 <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                  GENZ CANDIDATE ID
+                  EMPLOYEE ID
                 </label>
                 <input 
                   required 
@@ -214,7 +211,7 @@ export default function Verify() {
 
               <div>
                 <label className="block text-xs font-black text-gray-500 uppercase tracking-wider mb-2">
-                  ASSOCIATE FULL NAME
+                  FULL LEGAL NAME
                 </label>
                 <input 
                   required 
@@ -322,50 +319,26 @@ export default function Verify() {
         )}
 
         {/* Verification Guidelines (Hidden when printing) */}
-        <div className="max-w-3xl mx-auto space-y-6 pt-6 no-print text-left">
-          <h2 className="text-xs font-black text-gray-400 tracking-widest uppercase text-center mb-8">
-            VERIFICATION GUIDELINES
-          </h2>
-
-          <div className="space-y-4">
-            {/* Accordion 1: Verification Protocol */}
-            <div className={`bg-white rounded-2xl border-2 transition-all ${
-              openGuideline === 'protocol' ? 'border-blue-500 shadow-[0_4px_20px_rgb(59,130,246,0.08)]' : 'border-gray-200'
-            }`}>
-              <button 
-                onClick={() => setOpenGuideline(openGuideline === 'protocol' ? null : 'protocol')}
-                className="w-full px-6 py-5 flex items-center justify-between font-bold text-gray-800 text-base"
-              >
-                <span>Verification Protocol</span>
-                <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${
-                  openGuideline === 'protocol' ? 'rotate-180' : ''
-                }`} />
-              </button>
-              {openGuideline === 'protocol' && (
-                <div className="px-6 pb-6 text-sm text-gray-600 font-medium leading-relaxed border-t border-gray-100/55 pt-4">
-                  This system queries the central Gen-Z IITians employee ledger. All records are updated in real-time upon contract completion or termination.
-                </div>
-              )}
+        <div className="max-w-4xl mx-auto pt-6 no-print text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Card 1: Data Integrity */}
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-left shadow-sm">
+              <h3 className="text-xs font-black text-[#0b1120] uppercase tracking-wider mb-3 flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-emerald-500" /> Data Integrity
+              </h3>
+              <p className="text-sm text-gray-500 font-bold leading-relaxed">
+                Employment information displayed on this portal is sourced from official company records and reflects the individual's documented association with Gen-Z IITian.
+              </p>
             </div>
 
-            {/* Accordion 2: Discrepancy Reporting */}
-            <div className={`bg-white rounded-2xl border-2 transition-all ${
-              openGuideline === 'discrepancy' ? 'border-blue-500 shadow-[0_4px_20px_rgb(59,130,246,0.08)]' : 'border-gray-200'
-            }`}>
-              <button 
-                onClick={() => setOpenGuideline(openGuideline === 'discrepancy' ? null : 'discrepancy')}
-                className="w-full px-6 py-5 flex items-center justify-between font-bold text-gray-800 text-base"
-              >
-                <span>Discrepancy Reporting</span>
-                <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${
-                  openGuideline === 'discrepancy' ? 'rotate-180' : ''
-                }`} />
-              </button>
-              {openGuideline === 'discrepancy' && (
-                <div className="px-6 pb-6 text-sm text-gray-600 font-medium leading-relaxed border-t border-gray-100/55 pt-4">
-                  Any inconsistencies in the displayed data should be immediately reported to the Human Resources department at <a href="mailto:help@genziitian.in" className="text-blue-600 hover:underline font-bold">help@genziitian.in</a> with a copy of the original offer letter.
-                </div>
-              )}
+            {/* Card 2: Support & Corrections */}
+            <div className="bg-white border-2 border-gray-200 rounded-2xl p-6 text-left shadow-sm">
+              <h3 className="text-xs font-black text-[#0b1120] uppercase tracking-wider mb-3 flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 text-blue-500" /> Support & Corrections
+              </h3>
+              <p className="text-sm text-gray-500 font-bold leading-relaxed">
+                Found an issue with the verification result? Email <a href="mailto:help@genziitian.in" className="text-blue-600 hover:underline">help@genziitian.in</a> with the relevant Employee ID and supporting documentation. Our HR team will investigate and respond accordingly.
+              </p>
             </div>
           </div>
         </div>
